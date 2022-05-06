@@ -14,6 +14,7 @@
 ```
 ##### 2、上传到远程仓库
 ```bash
+    git pull //确保最新版本
     git add .
     git commit -m"XXXX"
     git push

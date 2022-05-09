@@ -3,7 +3,11 @@
         "katex",
         "theme-comscore",
         "chapter-fold",
-        "splitter"
+        "splitter",
+        "copy-code-button",
+        "-lunr", 
+        "-search", 
+        "search-pro"
     ],
     "pluginsConfig": {
         "theme-default": {

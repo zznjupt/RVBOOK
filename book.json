@@ -9,8 +9,21 @@
         "-search", 
         "search-pro",
         "prism", 
-        "-highlight"
+        "-highlight",
+        "hide-element",
+        "theme-fexa"
     ],
+    "variables": {
+        "themeFexa":{
+            "nav":[
+                {
+                    "url":"http://...",
+                    "target":"_blank",
+                    "name": "简易教程"
+                }
+            ]
+        }
+    },
     "pluginsConfig": {
         "theme-default": {
             "showLevel": true
@@ -19,6 +32,16 @@
             "css": [
                 "prismjs/themes/prism-tomorrow.css"
             ]
+        },
+        "pluginsConfig": {
+            "hide-element": {
+                "elements": [".gitbook-link"]
+            }
+        },
+        "theme-fexa":{
+            "search-placeholder":"输入关键字搜索",
+            "logo":"./logo.png",
+            "favicon": "./favicon.ico"
         }
     }
 }

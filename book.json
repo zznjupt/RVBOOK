@@ -1,7 +1,7 @@
 {
     "plugins": [
         "katex",
-
+        "theme-comscore",
         "chapter-fold",
         "splitter",
         "copy-code-button",
@@ -17,9 +17,9 @@
         "themeFexa":{
             "nav":[
                 {
-                    "url":"http://...",
+                    "url":"https://github.com/zznjupt/RVBOOK",
                     "target":"_blank",
-                    "name": "简易教程"
+                    "name": "本书代码仓库"
                 }
             ]
         }

@@ -40,7 +40,7 @@ https://docs.qq.com/sheet/DRHhjbkdDanlpcndZ
 
 【备注】除1外，234为推荐学习路线，不做硬性要求
 
-```
+
 Info styling
 > **[info] For info**
 >
@@ -60,4 +60,3 @@ Success styling
 > **[success] For info**
 >
 > Use this for success messages.
-```

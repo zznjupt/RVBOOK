@@ -7,11 +7,18 @@
         "copy-code-button",
         "-lunr", 
         "-search", 
-        "search-pro"
+        "search-pro",
+        "prism", 
+        "-highlight"
     ],
     "pluginsConfig": {
         "theme-default": {
             "showLevel": true
+        },
+        "prism": {
+            "css": [
+                "prismjs/themes/prism-tomorrow.css"
+            ]
         }
     }
 }

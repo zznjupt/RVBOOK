@@ -2,6 +2,10 @@
     "plugins": [
         "katex",
         "theme-comscore"
-    ]
-    
+    ],
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": true
+        }
+    }
 }

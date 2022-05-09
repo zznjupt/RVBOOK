@@ -1,7 +1,8 @@
 {
     "plugins": [
         "katex",
-        "theme-comscore"
+        "theme-comscore",
+        "chapter-fold"
     ],
     "pluginsConfig": {
         "theme-default": {

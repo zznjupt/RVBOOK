@@ -11,6 +11,6 @@
 * [电网数据保护调研](CIRED/dataprotect.md)
 
 ## 单周期单指令CPU设计
-### verilog版本
-* [踏出第一步](单周期单指令CPU设计/1.md)
+* verilog版本
+	* [踏出第一步](单周期单指令CPU设计/1.md)
 

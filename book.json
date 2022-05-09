@@ -23,7 +23,8 @@
         "-highlight",
         "hide-element",
         "theme-fexa",
-        "heading-anchors"
+        "heading-anchors",
+        "alerts"
         
     ],
     "variables": {

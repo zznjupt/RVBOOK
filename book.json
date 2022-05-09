@@ -13,7 +13,8 @@
         "prism", 
         "-highlight",
         "hide-element",
-        "theme-fexa"
+        "theme-fexa",
+        "heading-anchors"
     ],
     "variables": {
         "themeFexa":{

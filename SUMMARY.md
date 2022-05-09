@@ -3,7 +3,7 @@
 * [README](README.md)
 
 ## 工作日志
-* [小组开会内容](工作日志/meeting.md)
+* [小组开会内容归档](工作日志/meeting.md)
 
 ## CIRED 2022 论文撰写
 * [论文大纲](CIRED/outline.md)

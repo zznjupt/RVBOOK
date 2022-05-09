@@ -12,6 +12,7 @@
         "-fontsettings",
         "katex",
         "theme-comscore",
+        "expandable-chapters",
         "chapter-fold",
         "splitter",
         "copy-code-button",

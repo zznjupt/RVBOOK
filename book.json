@@ -9,7 +9,7 @@
     
     "plugins": [
         "-sharing",
-        "-fontsettings",
+
         "katex",
         "theme-comscore",
         "expandable-chapters",

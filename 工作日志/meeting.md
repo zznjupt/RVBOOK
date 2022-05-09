@@ -39,24 +39,3 @@ https://docs.qq.com/sheet/DRHhjbkdDanlpcndZ
 【在线文档】https://oscpu.github.io/NutShell-doc/
 
 【备注】除1外，234为推荐学习路线，不做硬性要求
-
-
-Info styling
-> **[info] For info**
->
-> Use this for infomation messages.
-
-Warning styling
-> **[warning] For warning**
->
-> Use this for warning messages.
-
-Danger styling
-> **[danger] For danger**
->
-> Use this for danger messages.
-
-Success styling
-> **[success] For info**
->
-> Use this for success messages.

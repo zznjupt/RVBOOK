@@ -14,7 +14,6 @@ int main(void)
 	return 0;
 }
 ```
-
 2. 生成可执行文件
 - 使用riscv的gcc交叉编译器在x86生成riscv的可执行文件。
 - 需要添加  `-static`编译选项。表示使用静态链接

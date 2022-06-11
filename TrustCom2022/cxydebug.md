@@ -1,7 +1,7 @@
 ## 搭建qemu验证环境
 
 **参考的是c9xx linux-5.10 的 readme.txt -> Quick Start for qemu run 章节:**
-https://github.com/c-sky/buildroot/releases/tag/v1.0.10.1；
+https://github.com/c-sky/buildroot/releases/tag/v1.0.10.1
 
 ### 调试日记
 

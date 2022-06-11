@@ -8,7 +8,9 @@ https://github.com/c-sky/buildroot/releases
 C910对应的版本是： `c9xx linux-5.10`
 阅读readme.txt,这是官方给的使用手册。
 ![](../TrustCom2022/img/c910-releases.png)
+
 参考 readme.txt -> Quick Start for qemu run 章节，模拟器包含在 toolchain_thead_xxx.tar.xz 中，一般解压到 host 目录下
+
 ```shell
 echo "Download"
  wget -nc https://gitlab.com/c-sky/buildroot/-/jobs/1251564514/artifacts/raw/output/images/toolchain_thead_9xx_compat_5.10_glibc_br_defconfig_5fe9fbd12ca3045d59a5d2e813f1c381327e6067.tar.xz

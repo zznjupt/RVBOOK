@@ -76,7 +76,7 @@ echo "Root of code base has been specified as:\n    $CODE_BASE_PATH"
 ->openc910/C910_RTL_FACTORY/setup/setup.sh
 
 ```bash
-#!usr/bin/bash
+#!/usr/bin/bash
 
 pattern="\/setup"`echo '$'`
 export CODE_BASE_PATH `pwd | perl -pe "s/$pattern//"`
@@ -96,7 +96,7 @@ echo "    $TOOL_EXTENSION"
 ->openc910/smart_run/setup/example_setup.sh
 
 ```bash
-#!usr/bin/bash
+#!/usr/bin/bash
 
 export TOOL_EXTENSION=/home/dios/XUANTIE/Xuantie-900-gcc-elf-newlib-x86_64-V2.4.0-20220428/Xuantie-900-gcc-elf-newlib-x86_64-V2.4.0/bin
 echo 'Toolchain path($TOOL_EXTENSION):'

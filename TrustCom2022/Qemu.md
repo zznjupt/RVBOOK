@@ -24,4 +24,5 @@ int main(void)
    - qemu-riscv64 对应user mode
    - 这里应该使用user模式
    >qemu-riscv64 hello
-![qemu-riscv64](../img/qemu-riscv.png "图片title")
+
+<img src="././img/qemu-riscv.png" width="100%" height="100%">

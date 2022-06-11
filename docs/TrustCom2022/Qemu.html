@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>学习框架和短期要求 · RVBOOK</title>
+        <title>江芳Qemu · RVBOOK</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -85,10 +85,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="cxydebug.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="zz.html" />
     
 
     </head>
@@ -153,7 +151,7 @@
         
         
     
-        <li class="chapter active" data-level="2.1" data-path="meeting1.html">
+        <li class="chapter " data-level="2.1" data-path="meeting1.html">
             
                 <a href="meeting1.html">
             
@@ -192,7 +190,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="Qemu.html">
+        <li class="chapter active" data-level="2.4" data-path="Qemu.html">
             
                 <a href="Qemu.html">
             
@@ -308,7 +306,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >学习框架和短期要求</a>
+        <a href=".." >江芳Qemu</a>
     </h1>
 </div>
 
@@ -323,29 +321,41 @@
     
 					<section class="normal markdown-section">
 						
-						<h2 id="62&#x65E5;&#x5C0F;&#x4F1A;&#x8BA8;&#x8BBA;">6.2&#x65E5;&#x5C0F;&#x4F1A;&#x8BA8;&#x8BBA;</h2>
-<p><a href="https://docs.qq.com/doc/DRENqbWZCTVVWcmF6?u=c0e3e6d7852c4a95b8460bddc96738c8&amp;&amp;_t=1654675092605" target="_blank">https://docs.qq.com/doc/DRENqbWZCTVVWcmF6?u=c0e3e6d7852c4a95b8460bddc96738c8&amp;&amp;_t=1654675092605</a></p>
-<h2 id="&#x5B66;&#x4E60;&#x6846;&#x67B6;">&#x5B66;&#x4E60;&#x6846;&#x67B6;</h2>
-<p>&#x76EE;&#x524D;&#x786E;&#x5B9A;&#x4E86;&#x7814;&#x7A76;&#x76EE;&#x6807;CPU&#x4E3A;&#xFF1A;XUANTIE-C910</p>
-<p>&#x4E4B;&#x524D;&#x8BA8;&#x8BBA;&#x4E86;&#x7528;&#x5B9E;&#x9A8C;&#x5BA4;&#x670D;&#x52A1;&#x5668;&#x4F5C;&#x4E3A;&#x4EFF;&#x771F;&#x5E73;&#x53F0;&#xFF0C;&#x4F46;&#x662F;&#x6700;&#x597D;&#x4E2A;&#x4EBA;PC&#x90FD;&#x53EF;&#x4EE5;&#x628A;&#x5DE5;&#x5177;&#x94FE;&#x5B89;&#x88C5;&#x7F16;&#x8BD1;&#x548C;&#x8FDB;&#x884C;&#x5B9E;&#x9A8C;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x505A;&#x7684;&#x4E8B;&#xFF1A;</p>
-<ul>
-<li><p>&#x4EFF;&#x771F;&#x5DE5;&#x5177;&#x94FE;&#x4EE5;&#x53CA;&#x5DE5;&#x5177;&#x94FE;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;&#x9700;&#x8981;&#x7F16;&#x5199;<strong>&#x8BF4;&#x660E;&#x6587;&#x6863;</strong>&#xFF0C;&#x8BF4;&#x660E;&#x6587;&#x6863;&#x4E0A;&#x4F20;&#x81F3;&#x672C;&#x7F51;&#x9875;</p>
-<ul>
-<li>&#x81EA;&#x5DF1;&#x7684;&#x73AF;&#x5883;&#x548C;&#x4F9D;&#x8D56;&#x9879;</li>
-<li>&#x6807;&#x6CE8;&#x5DE5;&#x5177;&#x94FE;<strong>&#x4E0B;&#x8F7D;&#x51FA;&#x5904;</strong>&#x548C;<strong>&#x7248;&#x672C;&#x53F7;</strong></li>
-<li><strong>&#x6B65;&#x9AA4;&#x5B8C;&#x6574;&#xFF0C;&#x6D41;&#x7A0B;&#x6E05;&#x6670;</strong></li>
-<li>&#x6574;&#x7406;&#x6240;&#x6709;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5982;&#x679C;&#x89E3;&#x51B3;&#xFF0C;&#x8BF7;&#x7ED9;&#x51FA;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF0C;&#x672A;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x5927;&#x5BB6;&#x4E00;&#x8D77;&#x60F3;&#x529E;&#x6CD5;</li>
+						<p>[TOC]</p>
+<h2 id="qemu-&#x7B80;&#x4ECB;">Qemu &#x7B80;&#x4ECB;</h2>
+<h2 id="qemu-&#x5B89;&#x88C5;">Qemu &#x5B89;&#x88C5;</h2>
+<h3 id="&#x7F16;&#x8BD1;&#x8FD0;&#x884C;&#xFF1A;hello-world">&#x7F16;&#x8BD1;&#x8FD0;&#x884C;&#xFF1A;Hello World</h3>
+<ol>
+<li>&#x7F16;&#x5199;&#x4EE3;&#x7801;
+```c<h1 id="include-">include <stdio.h></stdio.h></h1>
+</li>
+</ol>
+<p>int main(void)
+{
+    printf(&quot;Hello World!\n&quot;);
+    return 0;
+}
+```</p>
+<ol>
+<li>&#x751F;&#x6210;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;<ul>
+<li>&#x4F7F;&#x7528;riscv&#x7684;gcc&#x4EA4;&#x53C9;&#x7F16;&#x8BD1;&#x5668;&#x5728;x86&#x751F;&#x6210;riscv&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x9700;&#x8981;&#x6DFB;&#x52A0;  <code>-static</code>&#x7F16;&#x8BD1;&#x9009;&#x9879;&#x3002;&#x8868;&#x793A;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x94FE;&#x63A5;<blockquote>
+<p>riscv64-linux-gnu-gcc -static hello.c -o hello</p>
+</blockquote>
+</li>
 </ul>
 </li>
-<li><p>&#x4E0A;&#x4F20;&#x65B9;&#x6CD5;</p>
-<ul>
-<li>&#x5C06;&#x672C;&#x6587;&#x6863;git pull&#x4E0B;&#x6765;&#x4E4B;&#x540E;&#x5728; TrustCom2022 &#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x65B0;&#x5EFA;.md&#x6587;&#x4EF6;&#xFF0C;&#x5199;&#x597D;&#x540E;push&#x4E0A;&#x5373;&#x53EF;&#xFF0C;&#x7F51;&#x9875;&#x7AEF;&#x4E0D;&#x4F1A;&#x53CA;&#x65F6;&#x66F4;&#x65B0;&#x9700;&#x8981;&#x6211;&#x8FD9;&#x8FB9;&#x7F16;&#x8BD1;&#x4E00;&#x4E0B;&#xFF0C;&#x6211;&#x4F1A;&#x5728;&#x6BCF;&#x5929;&#x7684;&#x4E0D;&#x56FA;&#x5B9A;&#x65F6;&#x95F4;&#x7F16;&#x8BD1;&#x4E0A;&#x4F20;</li>
+<li>&#x6267;&#x884C;<ul>
+<li>qemu-system-riscv64 &#x5BF9;&#x5E94;system mode</li>
+<li>qemu-riscv64 &#x5BF9;&#x5E94;user mode</li>
+<li>&#x8FD9;&#x91CC;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;user&#x6A21;&#x5F0F;<blockquote>
+<p>qemu-riscv64 hello</p>
+</blockquote>
+</li>
 </ul>
 </li>
-<li><p>&#x8981;&#x660E;&#x786E;&#x81EA;&#x5DF1;&#x5728;&#x505A;&#x4EC0;&#x4E48;&#x4E8B;&#x60C5;&#xFF0C;&#x6BCF;&#x4EF6;&#x4E8B;&#x8BF7;&#x6700;&#x597D;&#x6709;&#x72EC;&#x7ACB;&#x7684;&#x6587;&#x6863;</p>
-</li>
-</ul>
-<p><strong>Good luck&#xFF01;</strong></p>
+</ol>
+<p><img src="img/qemu-riscv.png" width="100%" height="100%"></p>
 
 						
 					</section>
@@ -373,14 +383,10 @@
 
 		
 		
-		<a href="../" class="navigation navigation-prev " aria-label="Previous page: README">
+		<a href="zz.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Verilator仿真-周喆">
 			<i class="fa fa-angle-left"></i>
 		</a>
 		
-		
-		<a href="cxydebug.html" class="navigation navigation-next " aria-label="Next page: 程晓宇Debug">
-			<i class="fa fa-angle-right"></i>
-		</a>
 		
 		
 		
@@ -388,7 +394,7 @@
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"学习框架和短期要求","level":"2.1","depth":1,"next":{"title":"程晓宇Debug","level":"2.2","depth":1,"path":"TrustCom2022/cxydebug.md","ref":"TrustCom2022/cxydebug.md","articles":[]},"previous":{"title":"README","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-comscore","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","theme-fexa","heading-anchors","alerts"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"pluginsConfig":{"hide-element":{"elements":[".gitbook-link"]}},"splitter":{},"search-pro":{},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"./logo.png","favicon":"./favicon.ico"},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"theme-comscore":{},"alerts":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeFexa":{"nav":[{"url":"https://github.com/zznjupt/RVBOOK","target":"_blank","name":"本书代码仓库"}]}},"title":"RVBOOK","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"记录 RISCV 学习的一些知识与心得"},"file":{"path":"TrustCom2022/meeting1.md","mtime":"2022-06-09T09:47:02.466Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-11T13:34:29.516Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"江芳Qemu","level":"2.4","depth":1,"next":{"title":"CIRED 2022 论文撰写","level":"3.1","depth":1,"ref":"","articles":[{"title":"论文大纲","level":"3.1.1","depth":2,"path":"CIRED/outline.md","ref":"CIRED/outline.md","articles":[]},{"title":"电网数据保护调研","level":"3.1.2","depth":2,"path":"CIRED/dataprotect.md","ref":"CIRED/dataprotect.md","articles":[]},{"title":"实验部分内容","level":"3.1.3","depth":2,"path":"CIRED/implementation.md","ref":"CIRED/implementation.md","articles":[]}]},"previous":{"title":"Verilator仿真-周喆","level":"2.3","depth":1,"path":"TrustCom2022/zz.md","ref":"TrustCom2022/zz.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-comscore","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","theme-fexa","heading-anchors","alerts"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"pluginsConfig":{"hide-element":{"elements":[".gitbook-link"]}},"splitter":{},"search-pro":{},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"./logo.png","favicon":"./favicon.ico"},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"theme-comscore":{},"alerts":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeFexa":{"nav":[{"url":"https://github.com/zznjupt/RVBOOK","target":"_blank","name":"本书代码仓库"}]}},"title":"RVBOOK","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"记录 RISCV 学习的一些知识与心得"},"file":{"path":"TrustCom2022/Qemu.md","mtime":"2022-06-11T13:34:18.741Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-11T13:34:29.516Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>

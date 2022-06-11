@@ -60,7 +60,7 @@ https://occ.t-head.cn/community/download?id=3948120165480468480
 
 我下载的版本是 Xuantie-900-gcc-elf-newlib-x86_64-V2.0.3-20210806.tar.gz
 
-#### 搭建主流程
+### 仿真流程
 
 * 首先修改openc910 project下的两个用于部署环境的.csh文件修改为.sh文件：
 

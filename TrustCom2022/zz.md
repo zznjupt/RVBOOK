@@ -65,6 +65,7 @@ https://occ.t-head.cn/community/download?id=3948120165480468480
 * 首先修改openc910 project下的两个用于部署环境的.csh文件修改为.sh文件：
 
 openc910/C910_RTL_FACTORY/setup/setup.csh
+
 ```bash
 #!/bin/csh
 
@@ -73,6 +74,7 @@ setenv CODE_BASE_PATH `pwd | perl -pe "s/$pattern//"`
 echo "Root of code base has been specified as:\n    $CODE_BASE_PATH"
 ```
 ->openc910/C910_RTL_FACTORY/setup/setup.sh
+
 ```bash
 #! usr/bin/bash
 
@@ -80,7 +82,9 @@ pattern="\/setup"`echo '$'`
 export CODE_BASE_PATH `pwd | perl -pe "s/$pattern//"`
 echo "Root of code base has been specified as:\n    $CODE_BASE_PATH"
 ```
+
 openc910/smart_run/setup/example_setup.csh
+
 ```bash
 #!/bin/csh
 
@@ -88,7 +92,9 @@ setenv TOOL_EXTENSION /tools/riscv/riscv64-elf-x86_64/bin
 echo 'Toolchain path($TOOL_EXTENSION):'
 echo "    $TOOL_EXTENSION"
 ```
+
 ->openc910/smart_run/setup/example_setup.sh
+
 ```bash
 #! usr/bin/bash
 
@@ -107,33 +113,43 @@ source setup/example_setup.sh
 ```
 
 如果执行sh脚本报错如下：
+
 ```bash
 :Syntax error: Bad fd number
 ```
+
 可能是sh链接到了dash，因此需要检查链接情况：
+
 ```bash
 ls -l /bin/sh
 ```
 如果得到的结果是
+
 ```bash
 /bin/sh -> dash
 ```
+
 那么执行以下命令即可
+
 ```bash
 sudo mv /bin/sh /bin/sh.orig
 sudo ln -s /bin/bash /bin/sh
 ```
+
 再次检查应该得到正确的结果
+
 ```bash
 /bin/sh -> /bin/bash
 ```
 
 * 接着，在/smart_run下创建/work目录
+
 ```bash
 mkdir work
 ```
 
 * 然后即可进行仿真工作，本次实验选取的备选CASE为hello_world
+
 ```bash
 meke cleanVerilator
 make compile SIM=verilator

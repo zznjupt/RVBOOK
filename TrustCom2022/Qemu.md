@@ -6,6 +6,7 @@
 
 ### 编译运行：Hello World
 1. 编写代码
+
 ```c
 #include <stdio.h>
 
@@ -15,6 +16,7 @@ int main(void)
 	return 0;
 }
 ```
+
 2. 生成可执行文件
    - 使用riscv的gcc交叉编译器在x86生成riscv的可执行文件。
    - 需要添加  `-static`编译选项。表示使用静态链接
@@ -26,3 +28,4 @@ int main(void)
    >qemu-riscv64 hello
 
 <img src="././img/qemu-riscv.png" width="100%" height="100%">
+

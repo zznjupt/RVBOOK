@@ -351,39 +351,37 @@ autoconf         <span class="token comment"># Create ./configure script</span>
 <p>&#x6211;&#x4E0B;&#x8F7D;&#x7684;&#x7248;&#x672C;&#x662F; Xuantie-900-gcc-elf-newlib-x86_64-V2.0.3-20210806.tar.gz</p>
 <h4 id="&#x642D;&#x5EFA;&#x4E3B;&#x6D41;&#x7A0B;">&#x642D;&#x5EFA;&#x4E3B;&#x6D41;&#x7A0B;</h4>
 <ul>
-<li><p>&#x9996;&#x5148;&#x4FEE;&#x6539;openc910 project&#x4E0B;&#x7684;&#x4E24;&#x4E2A;&#x7528;&#x4E8E;&#x90E8;&#x7F72;&#x73AF;&#x5883;&#x7684;.csh&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x4E3A;.sh&#x6587;&#x4EF6;&#xFF1A;</p>
-</li>
-<li><p>openc910/C910_RTL_FACTORY/setup/setup.csh
-```bash</p>
-<h1 id="bincsh">!/bin/csh</h1>
-</li>
+<li>&#x9996;&#x5148;&#x4FEE;&#x6539;openc910 project&#x4E0B;&#x7684;&#x4E24;&#x4E2A;&#x7528;&#x4E8E;&#x90E8;&#x7F72;&#x73AF;&#x5883;&#x7684;.csh&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x4E3A;.sh&#x6587;&#x4EF6;&#xFF1A;</li>
 </ul>
-<p>set pattern = &quot;\/setup&quot;<code>echo &apos;$&apos;</code>
-setenv CODE_BASE_PATH <code>pwd | perl -pe &quot;s/$pattern//&quot;</code>
-echo &quot;Root of code base has been specified as:\n    $CODE_BASE_PATH&quot;</p>
-<pre class="language-"><code>-&gt;openc910/C910_RTL_FACTORY/setup/setup.sh
-```bash
-#! usr/bin/bash
+<p>openc910/C910_RTL_FACTORY/setup/setup.csh</p>
+<pre class="language-"><code class="lang-bash"><span class="token shebang important">#!/bin/csh</span>
 
-pattern=&quot;\/setup&quot;`echo &apos;$&apos;`
-export CODE_BASE_PATH `pwd | perl -pe &quot;s/$pattern//&quot;`
-echo &quot;Root of code base has been specified as:\n    $CODE_BASE_PATH&quot;
-</code></pre><ol>
-<li>openc910/smart_run/setup/example_setup.csh
-```bash<h1 id="bincsh">!/bin/csh</h1>
-</li>
-</ol>
-<p>setenv TOOL_EXTENSION /tools/riscv/riscv64-elf-x86_64/bin
-echo &apos;Toolchain path($TOOL_EXTENSION):&apos;
-echo &quot;    $TOOL_EXTENSION&quot;</p>
-<pre class="language-"><code>-&gt;openc910/smart_run/setup/example_setup.sh
-```bash
-#! usr/bin/bash
+<span class="token builtin class-name">set</span> pattern <span class="token operator">=</span> <span class="token string">&quot;\/setup&quot;</span><span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">echo</span> <span class="token string">&apos;$&apos;</span><span class="token variable">`</span></span>
+setenv CODE_BASE_PATH <span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">pwd</span> <span class="token operator">|</span> perl -pe <span class="token string">&quot;s/<span class="token variable">$pattern</span>//&quot;</span><span class="token variable">`</span></span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Root of code base has been specified as:<span class="token entity" title="\n">\n</span>    <span class="token variable">$CODE_BASE_PATH</span>&quot;</span>
+</code></pre>
+<p>-&gt;openc910/C910_RTL_FACTORY/setup/setup.sh</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment">#! usr/bin/bash</span>
 
-export TOOL_EXTENSION=/home/dios/XUANTIE/Xuantie-900-gcc-elf-newlib-x86_64-V2.4.0-20220428/Xuantie-900-gcc-elf-newlib-x86_64-V2.4.0/bin
-echo &apos;Toolchain path($TOOL_EXTENSION):&apos;
-echo &quot;    $TOOL_EXTENSION&quot;
-</code></pre><ul>
+<span class="token assign-left variable">pattern</span><span class="token operator">=</span><span class="token string">&quot;\/setup&quot;</span><span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">echo</span> <span class="token string">&apos;$&apos;</span><span class="token variable">`</span></span>
+<span class="token builtin class-name">export</span> CODE_BASE_PATH <span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">pwd</span> <span class="token operator">|</span> perl -pe <span class="token string">&quot;s/<span class="token variable">$pattern</span>//&quot;</span><span class="token variable">`</span></span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Root of code base has been specified as:<span class="token entity" title="\n">\n</span>    <span class="token variable">$CODE_BASE_PATH</span>&quot;</span>
+</code></pre>
+<p>openc910/smart_run/setup/example_setup.csh</p>
+<pre class="language-"><code class="lang-bash"><span class="token shebang important">#!/bin/csh</span>
+
+setenv TOOL_EXTENSION /tools/riscv/riscv64-elf-x86_64/bin
+<span class="token builtin class-name">echo</span> <span class="token string">&apos;Toolchain path($TOOL_EXTENSION):&apos;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;    <span class="token variable">$TOOL_EXTENSION</span>&quot;</span>
+</code></pre>
+<p>-&gt;openc910/smart_run/setup/example_setup.sh</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment">#! usr/bin/bash</span>
+
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">TOOL_EXTENSION</span><span class="token operator">=</span>/home/dios/XUANTIE/Xuantie-900-gcc-elf-newlib-x86_64-V2.4.0-20220428/Xuantie-900-gcc-elf-newlib-x86_64-V2.4.0/bin
+<span class="token builtin class-name">echo</span> <span class="token string">&apos;Toolchain path($TOOL_EXTENSION):&apos;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;    <span class="token variable">$TOOL_EXTENSION</span>&quot;</span>
+</code></pre>
+<ul>
 <li>&#x63A5;&#x7740;&#xFF0C;&#x6267;&#x884C;&#x4E24;&#x4E2A;setup&#x811A;&#x672C;&#xFF0C;&#x6CE8;&#x610F;&#x9700;&#x8981;&#x4E25;&#x683C;&#x6309;&#x7167;&#x4E0B;&#x9762;&#x6B65;&#x9AA4;&#x6267;&#x884C;&#xFF0C;&#x56E0;&#x4E3A;&#x542F;&#x52A8;&#x811A;&#x672C;&#x7684;&#x4F4D;&#x7F6E;&#x5F71;&#x54CD;&#x7ED3;&#x679C;</li>
 </ul>
 <pre class="language-"><code class="lang-bash"><span class="token builtin class-name">cd</span> openc910/C910_RTL_FACTORY
@@ -460,7 +458,7 @@ echo &quot;    $TOOL_EXTENSION&quot;
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"Verilator仿真-周喆","level":"2.3","depth":1,"next":{"title":"CIRED 2022 论文撰写","level":"2.4","depth":1,"ref":"","articles":[{"title":"论文大纲","level":"2.4.1","depth":2,"path":"CIRED/outline.md","ref":"CIRED/outline.md","articles":[]},{"title":"电网数据保护调研","level":"2.4.2","depth":2,"path":"CIRED/dataprotect.md","ref":"CIRED/dataprotect.md","articles":[]},{"title":"实验部分内容","level":"2.4.3","depth":2,"path":"CIRED/implementation.md","ref":"CIRED/implementation.md","articles":[]}]},"previous":{"title":"程晓宇Debug","level":"2.2","depth":1,"path":"TrustCom2022/cxydebug.md","ref":"TrustCom2022/cxydebug.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-comscore","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","theme-fexa","heading-anchors","alerts"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"pluginsConfig":{"hide-element":{"elements":[".gitbook-link"]}},"splitter":{},"search-pro":{},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"./logo.png","favicon":"./favicon.ico"},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"theme-comscore":{},"alerts":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeFexa":{"nav":[{"url":"https://github.com/zznjupt/RVBOOK","target":"_blank","name":"本书代码仓库"}]}},"title":"RVBOOK","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"记录 RISCV 学习的一些知识与心得"},"file":{"path":"TrustCom2022/zz.md","mtime":"2022-06-11T09:08:15.709Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-11T09:09:29.964Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"Verilator仿真-周喆","level":"2.3","depth":1,"next":{"title":"CIRED 2022 论文撰写","level":"2.4","depth":1,"ref":"","articles":[{"title":"论文大纲","level":"2.4.1","depth":2,"path":"CIRED/outline.md","ref":"CIRED/outline.md","articles":[]},{"title":"电网数据保护调研","level":"2.4.2","depth":2,"path":"CIRED/dataprotect.md","ref":"CIRED/dataprotect.md","articles":[]},{"title":"实验部分内容","level":"2.4.3","depth":2,"path":"CIRED/implementation.md","ref":"CIRED/implementation.md","articles":[]}]},"previous":{"title":"程晓宇Debug","level":"2.2","depth":1,"path":"TrustCom2022/cxydebug.md","ref":"TrustCom2022/cxydebug.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-comscore","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","theme-fexa","heading-anchors","alerts"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"pluginsConfig":{"hide-element":{"elements":[".gitbook-link"]}},"splitter":{},"search-pro":{},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"./logo.png","favicon":"./favicon.ico"},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"theme-comscore":{},"alerts":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeFexa":{"nav":[{"url":"https://github.com/zznjupt/RVBOOK","target":"_blank","name":"本书代码仓库"}]}},"title":"RVBOOK","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"记录 RISCV 学习的一些知识与心得"},"file":{"path":"TrustCom2022/zz.md","mtime":"2022-06-11T09:12:25.849Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-11T09:12:30.247Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>

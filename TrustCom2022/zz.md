@@ -64,7 +64,7 @@ https://occ.t-head.cn/community/download?id=3948120165480468480
 
 * 首先修改openc910 project下的两个用于部署环境的.csh文件修改为.sh文件：
 
-1. openc910/C910_RTL_FACTORY/setup/setup.csh
+openc910/C910_RTL_FACTORY/setup/setup.csh
 ```bash
 #!/bin/csh
 
@@ -80,7 +80,7 @@ pattern="\/setup"`echo '$'`
 export CODE_BASE_PATH `pwd | perl -pe "s/$pattern//"`
 echo "Root of code base has been specified as:\n    $CODE_BASE_PATH"
 ```
-2. openc910/smart_run/setup/example_setup.csh
+openc910/smart_run/setup/example_setup.csh
 ```bash
 #!/bin/csh
 

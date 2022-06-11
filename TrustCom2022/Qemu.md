@@ -1,5 +1,3 @@
-[TOC]
-
 ## Qemu 简介
 
 ## Qemu 安装

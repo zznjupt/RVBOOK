@@ -58,7 +58,7 @@ sudo make install
 
 https://occ.t-head.cn/community/download?id=3948120165480468480
 
-我下载的版本是 Xuantie-900-gcc-elf-newlib-x86_64-V2.0.3-20210806.tar.gz
+我下载的版本是 Xuantie-900-gcc-elf-newlib-x86_64-V2.4.0-20220428.tar.gz
 
 ### 仿真流程
 

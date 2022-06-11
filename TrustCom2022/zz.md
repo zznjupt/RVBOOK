@@ -151,7 +151,7 @@ mkdir work
 * 然后即可进行仿真工作，本次实验选取的备选CASE为hello_world
 
 ```bash
-meke cleanVerilator
+make cleanVerilator
 make compile SIM=verilator
 make buildVerilator
 make buildcase CASE=hello_world

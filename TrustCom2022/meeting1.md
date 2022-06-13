@@ -31,7 +31,7 @@ RISC-V Processor with Vector Extension》作者的身份背景，包括但不局
 
 > Chen Chen, Xiaoyan Xiang, Chang Liu, Yunhai Shang, Ren Guo, Dongqi Liu,
 > Yimin Lu, Ziyi Hao, Jiahui Luo, Zhijian Chen, Chunqiang Li,
-> Yu Pu, Jianyi Meng*, Xiaolang Yan, Yuan Xie and Xiaoning Qi
+> Yu Pu, Jianyi Meng*, Xiaolang Yan, Yuan Xie and Xiaoning Qi.
 > The T-Head Division, Alibaba Cloud
 > Email: jianyi.mjy@alibaba-inc.com
 

@@ -159,3 +159,7 @@ make runVerilator
 ```
 
 但是每次运行buildVerilator的时候总会运行过程中死机重启，初步认为是内存不够的原因，分配了26G内存依旧存在这个问题，之后在服务器上跑试试看
+
+应该就是内存问题或者是虚拟机性能问题，在服务器上成功helloworld
+
+![image-20220614152740224](/Users/zhouzhe/Library/Application Support/typora-user-images/image-20220614152740224.png)

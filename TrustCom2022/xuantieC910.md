@@ -11,18 +11,6 @@ https://github.com/c-sky/buildroot/releases
 C910对应的版本是： `c9xx linux-5.10`
 阅读readme.txt,这是官方给的使用手册。
 ![](../TrustCom2022/img/c910-releases.png)
-<<<<<<< HEAD
-=======
-
-参考 readme.txt -> Quick Start for qemu run 章节，模拟器包含在 toolchain_thead_xxx.tar.xz 中，一般解压到 host 目录下
-
-```shell
-echo "Download"
- wget -nc https://gitlab.com/c-sky/buildroot/-/jobs/1251564514/artifacts/raw/output/images/toolchain_thead_9xx_compat_5.10_glibc_br_defconfig_5fe9fbd12ca3045d59a5d2e813f1c381327e6067.tar.xz
- wget -nc https://gitlab.com/c-sky/buildroot/-/jobs/1251564514/artifacts/raw/output/images/Image.xz
- wget -nc https://gitlab.com/c-sky/buildroot/-/jobs/1251564514/artifacts/raw/output/images/fw_jump.elf
- wget -nc https://gitlab.com/c-sky/buildroot/-/jobs/1251564514/artifacts/raw/output/images/rootfs.ext2.xz
->>>>>>> c0c6fac2e4f6f3b77acb8364f22f8ce0a62d04be
 
 新建一个工作目录，如xuantie，下面所有操作都将在该文件夹下进行。
 
@@ -38,7 +26,7 @@ echo "Download"
 请参考Qemu相关章节，为主机和qemu模拟出的系统，添加共享文件夹。
 需要在qemu中执行的文件，请放入共享文件夹中。
 
-## 4、启动qemu，运行攻击代码
+## 3、启动qemu，运行攻击代码
 
 1. 在xuantie文件夹下，运行：
 ```shell

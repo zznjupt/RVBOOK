@@ -1,10 +1,8 @@
-[TOC]
 
-## Qemu 简介
 
-## Qemu 安装
 
-### 编译运行：Hello World
+
+## 1、编译运行：Hello World
 1. 编写代码
 ```c
 #include <stdio.h>
@@ -24,4 +22,29 @@ int main(void)
    - qemu-riscv64 对应user mode
    - 这里应该使用user模式
    >qemu-riscv64 hello
-![qemu-riscv64](../img/qemu-riscv.png "图片title")
+
+![qemu-riscv64](../TrustCom2022/img/qemu-riscv.png )
+
+
+#
+
+## 2、系统模式下添加共享文件夹
+**①主机中创建共享文件夹**
+
+mkdir /home/jiangfang/share
+
+**②启动时添加如下两行参数**：
+
+path为主机中共享文件夹的位置
+
+```markdown
+-fsdev local,security_model=passthrough,id=fsdev0,path=/home/jiangfang/share \
+-device virtio-9p-device,id=fs0,fsdev=fsdev0,mount_tag=hostshare
+```
+**③qemu中创建文件夹**
+
+`mkdir /tmp/share`
+
+**④挂载**
+
+`mount -t 9p -o trans=virtio,version=9p2000.L hostshare /tmp/share/`

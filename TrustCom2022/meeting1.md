@@ -21,7 +21,25 @@ https://docs.qq.com/doc/DRENqbWZCTVVWcmF6?u=c0e3e6d7852c4a95b8460bddc96738c8&&_t
 
 **Good luck！**
 
+## 6.13日与童老师对话要点
 
+* 跟童老师说了本周很忙，下周有期末考试，下周组会不用去
 
+* 调研一下《Xuantie-910: A Commercial Multi-Core 12-Stage
+Pipeline Out-of-Order 64-bit High Performance
+RISC-V Processor with Vector Extension》作者的身份背景，包括但不局限于学校学历，职业等
 
+> Chen Chen, Xiaoyan Xiang, Chang Liu, Yunhai Shang, Ren Guo, Dongqi Liu,
+> Yimin Lu, Ziyi Hao, Jiahui Luo, Zhijian Chen, Chunqiang Li,
+> Yu Pu, Jianyi Meng*, Xiaolang Yan, Yuan Xie and Xiaoning Qi.
+> The T-Head Division, Alibaba Cloud
+> Email: jianyi.mjy@alibaba-inc.com
+
+* 检索调研复旦微的关于C910或者微架构方面的硕士论文
+
+* 继续各自的仿真实验
+
+* 尽快安排与王老师下一次见面
+
+* 思考有什么需要购买的实验器材
 

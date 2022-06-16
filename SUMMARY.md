@@ -6,6 +6,8 @@
 * [学习框架和短期要求](TrustCom2022/meeting1.md)
 * [程晓宇Debug](TrustCom2022/cxydebug.md)
 * [Verilator仿真-周喆](TrustCom2022/zz.md)
+* [江芳Qemu](TrustCom2022/Qemu.md)
+* [江芳xuantieC910](TrustCom2022/xuantieC910.md)
 
 
 ## 归档

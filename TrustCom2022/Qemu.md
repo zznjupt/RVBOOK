@@ -1,9 +1,19 @@
+<<<<<<< HEAD
+
+=======
+## Qemu 简介
+>>>>>>> c0c6fac2e4f6f3b77acb8364f22f8ce0a62d04be
 
 
-
+<<<<<<< HEAD
 
 ## 1、编译运行：Hello World
 1. 编写代码
+=======
+### 编译运行：Hello World
+1.编写代码
+
+>>>>>>> c0c6fac2e4f6f3b77acb8364f22f8ce0a62d04be
 ```c
 #include <stdio.h>
 
@@ -13,14 +23,17 @@ int main(void)
 	return 0;
 }
 ```
-2. 生成可执行文件
-   - 使用riscv的gcc交叉编译器在x86生成riscv的可执行文件。
+
+2.生成可执行文件
+   - 使用riscv的gcc交叉编译器在x86生成riscv的可执行文件
    - 需要添加  `-static`编译选项。表示使用静态链接
    >riscv64-linux-gnu-gcc -static hello.c -o hello
-3. 执行
+
+3.执行
    - qemu-system-riscv64 对应system mode
    - qemu-riscv64 对应user mode
    - 这里应该使用user模式
+<<<<<<< HEAD
    >qemu-riscv64 hello
 
 ![qemu-riscv64](../TrustCom2022/img/qemu-riscv.png )
@@ -48,3 +61,8 @@ path为主机中共享文件夹的位置
 **④挂载**
 
 `mount -t 9p -o trans=virtio,version=9p2000.L hostshare /tmp/share/`
+=======
+      <!-- >qemu-riscv64 hello -->
+
+    <img src="././img/qemu-riscv.png" width="100%" height="100%">
+>>>>>>> c0c6fac2e4f6f3b77acb8364f22f8ce0a62d04be

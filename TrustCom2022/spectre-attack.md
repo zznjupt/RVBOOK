@@ -75,7 +75,7 @@ Cache查找的策略是，根据set（idx)位锁定所在行，并于该行中�
 |numSetsClear|需要清除的缓存行的个数|
 |alignedMem| dummyMeme[L1_SIZE_BYTES]处地址的tag值|
 |setOffset|set值（idx)|
-|wayOffset||
+|wayOffset| |
 
 
 ## 参考网址

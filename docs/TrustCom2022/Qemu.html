@@ -179,7 +179,20 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="zz.html">
+        <li class="chapter " data-level="2.3" data-path="fangjDebug.html">
+            
+                <a href="fangjDebug.html">
+            
+                    
+                    江芳debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="zz.html">
             
                 <a href="zz.html">
             
@@ -192,7 +205,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.4" data-path="Qemu.html">
+        <li class="chapter active" data-level="2.5" data-path="Qemu.html">
             
                 <a href="Qemu.html">
             
@@ -205,12 +218,25 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="xuantieC910.html">
+        <li class="chapter " data-level="2.6" data-path="xuantieC910.html">
             
                 <a href="xuantieC910.html">
             
                     
                     江芳xuantieC910
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="spectre-attack.html">
+            
+                <a href="spectre-attack.html">
+            
+                    
+                    幽灵攻击
             
                 </a>
             
@@ -336,9 +362,7 @@
     
 					<section class="normal markdown-section">
 						
-						<h2 id="qemu-&#x7B80;&#x4ECB;">Qemu &#x7B80;&#x4ECB;</h2>
-<h2 id="qemu-&#x5B89;&#x88C5;">Qemu &#x5B89;&#x88C5;</h2>
-<h3 id="&#x7F16;&#x8BD1;&#x8FD0;&#x884C;&#xFF1A;hello-world">&#x7F16;&#x8BD1;&#x8FD0;&#x884C;&#xFF1A;Hello World</h3>
+						<h2 id="1&#x3001;&#x7F16;&#x8BD1;&#x8FD0;&#x884C;&#xFF1A;hello-world">1&#x3001;&#x7F16;&#x8BD1;&#x8FD0;&#x884C;&#xFF1A;Hello World</h2>
 <p>1.&#x7F16;&#x5199;&#x4EE3;&#x7801;</p>
 <pre class="language-"><code class="lang-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
 
@@ -360,11 +384,25 @@
 <ul>
 <li>qemu-system-riscv64 &#x5BF9;&#x5E94;system mode</li>
 <li>qemu-riscv64 &#x5BF9;&#x5E94;user mode</li>
-<li><p>&#x8FD9;&#x91CC;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;user&#x6A21;&#x5F0F;</p>
- <!-- >qemu-riscv64 hello -->
-<p><img src="img/qemu-riscv.png" width="100%" height="100%"></p>
+<li>&#x8FD9;&#x91CC;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;user&#x6A21;&#x5F0F;<blockquote>
+<p>qemu-riscv64 hello</p>
+</blockquote>
 </li>
 </ul>
+<p><img src="img/qemu-riscv.png" alt="qemu-riscv64"></p>
+<p>#</p>
+<h2 id="2&#x3001;&#x7CFB;&#x7EDF;&#x6A21;&#x5F0F;&#x4E0B;&#x6DFB;&#x52A0;&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#x5939;">2&#x3001;&#x7CFB;&#x7EDF;&#x6A21;&#x5F0F;&#x4E0B;&#x6DFB;&#x52A0;&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#x5939;</h2>
+<p><strong>&#x2460;&#x4E3B;&#x673A;&#x4E2D;&#x521B;&#x5EFA;&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#x5939;</strong></p>
+<p>mkdir /home/jiangfang/share</p>
+<p><strong>&#x2461;&#x542F;&#x52A8;&#x65F6;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x4E24;&#x884C;&#x53C2;&#x6570;</strong>&#xFF1A;</p>
+<p>path&#x4E3A;&#x4E3B;&#x673A;&#x4E2D;&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x4F4D;&#x7F6E;</p>
+<pre class="language-"><code class="lang-markdown">-fsdev local,security_model=passthrough,id=fsdev0,path=/home/jiangfang/share \
+-device virtio-9p-device,id=fs0,fsdev=fsdev0,mount_tag=hostshare
+</code></pre>
+<p><strong>&#x2462;qemu&#x4E2D;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5939;</strong></p>
+<p><code>mkdir /tmp/share</code></p>
+<p><strong>&#x2463;&#x6302;&#x8F7D;</strong></p>
+<p><code>mount -t 9p -o trans=virtio,version=9p2000.L hostshare /tmp/share/</code></p>
 
 						
 					</section>
@@ -407,7 +445,7 @@
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"江芳Qemu","level":"2.4","depth":1,"next":{"title":"江芳xuantieC910","level":"2.5","depth":1,"path":"TrustCom2022/xuantieC910.md","ref":"TrustCom2022/xuantieC910.md","articles":[]},"previous":{"title":"Verilator仿真-周喆","level":"2.3","depth":1,"path":"TrustCom2022/zz.md","ref":"TrustCom2022/zz.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-comscore","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","theme-fexa","heading-anchors","alerts"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"pluginsConfig":{"hide-element":{"elements":[".gitbook-link"]}},"splitter":{},"search-pro":{},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"./logo.png","favicon":"./favicon.ico"},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"theme-comscore":{},"alerts":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeFexa":{"nav":[{"url":"https://github.com/zznjupt/RVBOOK","target":"_blank","name":"本书代码仓库"}]}},"title":"RVBOOK","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"记录 RISCV 学习的一些知识与心得"},"file":{"path":"TrustCom2022/Qemu.md","mtime":"2022-06-11T15:40:09.108Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-15T11:37:17.305Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"江芳Qemu","level":"2.5","depth":1,"next":{"title":"江芳xuantieC910","level":"2.6","depth":1,"path":"TrustCom2022/xuantieC910.md","ref":"TrustCom2022/xuantieC910.md","articles":[]},"previous":{"title":"Verilator仿真-周喆","level":"2.4","depth":1,"path":"TrustCom2022/zz.md","ref":"TrustCom2022/zz.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-comscore","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","theme-fexa","heading-anchors","alerts"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"pluginsConfig":{"hide-element":{"elements":[".gitbook-link"]}},"splitter":{},"search-pro":{},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"./logo.png","favicon":"./favicon.ico"},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"theme-comscore":{},"alerts":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeFexa":{"nav":[{"url":"https://github.com/zznjupt/RVBOOK","target":"_blank","name":"本书代码仓库"}]}},"title":"RVBOOK","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"记录 RISCV 学习的一些知识与心得"},"file":{"path":"TrustCom2022/Qemu.md","mtime":"2022-06-19T12:58:20.534Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-19T13:02:38.018Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>

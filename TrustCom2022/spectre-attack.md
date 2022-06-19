@@ -22,7 +22,7 @@ RISC-V CPU的指令集还不支持对cache line的直接操作（x86有clflush�
 
 举个极端的例子，如果你知道整个Cache有64KB，那么你加载64KB大小的随机内存数据（垃圾数据）到一个数组中，则这些数据就会被同时加载到data Cache中，因为Cache只有64KB大小，这时Cache中原本的所有数据会被冲走，我们采用的方法类似，但只flush我们关心的cache行，而不是整个cache。
 
-![](/TrustCom2022/img/cache.png)
+<img src="././img/cache.png" width="100%" height="100%">
 
 Cache查找的策略是，根据set（idx)位锁定所在行，并于该行中的n路（Ways)的tag进行比较。如果有相同的，则表示cache `hit`。否则Cache `miss`。
 因此，只需要访问相同idx，但是不同tag地址的数据就可以将原有的cache line驱逐出去。

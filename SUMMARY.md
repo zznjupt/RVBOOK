@@ -17,3 +17,10 @@
 	* [电网数据保护调研](CIRED/dataprotect.md)
 	* [实验部分内容](CIRED/implementation.md)
 
+
+
+## 一生一芯
+
+单周期非流水CPU
+
+顺序五级流水线CPU

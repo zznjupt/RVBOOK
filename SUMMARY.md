@@ -19,6 +19,6 @@
 
 ## 一生一芯
 
-[单周期非流水CPU](ysys/riscvCpu/SingleCycleCore.md)
+- [单周期非流水CPU](ysyx/riscvCpu/SingleCycleCore.md)
 
-[顺序五级流水线CPU](ysys/riscvCpu/PipelineCpu.md)
+- [顺序五级流水线CPU](ysyx/riscvCpu/PipelineCpu.md)

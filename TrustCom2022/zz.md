@@ -163,3 +163,5 @@ make runVerilator
 应该就是内存问题或者是虚拟机性能问题，在服务器上成功helloworld
 
 <img src="././img/zz1.png" width="100%" height="100%">
+
+贴一下 Hello_world.c 的代码

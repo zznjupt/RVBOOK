@@ -1,0 +1,624 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chipyard-1.8.0安装 · RVBOOK</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="UnisLab-ic-group">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-fexa/fexa.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../riscvCpu/SingleCycleCore.html" />
+    
+    
+    <link rel="prev" href="../../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+	<div class="header-inner">
+		<!-- LOGO -->
+		<div class="logo"></div>
+		<span class="title"></span>
+
+		<!-- Search -->
+		
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+
+		<!-- Nav -->
+		<ul class="header-nav">
+			<li>
+				<a href="https://github.com/zznjupt/RVBOOK" target="_blank">本书代码仓库</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="book-summary">
+		<div class="book-summary-title">文档目录</div>
+		
+		
+		<nav role="navigation">
+			
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">BOOM-Chipyard</li>
+        
+        
+    
+        <li class="chapter active" data-level="2.1" data-path="chipyard-install.html">
+            
+                <a href="chipyard-install.html">
+            
+                    
+                    Chipyard-1.8.0安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">一生一芯</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../riscvCpu/SingleCycleCore.html">
+            
+                <a href="../riscvCpu/SingleCycleCore.html">
+            
+                    
+                    单周期非流水CPU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../riscvCpu/PipelineCpu.html">
+            
+                <a href="../riscvCpu/PipelineCpu.html">
+            
+                    
+                    顺序五级流水线CPU
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">归档</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    CIRED 2022 论文撰写
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../CIRED/outline.html">
+            
+                <a href="../CIRED/outline.html">
+            
+                    
+                    论文大纲
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../CIRED/dataprotect.html">
+            
+                <a href="../CIRED/dataprotect.html">
+            
+                    
+                    电网数据保护调研
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../CIRED/implementation.html">
+            
+                <a href="../CIRED/implementation.html">
+            
+                    
+                    实验部分内容
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    TrustCom 2022 论文撰写
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../TrustCom2022/meeting1.html">
+            
+                <a href="../TrustCom2022/meeting1.html">
+            
+                    
+                    学习框架和短期要求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="../TrustCom2022/cxydebug.html">
+            
+                <a href="../TrustCom2022/cxydebug.html">
+            
+                    
+                    程晓宇Debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="../TrustCom2022/fangjDebug.html">
+            
+                <a href="../TrustCom2022/fangjDebug.html">
+            
+                    
+                    江芳debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="../TrustCom2022/zz.html">
+            
+                <a href="../TrustCom2022/zz.html">
+            
+                    
+                    Verilator仿真-周喆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="../TrustCom2022/Qemu.html">
+            
+                <a href="../TrustCom2022/Qemu.html">
+            
+                    
+                    江芳Qemu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="../TrustCom2022/xuantieC910.html">
+            
+                <a href="../TrustCom2022/xuantieC910.html">
+            
+                    
+                    江芳xuantieC910
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="../TrustCom2022/spectre-attack.html">
+            
+                <a href="../TrustCom2022/spectre-attack.html">
+            
+                    
+                    幽灵攻击
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+		</nav>
+		
+		
+	</div>
+
+	<!-- Content nav -->
+	<div class="book-anchor">
+		<div class="book-anchor-title">文章结构</div>
+		<div class="book-anchor-body">
+
+		</div>
+	</div>
+
+	<div class="book-body">
+		
+		<div class="body-inner">
+			
+			
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Chipyard-1.8.0安装</a>
+    </h1>
+</div>
+
+
+
+
+			<div class="page-wrapper" tabindex="-1" role="main">
+				<div class="page-inner">
+					
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+					<section class="normal markdown-section">
+						
+						<h1 id="chipyard-180&#x5B89;&#x88C5;">Chipyard 1.8.0&#x5B89;&#x88C5;</h1>
+<h2 id="0-&#x7248;&#x672C;">0 &#x7248;&#x672C;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x7248;&#x672C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ubuntu</td>
+<td>20.04</td>
+</tr>
+<tr>
+<td>chipyard</td>
+<td>1.5.0</td>
+</tr>
+<tr>
+<td>conda</td>
+<td>4.12.0 &#x6216;&#x66F4;&#x9AD8;&#x7248;&#x672C;</td>
+</tr>
+<tr>
+<td>verilator</td>
+<td>4.226</td>
+</tr>
+<tr>
+<td>boom</td>
+<td>&#x5934;&#x6307;&#x9488;&#x4F4D;&#x4E8E; commit <strong>fac2c370c9deae97ca52aca6b34857e9ac0f6e9d</strong></td>
+</tr>
+</tbody>
+</table>
+<p>&#x7EC6;&#x8282;&#x8BF7;&#x53C2;&#x8003;chipyard 1.8.0<a href="https://chipyard.readthedocs.io/en/1.8.0/Chipyard-Basics/Initial-Repo-Setup.html" target="_blank">&#x5B89;&#x88C5;&#x6587;&#x6863;</a>&#x3002;</p>
+<h2 id="1-&#x3001;&#x5B89;&#x88C5;conda">1 &#x3001;&#x5B89;&#x88C5;Conda</h2>
+<p>&#x5728;chipyard1.8.0&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;Conda&#x7BA1;&#x7406;&#x9879;&#x76EE;&#x4F9D;&#x8D56;&#x3002;&#x53C2;&#x9605; <a href="https://github.com/conda-forge/miniforge/#download" target="_blank">Conda &#x5B89;&#x88C5;&#x8BF4;&#x660E;</a>&#xFF0C;&#x4E86;&#x89E3;&#x5982;&#x4F55;&#x4F7F;&#x7528; Miniforge &#x5B89;&#x88C5;&#x7A0B;&#x5E8F;&#x5B89;&#x88C5; Conda&#x3002;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre class="language-"><code class="lang-shell"><span class="token function">curl</span> -L -O <span class="token string">&quot;https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span><span class="token variable">)</span></span>-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -m<span class="token variable">)</span></span>.sh&quot;</span>
+<span class="token function">bash</span> Mambaforge-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span><span class="token variable">)</span></span>-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -m<span class="token variable">)</span></span>.sh
+</code></pre>
+<p>&#x5173;&#x95ED;&#x7EC8;&#x7AEF;&#xFF0C;&#x91CD;&#x65B0;&#x6253;&#x5F00;&#x540E;&#xFF0C;&#x4F1A;&#x751F;&#x6548;&#x3002;&#x7EC8;&#x7AEF;&#x524D;&#x51FA;&#x73B0; (base)&#x3002;&#x8FD0;&#x884C;<code>conda --version</code> &#x67E5;&#x770B;&#x7248;&#x672C;&#x3002;&#x8981;&#x6C42;conda&#x7248;&#x672C;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;4.12.0&#x3002;</p>
+<p>&#x63A5;&#x7740;&#xFF0C;&#x5B89;&#x88C5;conda-lock&#xFF08;Conda lock is a lightweight library that can be used to generate fully reproducible lock files for <a href="https://docs.conda.io/projects/conda" target="_blank">conda</a> environments.&#xFF09;</p>
+<pre class="language-"><code>conda install -n base conda-lock
+conda activate base
+</code></pre><h2 id="2&#x3001;-&#x521D;&#x59CB;&#x5316;&#x5B50;&#x6A21;&#x5757;&#x5B89;&#x88C5;&#x5DE5;&#x5177;&#x94FE;">2&#x3001; &#x521D;&#x59CB;&#x5316;&#x5B50;&#x6A21;&#x5757;&amp;&#x5B89;&#x88C5;&#x5DE5;&#x5177;&#x94FE;</h2>
+<p><strong>&#x2460; &#x62C9;&#x53D6;chipyard&#x4ED3;&#x5E93;&#xFF0C;&#x5E76;&#x5207;&#x6362;&#x5230;1.8.0&#x7248;&#x672C;</strong></p>
+<pre class="language-"><code class="lang-shell"><span class="token function">git</span> clone https://github.com/ucb-bar/chipyard.git
+<span class="token builtin class-name">cd</span> chipyard
+<span class="token function">git</span> checkout <span class="token number">1.8</span>.0
+</code></pre>
+<p><strong>&#x2461; &#x8FD0;&#x884C;&#x521D;&#x59CB;&#x5316;&#x811A;&#x672C;</strong></p>
+<p>&#x8BE5;&#x811A;&#x672C;&#x5C06;&#x4F1A;&#x521B;&#x5EFA;chipyard Conda&#x73AF;&#x5883;&#xFF0C;&#x5305;&#x62EC;riscv&#x5DE5;&#x5177;&#x94FE;</p>
+<p>&#x8FD0;&#x884C;&#x8BE5;&#x811A;&#x672C;&#x65F6;&#xFF0C;&#x8FD8;&#x4F1A;&#x8FD0;&#x884C;<code>init-submodules-no-riscv-tools.sh</code> &#x548C; <code>build-toolchain-extra.sh</code> &#x4E24;&#x4E2A;&#x811A;&#x672C;</p>
+<p>&#x5EFA;&#x8BAE;&#x9605;&#x8BFB;&#x76F8;&#x5E94;&#x811A;&#x672C;&#xFF0C;&#x5F04;&#x6E05;&#x5927;&#x81F4;&#x5B8C;&#x6210;&#x4E86;&#x54EA;&#x4E9B;&#x64CD;&#x4F5C;</p>
+<pre class="language-"><code class="lang-shell">./build-setup.sh riscv-tools
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x901A;&#x8FC7;&#x547D;&#x4EE4;<code>conda env list</code>&#xFF0C;&#x5C06;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;chipyard&#x76F8;&#x5173;&#x7684;&#x73AF;&#x5883;&#xFF1A;<code>$CHIPYARD_DIRECTORY/.conda-env</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fangjiangff/images/img/202210091532177.png" alt="image-20221009153212893" style="zoom:80%;"></p>
+<p><strong>&#x2462; &#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;</strong></p>
+<p>&#x901A;&#x8FC7;&#x8FD0;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF0C;&#x8FDB;&#x800C;&#xFF1A;</p>
+<ul>
+<li><p>&#x6FC0;&#x6D3B;&#x5728; build-setup.sh &#x4E2D;&#x521B;&#x5EFA;&#x7684; conda &#x73AF;&#x5883;</p>
+</li>
+<li><p>&#x8BBE;&#x7F6E;&#x5C06;&#x6765; Chipyard &#x6B65;&#x9AA4;&#x6240;&#x9700;&#x7684;&#x5FC5;&#x8981;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF08;PATH&#x3001;RISCV &#x3001;LD_LIBRARY_PATH&#xFF09;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-shell"><span class="token builtin class-name">source</span> ./env.sh
+</code></pre>
+<p>&#x6CE8;&#xFF1A;&#x6BCF;&#x6B21;&#x8FD0;&#x884C;make&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x8FD9;&#x4E00;&#x6B65;</p>
+<h2 id="3&#x3001;-&#x4FEE;&#x8865;&#x90E8;&#x5206;&#x7F3A;&#x5931;&#x6A21;&#x5757;">3&#x3001; &#x4FEE;&#x8865;&#x90E8;&#x5206;&#x7F3A;&#x5931;&#x6A21;&#x5757;</h2>
+<p>&#x56E0;&#x4E3A;&#x7F51;&#x7EDC;&#x95EE;&#x9898;&#xFF0C;&#x4F1A;&#x6709;&#x5B50;&#x6A21;&#x5757;&#x62C9;&#x53D6;&#x5931;&#x8D25;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x8FD9;&#x6837;&#x4F1A;&#x5BFC;&#x81F4;&#x5728;&#x7F16;&#x8BD1;Boom&#x65F6;&#x51FA;&#x73B0;&#x5F88;&#x591A;&#x9519;&#x8BEF;&#xFF0C;&#x5982;&#xFF1A;</p>
+<p><img src="https://cdn.jsdelivr.net/gh/fangjiangff/images/img/202210091542990.png" alt="image-20221009154232885" style="zoom:50%;"></p>
+<p>&#x5728;&#x4E0A;&#x4E00;&#x6B65;&#xFF0C;&#x8FD0;&#x884C;<code>build-setup.sh</code>&#x811A;&#x672C;&#x65F6;&#xFF0C;&#x4F1A;&#x5728;chipyard&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x751F;&#x6210;<code>init-submodules-no-riscv-tools.log</code>&#x6587;&#x4EF6;&#x3002;&#x8BB0;&#x5F55;&#x4E86;&#x8BE5;&#x811A;&#x672C;&#x8FD0;&#x884C;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#xFF0C;&#x770B;&#x5230;&#x54EA;&#x4E9B;&#x5B50;&#x6A21;&#x5757;&#x62C9;&#x53D6;&#x5931;&#x8D25;&#x4E86;&#x3002;</p>
+<p>&#x540C;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;chipyard/.gitmodules&#x4E2D;&#x67E5;&#x770B;&#xFF0C;chipyard&#x5177;&#x4F53;&#x6709;&#x54EA;&#x4E9B;&#x5B50;&#x6A21;&#x5757;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x9762;&#x5BF9;&#x7F3A;&#x5931;&#x7684;&#x5B50;&#x6A21;&#x5757;&#xFF0C;&#x5982;<code>tools/torture</code>&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x6765;&#x83B7;&#x53D6;&#x3002;</p>
+<pre class="language-"><code class="lang-shell"><span class="token function">git</span> submodule update --init --recursive tools/torture
+</code></pre>
+<p><strong>&#x8BF7;&#x786E;&#x4FDD;<code>generators</code>&#x548C;<code>tools</code>&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x5B50;&#x6A21;&#x5757;&#x90FD;&#x62C9;&#x53D6;&#x4E0B;&#x6765;&#x4E86;</strong>&#x3002;&#x6709;&#x65F6;&#x5019;&#xFF0C;&#x5B83;&#x53EA;&#x6709;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x4E0D;&#x5168;&#xFF0C;&#x6700;&#x597D;&#x4E00;&#x4E2A;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x70B9;&#x8FDB;&#x53BB;&#x786E;&#x8BA4;&#x4E00;&#x4E0B;&#x3002;</p>
+<p><img src="https://cdn.jsdelivr.net/gh/fangjiangff/images/img/202210091549653.png" alt="image-20221009154957589" style="zoom:60%;"></p>
+<h2 id="4&#x3001;-&#x751F;&#x6210;boom">4&#x3001; &#x751F;&#x6210;Boom</h2>
+<p>chipyard&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Verilator&#x4E0B;&#x8F7D;&#x3001;&#x6784;&#x5EFA;&#x548C;&#x6267;&#x884C;&#x4EFF;&#x771F;&#x3002;&#x901A;&#x8FC7;CONFIG&#x6307;&#x5B9A;&#x7F16;&#x8BD1;&#x7684;&#x9879;&#x76EE;&#x3002;&#x53EF;&#x4EE5;&#x5728;<code>chipyard/generators/chipyard/src/main/scala/config/BoomConfigs.scala</code> &#x67E5;&#x770B;&#x53EF;&#x9009;&#x7684;BOOM&#x914D;&#x7F6E;&#x540D;&#x79F0;&#x3002;</p>
+<p>&#x5C06;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;``&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B64;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x8FD0;&#x884C;&#x4EFB;&#x4F55;&#x517C;&#x5BB9;&#x7684; RV64 &#x4EE3;&#x7801;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8FD0;&#x884C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A; riscv &#x5DE5;&#x5177;&#x94FE;&#x4E2D;&#x96C6;&#x6210;&#x7684;&#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-shell"><span class="token comment"># Enter Verilator directory</span>
+<span class="token builtin class-name">cd</span> sims/verilator
+<span class="token function">make</span> <span class="token assign-left variable">CONFIG</span><span class="token operator">=</span>SmallBoomConfig
+./simulator-chipyard-RocketConfig <span class="token variable">$RISCV</span>/riscv64-unknown-elf/share/riscv-tests/isa/rv64ui-p-simple
+</code></pre>
+<p>&#x7F16;&#x8BD1;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4F1A;&#x5728;&#x7EC8;&#x7AEF;&#x4E0A;&#xFF0C;&#x8F93;&#x51FA;&#x5927;&#x91CF;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x7EC8;&#x7AEF;&#x7684;&#x5185;&#x5BB9;&#x8F93;&#x5165;&#x5230;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x4E2D;&#xFF1A;</p>
+<pre class="language-"><code>make CONFIG=SmallBoomConfig 2&gt;&amp;1 | tee &gt; LOGNAME.log
+</code></pre><p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9605;&#x8BFB;&#x65E5;&#x5FD7;&#xFF0C;&#x4E86;&#x89E3;Makefile&#x6587;&#x4EF6;&#x5177;&#x4F53;&#x5E2E;&#x4F60;&#x5B8C;&#x6210;&#x4E86;&#x4EC0;&#x4E48;&#xFF0C;verilator&#x7684;&#x9876;&#x5C42;&#x6A21;&#x5757;&#x662F;&#x54EA;&#x4E00;&#x4E2A;&#xFF0C;&#x5982;&#x4F55;&#x5F97;&#x5230;&#x6700;&#x7EC8;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x3002;</p>
+
+						
+					</section>
+					
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+				</div>
+			</div>
+			
+		</div>
+
+		
+		
+		<a href="../../" class="navigation navigation-prev " aria-label="Previous page: README">
+			<i class="fa fa-angle-left"></i>
+		</a>
+		
+		
+		<a href="../riscvCpu/SingleCycleCore.html" class="navigation navigation-next " aria-label="Next page: 单周期非流水CPU">
+			<i class="fa fa-angle-right"></i>
+		</a>
+		
+		
+		
+	</div>
+	<script>
+		var gitbook = gitbook || [];
+		gitbook.push(function() {
+			gitbook.page.hasChanged({"page":{"title":"Chipyard-1.8.0安装","level":"2.1","depth":1,"next":{"title":"单周期非流水CPU","level":"3.1","depth":1,"path":"workspace/riscvCpu/SingleCycleCore.md","ref":"workspace/riscvCpu/SingleCycleCore.md","articles":[]},"previous":{"title":"README","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-comscore","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","theme-fexa","heading-anchors","alerts"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"pluginsConfig":{"hide-element":{"elements":[".gitbook-link"]}},"splitter":{},"search-pro":{},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"./logo.png","favicon":"./favicon.ico"},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"theme-comscore":{},"alerts":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeFexa":{"nav":[{"url":"https://github.com/zznjupt/RVBOOK","target":"_blank","name":"本书代码仓库"}]}},"title":"RVBOOK","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"记录 RISCV 学习的一些知识与心得"},"file":{"path":"workspace/help-docs/chipyard-install.md","mtime":"2022-10-10T06:39:29.944Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-10T07:09:27.701Z"},"basePath":"../..","book":{"language":""}});
+		});
+	</script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.2.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-heading-anchors/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-fexa/fexa.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -209,7 +209,7 @@ class PmemHarness extends BlackBox with HasBlackBoxResource {
 
 pmem_read和pmem_write中模拟了64位总线的行为: 它们只支持地址按8字节对齐的读写, 其中读操作总是返回按8字节对齐读出的数据, 需要由RTL代码根据读地址选择出需要的部分:
 
-```
+```scala
 val mask = LookupTreeDefault(lsuOpType, "b1111_1111".U, List(
       LSUOpType.sb -> "b0000_0001".U,
       LSUOpType.sh -> "b0000_0011".U,

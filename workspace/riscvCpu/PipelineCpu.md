@@ -76,7 +76,7 @@ class BUS_EX_MEM extends Bundle{
 }
 ```
 
-​	如下代码所示，`REG_EX_MEM`寄存器的输入输出类型均为上述定义的`BUS_EX_MEM`。ex_mem_reg初始化为`BUS_EX_MEM`类型的寄存器。下一个周期才能从io.out中读出当拍的流水线寄存器中的内容。(如何这里很难理解，请查阅chisel中RegInit、RegNext的用法，或者查看生成的Verilog代码)。
+​	如下代码所示，`REG_EX_MEM`寄存器的输入输出类型均为上述定义的`BUS_EX_MEM`。ex_mem_reg初始化为`BUS_EX_MEM`类型的寄存器。下一个周期才能从io.out中读出当拍的流水线寄存器中的内容。(如果这里很难理解，请查阅chisel中RegInit、RegNext的用法，或者查看生成的Verilog代码)。
 
 ```scala
 class PipelineReg_EX_MEM extends Module{

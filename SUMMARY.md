@@ -2,6 +2,11 @@
 
 * [README](README.md)
 
+## 一生一芯
+
+* [单周期非流水CPU](ysyx/riscvCpu/SingleCycleCore.md)
+* [顺序五级流水线CPU](ysyx/riscvCpu/PipelineCpu.md)
+
 ## 归档
 * CIRED 2022 论文撰写
 	* [论文大纲](CIRED/outline.md)
@@ -16,8 +21,3 @@
 	* [江芳xuantieC910](TrustCom2022/xuantieC910.md)
 	* [幽灵攻击](TrustCom2022/spectre-attack.md)
 
-## 一生一芯
-
-* [单周期非流水CPU](ysyx/riscvCpu/SingleCycleCore.md)
-
-* [顺序五级流水线CPU](ysyx/riscvCpu/PipelineCpu.md)

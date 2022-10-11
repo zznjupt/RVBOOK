@@ -19,6 +19,5 @@
 
 ## 一生一芯
 
-- [单周期非流水CPU](ysyx/riscvCpu/SingleCycleCore.md)
+- [FangBook](help-docs/fangbook.md)
 
-- [顺序五级流水线CPU](ysyx/riscvCpu/PipelineCpu.md)

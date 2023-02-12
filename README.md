@@ -1,21 +1,6 @@
-# RVBOOK 文档
+# 实验室项目记录RVBOOK 和个人项目记录
 
-成员：江芳、程晓宇、周喆、孙杨
+仓库维护者：周喆
+实验室成员：江芳、程晓宇、周喆
+个人项目记录：周喆
 
-
-## Git操作
-##### 0、获取帮助
-```bash
-    git --help
-```
-##### 1、克隆到本地
-```bash
-    git clone https://github.com/zznjupt/RVBOOK.git
-```
-##### 2、上传到远程仓库
-```bash
-    git pull //确保最新版本
-    git add .
-    git commit -m"XXXX"
-    git push
-```

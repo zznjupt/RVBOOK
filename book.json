@@ -1,5 +1,5 @@
 {
-    "title": "Priself Project",
+    "title": "ZZproject",
     "description": "记录 RISCV 学习的一些知识与心得",
     "author": "UnisLab-ic-group",
     "output.name": "site",
@@ -53,6 +53,8 @@
             }
         },
         "theme-fexa":{
+            "search-placeholder":"输入关键字搜索",
+            "logo":"./logo.png",
             "favicon": "./favicon.ico"
         }
     }

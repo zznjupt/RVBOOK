@@ -6,11 +6,6 @@
 
 * [Chipyard-1.8.0安装](workspace/help-docs/chipyard-install.md)
 
-## 一生一芯
+## 五级顺序流水线RISC-V处理器设计-Chisel
 
-<<<<<<< HEAD
-* [Chisel-单周期非流水CPU](workspace/riscvCpu/SingleCycleCore.md)
-* [Chisel-顺序五级流水线CPU](workspace/riscvCpu/PipelineCpu.md)
-
-=======
-* [FangBook](workspace/help-docs/fangbook.md)
+* [FangCore-江芳](workspace/help-docs/fangbook.md)

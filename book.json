@@ -10,7 +10,7 @@
     "plugins": [
         "-sharing",
         "katex",
-
+        "theme-default",
         "expandable-chapters",
         "chapter-fold",
         "splitter",

@@ -21,21 +21,13 @@
         "prism", 
         "-highlight",
         "hide-element",
-        "theme-fexa",
+
         "heading-anchors",
         "alerts"
         
     ],
     "variables": {
-        "themeFexa":{
-            "nav":[
-                {
-                    "url":"https://github.com/zznjupt/RVBOOK",
-                    "target":"_blank",
-                    "name": "Github"
-                }
-            ]
-        }
+
     },
     "pluginsConfig": {
         "fontSettings": {

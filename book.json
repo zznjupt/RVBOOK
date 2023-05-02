@@ -21,12 +21,13 @@
         "prism", 
         "-highlight",
         "hide-element",
-        "alerts"
+        "alerts",
+        "fontsettings"
         
     ],
     "pluginsConfig": {
-        "fontSettings": {
-            "size": 15
+        "fontsettings": {
+            "size": 12
         },
         "theme-default": {
             "showLevel": false

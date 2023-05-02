@@ -53,7 +53,7 @@ SystemVerilog 定点数库
 
 以乘法器为例：
 
-```Verilog
+```verilog
 module fxp_mul #( // 以乘法器为例
     parameter WIIA = 8,       // 输入(乘数a)的整数位宽，默认=8
     parameter WIFA = 8,       // 输入(乘数a)的小数位宽，默认=8

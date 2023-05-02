@@ -331,41 +331,45 @@ IEEE 754-2008 <strong>binary32</strong></p>
 </tr>
 </tbody>
 </table>
-<h2 id="verilog-fixedpoint">Verilog-FixedPoint</h2>
-<p>SystemVerilog &#x5B9A;&#x70B9;&#x6570;&#x5E93;</p>
-<ul>
-<li>&#x53EF;&#x5B9A;&#x5236;&#x6574;&#x6570;&#x4F4D;&#x5BBD;&#x548C;&#x5C0F;&#x6570;&#x4F4D;&#x5BBD;&#x3002;</li>
-<li><strong>&#x8FD0;&#x7B97;</strong> &#xFF1A; &#x52A0;&#x3001;&#x51CF;&#x3001;&#x4E58;&#x3001;&#x9664;&#x3001;&#x5F00;&#x65B9;&#x3002;</li>
-<li><strong>&#x6EA2;&#x51FA;&#x68C0;&#x6D4B;</strong> &#xFF1A; &#x53D1;&#x751F;&#x6EA2;&#x51FA;&#x65F6;&#xFF0C;&#x6EA2;&#x51FA;&#x4FE1;&#x53F7;=1&#xFF0C;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4F1A;&#x8BBE;&#x4E3A;&#x6B63;&#x6700;&#x5927;&#x503C;&#xFF08;&#x4E0A;&#x6EA2;&#x51FA;&#xFF09;&#x6216;&#x8D1F;&#x6700;&#x5C0F;&#x503C;&#xFF08;&#x4E0B;&#x6EA2;&#x51FA;&#xFF09;&#x3002;</li>
-<li><strong>&#x820D;&#x5165;&#x63A7;&#x5236;</strong> &#xFF1A; &#x53D1;&#x751F;&#x622A;&#x65AD;&#x65F6;&#xFF0C;&#x53EF;&#x9009;&#x62E9;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x3002;</li>
-<li><strong>&#x4E0E;&#x5355;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x6570;&#xFF08;IEEE754&#xFF09;&#x4E92;&#x76F8;&#x8F6C;&#x6362;</strong> &#x3002;</li>
-<li>&#x6240;&#x6709;&#x8FD0;&#x7B97;&#x5747;&#x6709; <strong>&#x5355;&#x5468;&#x671F;&#x5B9E;&#x73B0;</strong> &#xFF0C;&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x5EF6;&#x8FDF;&#x957F;&#x7684;&#x8FD0;&#x7B97;&#x6709; <strong>&#x6D41;&#x6C34;&#x7EBF;&#x5B9E;&#x73B0;</strong> &#x3002;</li>
-</ul>
-<p>&#x672C;&#x5E93;&#x7684;&#x6A21;&#x5757;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x53C2;&#x6570; (parameter) &#x6765;&#x5B9A;&#x5236;&#x5B9A;&#x70B9;&#x6570;&#x4F4D;&#x5BBD;&#xFF0C;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x7684;&#x547D;&#x540D;&#x662F;&#x7EDF;&#x4E00;&#x7684;&#xFF1A;</p>
-<ul>
-<li>WOI &#x548C; WOF &#x5206;&#x522B;&#x662F;&#x8F93;&#x51FA;&#x7684;&#x5B9A;&#x70B9;&#x6570;&#x7684;&#x6574;&#x6570;&#x4F4D;&#x5BBD;&#x548C;&#x5C0F;&#x6570;&#x4F4D;&#x5BBD;&#x3002;</li>
-<li>&#x5BF9;&#x4E8E;&#x5355;&#x76EE;&#x8FD0;&#x7B97;&#xFF0C; WII &#x548C; WIF &#x5206;&#x522B;&#x662F;&#x8F93;&#x5165;&#x7684;&#x5B9A;&#x70B9;&#x6570;&#x7684;&#x6574;&#x6570;&#x4F4D;&#x5BBD;&#x548C;&#x5C0F;&#x6570;&#x4F4D;&#x5BBD;&#x3002;</li>
-<li>&#x5BF9;&#x4E8E;&#x53CC;&#x76EE;&#x8FD0;&#x7B97;&#xFF0C; WIIA &#x548C; WIFA &#x5206;&#x522B;&#x662F;&#x8F93;&#x5165;&#x64CD;&#x4F5C;&#x6570;A&#x7684;&#x5B9A;&#x70B9;&#x6570;&#x7684;&#x6574;&#x6570;&#x4F4D;&#x5BBD;&#x548C;&#x5C0F;&#x6570;&#x4F4D;&#x5BBD;&#xFF1B;WIIB &#x548C; WIFB &#x5206;&#x522B;&#x662F;&#x8F93;&#x5165;&#x64CD;&#x4F5C;&#x6570;B&#x7684;&#x5B9A;&#x70B9;&#x6570;&#x7684;&#x6574;&#x6570;&#x4F4D;&#x5BBD;&#x548C;&#x5C0F;&#x6570;&#x4F4D;&#x5BBD;&#x3002;</li>
-</ul>
-<p>&#x4EE5;&#x4E58;&#x6CD5;&#x5668;&#x4E3A;&#x4F8B;&#xFF1A;</p>
-<pre class="language-"><code class="lang-verilog"><span class="token keyword">module</span> fxp_mul #<span class="token punctuation">(</span> <span class="token comment">// &#x4EE5;&#x4E58;&#x6CD5;&#x5668;&#x4E3A;&#x4F8B;</span>
-    <span class="token keyword">parameter</span> WIIA <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">,</span>       <span class="token comment">// &#x8F93;&#x5165;(&#x4E58;&#x6570;a)&#x7684;&#x6574;&#x6570;&#x4F4D;&#x5BBD;&#xFF0C;&#x9ED8;&#x8BA4;=8</span>
-    <span class="token keyword">parameter</span> WIFA <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">,</span>       <span class="token comment">// &#x8F93;&#x5165;(&#x4E58;&#x6570;a)&#x7684;&#x5C0F;&#x6570;&#x4F4D;&#x5BBD;&#xFF0C;&#x9ED8;&#x8BA4;=8</span>
-    <span class="token keyword">parameter</span> WIIB <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">,</span>       <span class="token comment">// &#x8F93;&#x5165;(&#x4E58;&#x6570;b)&#x7684;&#x6574;&#x6570;&#x4F4D;&#x5BBD;&#xFF0C;&#x9ED8;&#x8BA4;=8</span>
-    <span class="token keyword">parameter</span> WIFB <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">,</span>       <span class="token comment">// &#x8F93;&#x5165;(&#x4E58;&#x6570;b)&#x7684;&#x5C0F;&#x6570;&#x4F4D;&#x5BBD;&#xFF0C;&#x9ED8;&#x8BA4;=8</span>
-    <span class="token keyword">parameter</span> WOI  <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">,</span>       <span class="token comment">// &#x8F93;&#x51FA;(&#x79EF;)&#x7684;&#x6574;&#x6570;&#x4F4D;&#x5BBD;&#xFF0C;&#x9ED8;&#x8BA4;=8</span>
-    <span class="token keyword">parameter</span> WOF  <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">,</span>       <span class="token comment">// &#x8F93;&#x51FA;(&#x79EF;)&#x7684;&#x5C0F;&#x6570;&#x4F4D;&#x5BBD;&#xFF0C;&#x9ED8;&#x8BA4;=8</span>
-    <span class="token keyword">parameter</span> <span class="token keyword">bit</span> ROUND<span class="token operator">=</span> <span class="token number">1</span>    <span class="token comment">// &#x5F53;&#x79EF;&#x7684;&#x5C0F;&#x6570;&#x622A;&#x65AD;&#x65F6;&#xFF0C;&#x662F;&#x5426;&#x56DB;&#x820D;&#x4E94;&#x5165;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;</span>
-<span class="token punctuation">)</span><span class="token punctuation">(</span>
-    <span class="token keyword">input</span>  <span class="token keyword">wire</span> <span class="token punctuation">[</span>WIIA<span class="token operator">+</span>WIFA<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> ina<span class="token punctuation">,</span> <span class="token comment">// &#x4E58;&#x6570;a</span>
-    <span class="token keyword">input</span>  <span class="token keyword">wire</span> <span class="token punctuation">[</span>WIIB<span class="token operator">+</span>WIFB<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> inb<span class="token punctuation">,</span> <span class="token comment">// &#x4E58;&#x6570;b</span>
-    <span class="token keyword">output</span> <span class="token keyword">wire</span> <span class="token punctuation">[</span>WOI <span class="token operator">+</span>WOF <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> out<span class="token punctuation">,</span> <span class="token comment">// &#x7ED3;&#x679C;(&#x79EF;) = &#x4E58;&#x6570;a * &#x4E58;&#x6570;b</span>
-    <span class="token keyword">output</span> <span class="token keyword">wire</span> overflow             <span class="token comment">// &#x7ED3;&#x679C;&#x662F;&#x5426;&#x6EA2;&#x51FA;&#xFF0C;&#x82E5;&#x6EA2;&#x51FA;&#x5219;&#x4E3A; 1&apos;b1</span>
-                                     <span class="token comment">// &#x82E5;&#x4E3A;&#x4E0A;&#x6EA2;&#x51FA;&#xFF0C;&#x5219;out&#x88AB;&#x7F6E;&#x4E3A;&#x6700;&#x5927;&#x6B63;&#x503C;</span>
-                                     <span class="token comment">// &#x82E5;&#x4E3A;&#x4E0B;&#x6EA2;&#x51FA;&#xFF0C;&#x5219;out&#x88AB;&#x7F6E;&#x4E3A;&#x6700;&#x5C0F;&#x8D1F;&#x503C;</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h2 id="&#x5404;&#x6A21;&#x5757;&#x540D;&#x79F0;&#x4E0E;&#x529F;&#x80FD;">&#x5404;&#x6A21;&#x5757;&#x540D;&#x79F0;&#x4E0E;&#x529F;&#x80FD;</h2>
+<!-- ## Verilog-FixedPoint
+
+SystemVerilog 定点数库
+
+* 可定制整数位宽和小数位宽。
+* **运算** ： 加、减、乘、除、开方。
+* **溢出检测** ： 发生溢出时，溢出信号=1，输出结果会设为正最大值（上溢出）或负最小值（下溢出）。
+* **舍入控制** ： 发生截断时，可选择是否进行四舍五入。
+* **与单精度浮点数（IEEE754）互相转换** 。
+* 所有运算均有 **单周期实现** ，组合逻辑延迟长的运算有 **流水线实现** 。
+
+本库的模块输入输出都可以用参数 (parameter) 来定制定点数位宽，这些参数的命名是统一的：
+
+- WOI 和 WOF 分别是输出的定点数的整数位宽和小数位宽。
+- 对于单目运算， WII 和 WIF 分别是输入的定点数的整数位宽和小数位宽。
+- 对于双目运算， WIIA 和 WIFA 分别是输入操作数A的定点数的整数位宽和小数位宽；WIIB 和 WIFB 分别是输入操作数B的定点数的整数位宽和小数位宽。
+
+以乘法器为例：
+
+```verilog
+module fxp_mul #( // 以乘法器为例
+    parameter WIIA = 8,       // 输入(乘数a)的整数位宽，默认=8
+    parameter WIFA = 8,       // 输入(乘数a)的小数位宽，默认=8
+    parameter WIIB = 8,       // 输入(乘数b)的整数位宽，默认=8
+    parameter WIFB = 8,       // 输入(乘数b)的小数位宽，默认=8
+    parameter WOI  = 8,       // 输出(积)的整数位宽，默认=8
+    parameter WOF  = 8,       // 输出(积)的小数位宽，默认=8
+    parameter bit ROUND= 1    // 当积的小数截断时，是否四舍五入，默认是
+)(
+    input  wire [WIIA+WIFA-1:0] ina, // 乘数a
+    input  wire [WIIB+WIFB-1:0] inb, // 乘数b
+    output wire [WOI +WOF -1:0] out, // 结果(积) = 乘数a * 乘数b
+    output wire overflow             // 结果是否溢出，若溢出则为 1'b1
+                                     // 若为上溢出，则out被置为最大正值
+                                     // 若为下溢出，则out被置为最小负值
+);
+```
+
+## 各模块名称与功能 -->
 <!-- ### 矩阵处理器
 
 
@@ -408,7 +412,7 @@ AI处理器的矩阵处理单元专用于专用于**矩阵乘法**和**卷积运
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"硬件定点数","level":"2.1.1","depth":2,"next":{"title":"杂谈","level":"2.2","depth":1,"ref":"","articles":[]},"previous":{"title":"Hardware IP","level":"2.1","depth":1,"ref":"","articles":[{"title":"硬件定点数","level":"2.1.1","depth":2,"path":"blog/hardfix/README.md","ref":"./blog/hardfix/README.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-comscore","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","theme-fexa","heading-anchors","alerts"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"pluginsConfig":{"hide-element":{"elements":[".gitbook-link"]}},"splitter":{},"search-pro":{},"theme-fexa":{"search-placeholder":"输入关键字搜索","favicon":"./favicon.ico"},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"size":15},"heading-anchors":{},"theme-comscore":{},"alerts":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeFexa":{"nav":[{"url":"https://github.com/zznjupt/RVBOOK","target":"_blank","name":"Github"}]}},"title":"Blog","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"学习的一些知识与心得"},"file":{"path":"blog/hardfix/README.md","mtime":"2023-05-02T11:00:59.456Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-02T11:11:19.312Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"硬件定点数","level":"2.1.1","depth":2,"next":{"title":"杂谈","level":"2.2","depth":1,"ref":"","articles":[]},"previous":{"title":"Hardware IP","level":"2.1","depth":1,"ref":"","articles":[{"title":"硬件定点数","level":"2.1.1","depth":2,"path":"blog/hardfix/README.md","ref":"./blog/hardfix/README.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-comscore","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","theme-fexa","heading-anchors","alerts"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"pluginsConfig":{"hide-element":{"elements":[".gitbook-link"]}},"splitter":{},"search-pro":{},"theme-fexa":{"search-placeholder":"输入关键字搜索","favicon":"./favicon.ico"},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"size":15},"heading-anchors":{},"theme-comscore":{},"alerts":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeFexa":{"nav":[{"url":"https://github.com/zznjupt/RVBOOK","target":"_blank","name":"Github"}]}},"title":"Blog","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"学习的一些知识与心得"},"file":{"path":"blog/hardfix/README.md","mtime":"2023-05-02T11:26:46.961Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-02T11:26:50.204Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>

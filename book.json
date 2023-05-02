@@ -38,6 +38,9 @@
         }
     },
     "pluginsConfig": {
+        "fontSettings": {
+            "size": 15
+        },
         "theme-default": {
             "showLevel": false
         },
@@ -55,9 +58,6 @@
             "search-placeholder":"输入关键字搜索",
 
             "favicon": "./favicon.ico"
-        },
-        "fontSettings": {
-            "size": 15
         }
     }
 }

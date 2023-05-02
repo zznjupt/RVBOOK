@@ -35,11 +35,6 @@
             "css": [
                 "prismjs/themes/prism-tomorrow.css"
             ]
-        },
-        "pluginsConfig": {
-            "hide-element": {
-                "elements": [".gitbook-link"]
-            }
         }
     }
 }

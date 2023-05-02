@@ -57,7 +57,7 @@
             "favicon": "./favicon.ico"
         },
         "fontSettings": {
-            "size": 10
+            "size": 15
         }
     }
 }

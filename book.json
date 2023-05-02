@@ -31,6 +31,9 @@
         "fontSettings": {
             "size": 15
         },
+        "theme-default": {
+            "showLevel": false
+        },
         "prism": {
             "css": [
                 "prismjs/themes/prism-tomorrow.css"

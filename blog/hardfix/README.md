@@ -1,5 +1,4 @@
-![语言](https://img.shields.io/badge/语言-systemverilog_(IEEE1800_2005)-CAD09D.svg) 
-![SPEC](https://img.shields.io/badge/SPEC-IEEE_754-green.svg) 
+<img src='https://img.shields.io/badge/语言-systemverilog_(IEEE1800_2005)-CAD09D.svg'> <img src='https://img.shields.io/badge/SPEC-IEEE_754-green.svg'>
 
 
 # 漫谈单精度浮点数、定点数与硬件实现

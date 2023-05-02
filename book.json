@@ -24,9 +24,6 @@
         "alerts"
         
     ],
-    "variables": {
-
-    },
     "pluginsConfig": {
         "fontSettings": {
             "size": 15

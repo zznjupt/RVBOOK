@@ -15,14 +15,14 @@
         "chapter-fold",
         "splitter",
         "copy-code-button",
-        
+        "-lunr", 
         "-search", 
         "search-pro",
         "prism", 
         "-highlight",
         "hide-element",
 
-
+        "heading-anchors",
         "alerts"
         
     ],
@@ -30,6 +30,9 @@
 
     },
     "pluginsConfig": {
+        "fontSettings": {
+            "size": 15
+        },
         "theme-default": {
             "showLevel": false
         },

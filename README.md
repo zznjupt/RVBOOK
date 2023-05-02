@@ -1,2 +1,1 @@
-# 分享学习
-## [My page](https://zznjupt.github.io)
+## [个人主页](https://zznjupt.github.io)

@@ -55,7 +55,7 @@ SystemVerilog 定点数库
 
 以乘法器为例：
 
-```SystemVerilog
+```Verilog
 module fxp_mul #( // 以乘法器为例
     parameter WIIA = 8,       // 输入(乘数a)的整数位宽，默认=8
     parameter WIFA = 8,       // 输入(乘数a)的小数位宽，默认=8
@@ -78,34 +78,10 @@ module fxp_mul #( // 以乘法器为例
 
 ## 各模块名称与功能
 
-所有可综合的模块实现都在 RTL/fixedpoint.sv 中，各模块名称和功能如下表：
-|    运算    | 单周期版本(组合逻辑) |     流水线版本     | 流水线级数  |          说明          |
-| :--------: | :------------------: | :----------------: | :---------: | :--------------------: |
-|  位宽变换  |     **fxp_zoom**     |       不需要       |      -      |    有溢出、舍入控制    |
-|    加减    |    **fxp_addsub**    |       不需要       |      -      | 具有1bit信号控制加或减 |
-|     加     |     **fxp_add**      |       不需要       |      -      |                        |
-|    乘法    |     **fxp_mul**      |  **fxp_mul_pipe**  |      2      |                        |
-|    除法    |     **fxp_div**      |  **fxp_div_pipe**  |  WOI+WOF+3  |  单周期版时序不易收敛  |
-| 开方(sqrt) |     **fxp_sqrt**     | **fxp_sqrt_pipe**  | WII/2+WIF+2 |  单周期版时序不易收敛  |
-| 定点转浮点 |    **fxp2float**     | **fxp2float_pipe** |  WII+WIF+2  |  单周期版时序不易收敛  |
-| 浮点转定点 |    **float2fxp**     | **float2fxp_pipe** |  WOI+WOF+4  |  单周期版时序不易收敛  |
 
 
 
-## 仿真
 
-仿真相关的文件都在 SIM 文件夹中，其中：
-
-| 代码文件                | 说明                       |
-| ----------------------- | -------------------------- |
-| tb_add_sub_mul_div.sv   | 测试单周期版本的加减乘除   |
-| tb_fxp_mul_div_pipe.sv  | 测试流水线版本的乘除       |
-| tb_fxp_sqrt.sv          | 测试开方运算               |
-| tb_convert_fxp_float.sv | 测试定点数与浮点数互相转化 |
-
-使用 iverilog 进行仿真前，需要安装 iverilog ，见：[iverilog_usage](https://github.com/WangXuan95/WangXuan95/blob/main/iverilog_usage/iverilog_usage.md)
-
-然后双击对应的 .bat 文件就能运行仿真。
 
 
 

@@ -31,7 +31,7 @@
     },
     "pluginsConfig": {
         "theme-default": {
-
+            "showLevel": false
         },
         "prism": {
             "css": [

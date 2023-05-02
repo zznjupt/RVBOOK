@@ -30,9 +30,6 @@
 
     },
     "pluginsConfig": {
-        "fontSettings": {
-            "size": 15
-        },
         "theme-default": {
             "showLevel": false
         },
@@ -45,11 +42,6 @@
             "hide-element": {
                 "elements": [".gitbook-link"]
             }
-        },
-        "theme-fexa":{
-            "search-placeholder":"输入关键字搜索",
-
-            "favicon": "./favicon.ico"
         }
     }
 }

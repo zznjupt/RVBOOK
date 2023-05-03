@@ -39,11 +39,11 @@
             ]
         },
         "signature": {
-            "autoTimeStamp":{
+            "autotimestamp":{
                  "color":"gray",
                  "timeStampFormat": "MM/DD/YYYY HH:mm:ss"
             },
-            "autoCopyright":{
+            "autocopyright":{
                 "color":"gray",
                 "owner":"<a href='http://qfshare.com' target='_blank'>Priself</a>",
                 "center":true

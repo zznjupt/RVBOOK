@@ -4,7 +4,7 @@
 
 ## IC-FPGA
 
-* Hardware IP
+* 硬件数据存储结构
 	* [硬件定点数](./blog/hardfix/README.md)
 
 * 杂谈

@@ -26,20 +26,6 @@
         "signature"
         
     ],
-    "gitbook-plugin-signature":{
-        "autoTimeStamp":{
-             "color":"gray",
-             "timeStampFormat": "MM/DD/YYYY HH:mm:ss"
-        },
-        "autoCopyright":{
-            "color":"gray",
-            "owner":"<a href='http://qfshare.com' target='_blank'>ICCAD</a>",
-            "center":true
-        },
-        "signature":{
-            "key": "Provide by ICCAD "
-        }
-    },
     "pluginsConfig": {
         "fontsettings": {
             "size": 12
@@ -51,6 +37,20 @@
             "css": [
                 "prismjs/themes/prism-tomorrow.css"
             ]
+        },
+        "signature": {
+            "autoTimeStamp":{
+                 "color":"gray",
+                 "timeStampFormat": "MM/DD/YYYY HH:mm:ss"
+            },
+            "autoCopyright":{
+                "color":"gray",
+                "owner":"<a href='http://qfshare.com' target='_blank'>Priself</a>",
+                "center":true
+            },
+            "signature":{
+                "key": "Provide by Priself "
+            }
         }
     }
 }

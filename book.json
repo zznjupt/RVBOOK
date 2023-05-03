@@ -23,7 +23,8 @@
         "hide-element",
         "alerts",
         "fontsettings",
-        "signature"
+        "tbfed-pagefooter"
+
         
     ],
     "pluginsConfig": {
@@ -38,19 +39,10 @@
                 "prismjs/themes/prism-tomorrow.css"
             ]
         },
-        "signature": {
-            "autotimestamp":{
-                 "color":"gray",
-                 "timeStampFormat": "MM/DD/YYYY HH:mm:ss"
-            },
-            "autocopyright":{
-                "color":"gray",
-                "owner":"<a href='http://qfshare.com' target='_blank'>Priself</a>",
-                "center":true
-            },
-            "signature":{
-                "key": "Provide by Priself "
-            }
+        "tbfed-pagefooter": {
+            "copyright": "Copyright © Priself.zz@gmail.com 2023",
+            "modify_label": "该文章修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
         }
     }
 }

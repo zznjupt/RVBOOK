@@ -22,9 +22,24 @@
         "-highlight",
         "hide-element",
         "alerts",
-        "fontsettings"
+        "fontsettings",
+        "signature"
         
     ],
+    "gitbook-plugin-signature":{
+        "autoTimeStamp":{
+             "color":"gray",
+             "timeStampFormat": "MM/DD/YYYY HH:mm:ss"
+        },
+        "autoCopyright":{
+            "color":"gray",
+            "owner":"<a href='http://qfshare.com' target='_blank'>ICCAD</a>",
+            "center":true
+        },
+        "signature":{
+            "key": "Provide by ICCAD "
+        }
+    },
     "pluginsConfig": {
         "fontsettings": {
             "size": 12

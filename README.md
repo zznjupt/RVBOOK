@@ -5,7 +5,10 @@
 * 书籍<br>
 [计算机体系结构基础-胡伟武等](https://foxsen.github.io/archbase/)<br>
 [A Primer on Memory Consistency and Cache Coherence 2-Edition](https://pages.cs.wisc.edu/~markhill/papers/primer2020_2nd_edition.pdf)<br>
+
 <!-- [Computer Architecture A Quantitative Approach 6th Edition](http://acs.pub.ro/~cpop/SMPA/Computer%20Architecture,%20Sixth%20Edition_%20A%20Quantitative%20Approach%20(%20PDFDrive%20).pdf) -->
+
+<a href="http://acs.pub.ro/~cpop/SMPA/Computer%20Architecture,%20Sixth%20Edition_%20A%20Quantitative%20Approach%20(%20PDFDrive%20).pdf" target="_blank">Computer Architecture A Quantitative Approach 6th Edition</a>
 
 * 课程<br>
 [CS 127/227 - Fall 2021](https://cs127.boazbarak.org/)<br>

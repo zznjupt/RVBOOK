@@ -1,6 +1,6 @@
 ## Links
 
-[个人主页](https://zznjupt.github.io)
+* [个人主页](https://zznjupt.github.io)
 
 * 书籍<br>
 [计算机体系结构基础-胡伟武等](https://foxsen.github.io/archbase/)<br>

@@ -25,7 +25,7 @@ $$
 
 **MAC**
 
-* Memory Access Cost，内存占用量，用来评价模型在运行时的内存占用情况。 $1\times 1$卷积 FLOPs 为 $$2 * H  W * C_{\text{in}} * C_{\text{out}}$$, 其对应MAC为：
+* Memory Access Cost，内存占用量，用来评价模型在运行时的内存占用情况。 $1\times 1$卷积 FLOPs 为 $$2 * H * W * C_{\text{in}} * C_{\text{out}}$$, 其对应MAC为：
 
 $$
     2 * H * W * (C_{\text{in}} + C_{\text{out}}) + (C_{\text{in}} * C_{\text{out}})

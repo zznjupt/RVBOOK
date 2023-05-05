@@ -48,7 +48,9 @@
         "github-buttons": {
             "repo": "zznjupt/RVBOOK",
             "types": [
-                "star"
+                "star",
+                "watch",
+                "fork"
             ],
             "size": "small"
         }

@@ -23,7 +23,8 @@
         "hide-element",
         "alerts",
         "fontsettings",
-        "tbfed-pagefooter"
+        "tbfed-pagefooter",
+        "github-buttons"
 
         
     ],
@@ -43,6 +44,13 @@
             "copyright": "Copyright © Priself.zz@gmail.com 2023",
             "modify_label": "该文章修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "github-buttons": {
+            "repo": "zznjupt/RVBOOK",
+            "types": [
+                "star"
+            ],
+            "size": "small"
         }
     }
 }

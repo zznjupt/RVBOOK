@@ -42,7 +42,7 @@ module PE (
 reg  [7:0] Xmax;
 
 always @(posedge clk or negedge rst_n) begin
-    if(!rst_en)
+    if(!rst_n)
         Xmax <= 'd0;
     else if(mode) begin
         if(Xin > Xmax)

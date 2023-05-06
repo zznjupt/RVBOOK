@@ -16,12 +16,12 @@
 	* [AI 芯片指标](./blog/AI/AI芯片指标.md)
 	* [硬件定点数](./blog/hardfix/README.md)
 	* [脉动阵列(Systolic Array)](./blog/hardalgo/systolic-array.md)
-	
+
 ## 隐私计算
 
 * 隐私计算数学基础
 
-* 全同台加密
+* 全同态加密
 
 * 安全多方计算
 

@@ -376,7 +376,7 @@
 <h2 id="basics">Basics</h2>
 <h3 id="summary">Summary</h3>
 <p>Verilog is the main logic design language for lowRISC Comportable IP.</p>
-<p>Verilog and SystemVerilog (often generically referred to as just &quot;Verilog&quot; in
+<p>Verilog and Verilog (often generically referred to as just &quot;Verilog&quot; in
 this document) can be written in vastly different styles, which can lead to code
 conflicts and code review latency.  This style guide aims to promote Verilog
 readability across groups.  To quote the
@@ -389,7 +389,7 @@ understand.&quot;</p>
 <li>promote best practices</li>
 <li>increase code sharing and re-use</li>
 </ul>
-<p>This style guide defines style for both Verilog-2001 and SystemVerilog compliant
+<p>This style guide defines style for both Verilog-2001 and Verilog compliant
 code. Additionally, this style guide defines style for both synthesizable and
 test bench code.</p>
 <p>See the <a href="#appendix---condensed-style-guide">Appendix</a> for a condensed tabular
@@ -405,7 +405,7 @@ representation of this style guide.</p>
 <li><a href="#which-verilog-to-use">Which Verilog to Use</a></li>
 </ul>
 </li>
-<li><a href="#verilogsystemverilog-conventions">Verilog/SystemVerilog Conventions</a><ul>
+<li><a href="#verilogverilog-conventions">Verilog/Verilog Conventions</a><ul>
 <li><a href="#summary-1">Summary</a></li>
 <li><a href="#file-extensions">File Extensions</a></li>
 <li><a href="#general-file-appearance">General File Appearance</a><ul>
@@ -466,7 +466,7 @@ representation of this style guide.</p>
 </ul>
 </li>
 <li><a href="#language-features">Language Features</a><ul>
-<li><a href="#preferred-systemverilog-constructs">Preferred SystemVerilog Constructs</a></li>
+<li><a href="#preferred-verilog-constructs">Preferred Verilog Constructs</a></li>
 <li><a href="#package-dependencies">Package Dependencies</a></li>
 <li><a href="#module-declaration">Module Declaration</a></li>
 <li><a href="#module-instantiation">Module Instantiation</a></li>
@@ -578,21 +578,21 @@ and create code that is at variance with this style guide. It is always okay to
 deviate from the style guide by necessity, as long as that necessity is clearly
 justified by a brief comment, as well as a lint waiver pragma where appropriate.</p>
 <h3 id="which-verilog-to-use">Which Verilog to Use</h3>
-<p><strong><em>Prefer SystemVerilog-2017.</em></strong></p>
-<p>All RTL and tests should be developed in SystemVerilog, following the
-<a href="https://ieeexplore.ieee.org/document/8299595" target="_blank">IEEE 1800-2017 (SystemVerilog-2017) standard</a>, except for <a href="#problematic-language-features-and-constructs">prohibited features</a>.</p>
+<p><strong><em>Prefer Verilog-2017.</em></strong></p>
+<p>All RTL and tests should be developed in Verilog, following the
+<a href="https://ieeexplore.ieee.org/document/8299595" target="_blank">IEEE 1800-2017 (Verilog-2017) standard</a>, except for <a href="#problematic-language-features-and-constructs">prohibited features</a>.</p>
 <p>The standards document is available free of cost through <a href="https://ieeexplore.ieee.org/browse/standards/get-program/page/series?id=80" target="_blank">IEEE GET</a> (a registration is required).</p>
-<h2 id="verilogsystemverilog-conventions">Verilog/SystemVerilog Conventions</h2>
+<h2 id="verilogverilog-conventions">Verilog/Verilog Conventions</h2>
 <h3 id="summary">Summary</h3>
 <p>This section addresses primarily aesthetic aspects of style: line length,
 indentation, spacing, etc.</p>
 <h3 id="file-extensions">File Extensions</h3>
-<p><strong><em>Use the <code>.sv</code> extension for SystemVerilog files (or <code>.svh</code> for files
+<p><strong><em>Use the <code>.sv</code> extension for Verilog files (or <code>.svh</code> for files
 that are included via the preprocessor).</em></strong></p>
 <p>File extensions have the following meanings:</p>
 <ul>
-<li><code>.sv</code> indicates a SystemVerilog file defining a module or package.</li>
-<li><code>.svh</code> indicates a SystemVerilog header file intended to be included in
+<li><code>.sv</code> indicates a Verilog file defining a module or package.</li>
+<li><code>.svh</code> indicates a Verilog header file intended to be included in
 another file using a preprocessor <code>`include</code> directive.</li>
 <li><code>.v</code> indicates a Verilog-2001 file defining a module or package.</li>
 <li><code>.vh</code> indicates a Verilog-2001 header file.</li>
@@ -632,19 +632,19 @@ about indentation and wrapping.</p>
 a whole semicolon-terminated statement fits on a single line can <code>begin</code> and
 <code>end</code> be omitted.</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 // Wrapped procedural block requires begin and end.
 always_ff @(posedge clk) begin
   q &lt;= d;
 end</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 // The exception case, where begin and end may be omitted as the entire
 // structure fits on a single line.
 always_ff @(posedge clk) q &lt;= d;
 </code></pre><p>&#x1F44E;
-```systemverilog {.bad}
+```verilog {.bad}
 // Incorrect because a wrapped statement must have begin and end.
 always_ff @(posedge clk)
   q &lt;= d;</p>
@@ -655,7 +655,7 @@ only exception is if `end` has a label, a following `else` should be on a new
 line.
 
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 // &quot;end else begin&quot; are on the same line.
 if (condition) begin
   foo = bar;
@@ -663,14 +663,14 @@ end else begin
   foo = bum;
 end
 </code></pre><p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 // begin/end are omitted because each semicolon-terminated statement fits on
 // a single line.
 if (condition) foo = bar;
 else foo = bum;</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 // Incorrect because &quot;else&quot; must be on the same line as &quot;end&quot;.
 if (condition) begin
   foo = bar;
@@ -679,7 +679,7 @@ else begin
   foo = bum;
 end
 </code></pre><p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 // An exception is made for labeled blocks.
 if (condition) begin : a
   foo = bar;
@@ -694,7 +694,7 @@ and the associated statement) fits on a single line. Otherwise, use the `begin`
 keyword on the same line as the case expression.
 
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 // Consistent use of begin and end for each case item is good.
 unique case (state_q)
   StIdle: begin
@@ -712,7 +712,7 @@ unique case (state_q)
   end
 endcase
 </code></pre><p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 // Case items that fit on a single line may omit begin and end.
 unique case (state_q)
   StIdle: state_d = StA;
@@ -725,7 +725,7 @@ unique case (state_q)
 endcase</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 unique case (state_q)
   StIdle:           // These lines are incorrect because we should not wrap
     state_d = StA;  // case items at a block boundary without using begin
@@ -745,14 +745,14 @@ endcase
 spaces when you hit the tab key.</p>
 <h4 id="indented-sections">Indented Sections</h4>
 <p>Always add an additional level of indentation to the enclosed sections of all
-paired keywords. Examples of SystemVerilog keyword pairs: <code>begin / end</code>,
+paired keywords. Examples of Verilog keyword pairs: <code>begin / end</code>,
 <code>module / endmodule</code>, <code>package / endpackage</code>, <code>class / endclass</code>,
 <code>function / endfunction</code>.</p>
 <h4 id="line-wrapping">Line Wrapping</h4>
 <p>When wrapping a long expression, indent the continued part of the expression by
 four spaces, like this:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 assign zulu = enabled &amp;&amp; (
     alpha &lt; bravo &amp;&amp;
     charlie &lt; delta
@@ -771,7 +771,7 @@ Or, if it improves readability, align the continued part of the expression with
 a grouping open parenthesis or brace, like this:
 
 :+1:
-```systemverilog {.good}
+```verilog {.good}
 assign zulu = enabled &amp;&amp; (alpha &lt; bravo &amp;&amp;
                           charlie &lt; delta);
 
@@ -788,7 +788,7 @@ beginning of each line, but this must be done consistently within a file.</p>
 expression should be terminated with close characters (<code>}</code>, <code>)</code>) on their
 own line. Examples:</p>
 <p>:+1:
-```systemverilog {.good}
+```verilog {.good}
 assign bus_concatenation = {
     bus_valid,
     bus_parity[7:0],
@@ -812,7 +812,7 @@ Non-branching preprocessor directives must follow the same indentation rules as
 the regular code.
 
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 package foo;
 `ifdef FOO              // good: branching directive left-aligned
   `include &quot;foo.sv&quot;;    // normal indentation for non-branching directives
@@ -833,14 +833,14 @@ un-indented will result in post-preprocessed text looking properly indented.</p>
 the next character.</em></strong></p>
 <p>Additional whitespace is allowed for readability.</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 bus = {addr, parity, data};
 a = myfunc(lorem, ipsum, dolor, sit, amet, consectetur, adipiscing, elit,
            rhoncus);
 mymodule mymodule(.a(a), .b(b));</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 {parity,data} = bus;
 a = myfunc(a,b,c);
 mymodule mymodule(.a(a),.b(b));
@@ -857,26 +857,26 @@ This alignment makes it easy to see which characters are the same and which char
 <p>Use spaces, not tabs.</p>
 <p>For example:</p>
 <p>:+1:</p>
-<pre class="language-"><code class="lang-systemverilog">logic [7:0]  my_interface_data;
-logic [15:0] my_interface_address;
-logic        my_interface_enable;
+<pre class="language-"><code class="lang-verilog"><span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span>  my_interface_data<span class="token punctuation">;</span>
+<span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> my_interface_address<span class="token punctuation">;</span>
+<span class="token keyword">logic</span>        my_interface_enable<span class="token punctuation">;</span>
 
-logic       another_signal;
-logic [7:0] something_else;
+<span class="token keyword">logic</span>       another_signal<span class="token punctuation">;</span>
+<span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> something_else<span class="token punctuation">;</span>
 </code></pre>
 <p>:+1:</p>
-<pre class="language-"><code class="lang-systemverilog">mod u_mod (
-  .clk_i,
-  .rst_ni,
-  .sig_i          (my_signal_in),
-  .sig2_i         (my_signal_out),
-  // comment with no blank line maintains the block
-  .in_same_block_i(my_signal_in),
-  .sig3_i         (something),
+<pre class="language-"><code class="lang-verilog">mod u_mod <span class="token punctuation">(</span>
+  <span class="token punctuation">.</span>clk_i<span class="token punctuation">,</span>
+  <span class="token punctuation">.</span>rst_ni<span class="token punctuation">,</span>
+  <span class="token punctuation">.</span>sig_i          <span class="token punctuation">(</span>my_signal_in<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">.</span>sig2_i         <span class="token punctuation">(</span>my_signal_out<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token comment">// comment with no blank line maintains the block</span>
+  <span class="token punctuation">.</span><span class="token function">in_same_block_i</span><span class="token punctuation">(</span>my_signal_in<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">.</span>sig3_i         <span class="token punctuation">(</span>something<span class="token punctuation">)</span><span class="token punctuation">,</span>
 
-  .in_another_block_i(my_signal_in),
-  .sig4_i            (something)
-);
+  <span class="token punctuation">.</span><span class="token function">in_another_block_i</span><span class="token punctuation">(</span>my_signal_in<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">.</span>sig4_i            <span class="token punctuation">(</span>something<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h4 id="expressions">Expressions</h4>
 <p><strong><em>Include whitespace on both sides of all binary operators.</em></strong></p>
@@ -884,18 +884,18 @@ logic [7:0] something_else;
 readability.</p>
 <p>For example:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 assign a = ((addr &amp; mask) == My_addr) ? b[1] : ~b[0];  // good</p>
 <pre class="language-"><code>
 is better than
 
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 assign a=((addr&amp;mask)==My_addr)?b[1]:~b[0];  // bad
 </code></pre><p><strong>Exception:</strong> when declaring a bit vector, it is acceptable to use the compact
 notation. For example:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 wire [WIDTH-1:0] foo;   // this is acceptable
 wire [WIDTH - 1 : 0] foo;  // fine also, but not necessary</p>
 <pre class="language-"><code>
@@ -903,7 +903,7 @@ When splitting alternation expressions into multiple lines, use a format that is
 similar to an equivalent if-then-else line. For example:
 
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 assign a = ((addr &amp; mask) == `MY_ADDRESS) ?
            matches_value :
            doesnt_match_value;
@@ -917,7 +917,7 @@ assign a = ((addr &amp; mask) == `MY_ADDRESS) ?
 <p>Applies to packed and unpacked arrays as well as dynamic arrays, associative
 arrays, and queues.</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 logic [7:0][3:0] data[128][2];
 typedef logic [31:0] word_t;
 bit bit_array[512];
@@ -926,7 +926,7 @@ data_t some_map[addr_t];
 data_t some_q[$];</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 // There must not be a space between dimensions.
 logic [7:0] [3:0] data[128] [2];
 // There must be a space around packed dimensions.
@@ -946,7 +946,7 @@ segments. A space in a qualified name would break the continuity of a reference
 to one symbol, so it must not be added. Parameter lists must follow the
 <a href="#comma-delimited-lists">space-after-comma</a> rule.</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 my_fifo #(.WIDTH(4), .DEPTH(2)) my_fifo_nibble ...</p>
 <p>class foo extends bar #(32, 8);  // unqualified base class
   ...
@@ -955,7 +955,7 @@ endclass</p>
 <p>my_pkg::x_class#(8, 1) bar;  // package-qualified name</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 my_fifo#(.WIDTH(4), .DEPTH(2)) my_fifo_2by4 ...
 
 class foo extends bar#(32, 8);  // unqualified base class
@@ -969,12 +969,12 @@ my_pkg::x_class #(8, 1) bar;  // package-qualified name
 <p><strong><em>When labeling code blocks, add one space before and after the colon.</em></strong></p>
 <p>For example:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 begin : foo
 end : foo</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 end:bar            // There must be a space before and after the colon.
 endmodule: foobar  // There must be a space before the colon.
 </code></pre><h4 id="case-items">Case items</h4>
@@ -983,7 +983,7 @@ one space after the case item&apos;s colon.</p>
 <p>The <code>default</code> case item must include a colon.</p>
 <p>For example:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 unique case (my_state)
   StInit:   $display(&quot;Shall we begin&quot;);
   StError:  $display(&quot;Oh boy this is Bad&quot;);
@@ -994,7 +994,7 @@ unique case (my_state)
 endcase</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 unique case (1&apos;b1)
   (my_state == StError)  : interrupt = 1; // Excess whitespace before colon
   default:begin end                       // Missing space after colon
@@ -1004,22 +1004,22 @@ endcase
 name or task name and the open parenthesis.</em></strong></p>
 <p>For example:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 process_packet(pkt);</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 process_packet (pkt);  // There must not be a space before &quot;(&quot;
 </code></pre><h4 id="macro-calls">Macro Calls</h4>
 <p><strong><em>Macro calls must not have any spaces between the macro name and the
 open parenthesis.</em></strong></p>
 <p>For example:</p>
 <p>&#x1F44D;
-<code>``systemverilog {.good}</code>uvm_error(ID, &quot;you fail&quot;)
+<code>``verilog {.good}</code>uvm_error(ID, &quot;you fail&quot;)
 `ASSERT(name, a &amp; b, clk, rst)</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 `uvm_error (ID, &quot;you fail&quot;)  // There must not be a space before &quot;(&quot;
 `ASSERT (name, a &amp; b, clk, rst)
 </code></pre><h4 id="line-continuation">Line Continuation</h4>
@@ -1028,13 +1028,13 @@ open parenthesis.</em></strong></p>
 multi-line macro. The position of alignment only needs to be beyond the
 rightmost extent of a multi-line macro by at least one space, when a space does
 not split a token, but should not exceed the maximum line length.</p>
-<pre class="language-"><code class="lang-systemverilog">`define REALLY_LONG_MACRO(arg1, arg2, arg3) \
-    do_something(arg1);                     \
-    do_something_else(arg2);                \
-    final_action(arg3);
+<pre class="language-"><code class="lang-verilog"><span class="token constant">`define</span> <span class="token function">REALLY_LONG_MACRO</span><span class="token punctuation">(</span>arg1<span class="token punctuation">,</span> arg2<span class="token punctuation">,</span> arg3<span class="token punctuation">)</span> \
+    <span class="token function">do_something</span><span class="token punctuation">(</span>arg1<span class="token punctuation">)</span><span class="token punctuation">;</span>                     \
+    <span class="token function">do_something_else</span><span class="token punctuation">(</span>arg2<span class="token punctuation">)</span><span class="token punctuation">;</span>                \
+    <span class="token function">final_action</span><span class="token punctuation">(</span>arg3<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h4 id="space-around-keywords">Space Around Keywords</h4>
-<p><strong><em>Include whitespace before and after SystemVerilog keywords.</em></strong></p>
+<p><strong><em>Include whitespace before and after Verilog keywords.</em></strong></p>
 <p>Do not include a whitespace:</p>
 <ul>
 <li>before keywords that immediately follow a group opening, such as an open
@@ -1043,12 +1043,12 @@ parenthesis.</li>
 <li>after a keyword at the end of a line.</li>
 </ul>
 <p>For example:</p>
-<pre class="language-"><code class="lang-systemverilog">// Normal indentation before if.  Include a space after if.
-if (foo) begin
-end
-// Include a space after always, but not before posedge.
-always_ff @(posedge clk) begin
-end
+<pre class="language-"><code class="lang-verilog"><span class="token comment">// Normal indentation before if.  Include a space after if.</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>foo<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+<span class="token keyword">end</span>
+<span class="token comment">// Include a space after always, but not before posedge.</span>
+<span class="token important">always_ff @</span><span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+<span class="token keyword">end</span>
 </code></pre>
 <h3 id="parentheses">Parentheses</h3>
 <p><strong><em>Use parentheses to make operations unambiguous.</em></strong></p>
@@ -1060,19 +1060,19 @@ operations unambiguous.</p>
 expression must be enclosed in parentheses.</em></strong></p>
 <p>For example:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 assign foo = condition_a ? (condition_a_x ? x : y) : b;</p>
 <pre class="language-"><code>
 While the following nested ternary has only one meaning to the compiler, the
 meaning can be unclear and error-prone to humans:
 
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 assign foo = condition_a ? condition_a_x ? x : y : b;
 </code></pre><p><strong><em>Parentheses may be omitted if the code formatting conveys the same
 information, for example when describing a priority mux.</em></strong></p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 assign foo = condition_a ? a :
              condition_b ? b : not_a_nor_b;</p>
 <pre class="language-"><code>
@@ -1086,7 +1086,7 @@ with code describes that line of code.
 
 For example:
 
-```systemverilog
+```verilog
 // This comment describes the following module.
 module foo;
   ...
@@ -1097,26 +1097,26 @@ localparam bit ValBaz = 1;  // This comment describes the item to the left.
 order to separate different functional parts (like FSMs, the main datapath or
 registers) within a module. In that case, the preferred style is a single-line
 section name, framed with <code>//</code> C++ style comments as follows:</p>
-<pre class="language-"><code class="lang-systemverilog">module foo;
+<pre class="language-"><code class="lang-verilog"><span class="token keyword">module</span> foo<span class="token punctuation">;</span>
 
-  ////////////////
-  // Controller //
-  ////////////////
-  ...
+  <span class="token comment">////////////////</span>
+  <span class="token comment">// Controller //</span>
+  <span class="token comment">////////////////</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 
-  ///////////////////////
-  // Main ALU Datapath //
-  ///////////////////////
-  ...
+  <span class="token comment">///////////////////////</span>
+  <span class="token comment">// Main ALU Datapath //</span>
+  <span class="token comment">///////////////////////</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 
-endmodule : foo
+<span class="token keyword">endmodule</span> <span class="token punctuation">:</span> foo
 </code></pre>
 <p>If the designer would like to use comments to mark the beginning/end of a
 particular section for better readability (e.g. in nested for loop blocks), the
 preferred way is to use a single-line comment with no extra delineators, as
 shown in the examples below.</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 // begin: iterate over foobar
 for (...) begin
 ...
@@ -1124,12 +1124,12 @@ end
 // end: iterate over foobar</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 for (...) begin // iterate over foobar
 ...
 end // iterate over foobar
 </code></pre><p>&#x1F44E;
-```systemverilog {.bad}
+```verilog {.bad}
 //-------------------------- iterate over foobar -------------------------------
 for (...) begin
 ...
@@ -1137,7 +1137,7 @@ end
 //-------------------------- iterate over foobar -------------------------------</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 ///////////////////////////////
 // begin iterate over foobar //
 ///////////////////////////////
@@ -1156,46 +1156,46 @@ reader to find the declaration and see the signal type.</p>
 <h3 id="basic-template">Basic Template</h3>
 <p><strong><em>A template that demonstrates many of the items is given below.</em></strong></p>
 <p>Template:</p>
-<pre class="language-"><code class="lang-systemverilog">// Copyright lowRISC contributors.
-// Licensed under the Apache License, Version 2.0, see LICENSE for details.
-// SPDX-License-Identifier: Apache-2.0
-//
-// One line description of the module
+<pre class="language-"><code class="lang-verilog"><span class="token comment">// Copyright lowRISC contributors.</span>
+<span class="token comment">// Licensed under the Apache License, Version 2.0, see LICENSE for details.</span>
+<span class="token comment">// SPDX-License-Identifier: Apache-2.0</span>
+<span class="token comment">//</span>
+<span class="token comment">// One line description of the module</span>
 
-module my_module #(
-  parameter Width = 80,
-  parameter Height = 24
-) (
-  input              clk_i,
-  input              rst_ni,
-  input              req_valid_i,
-  input  [Width-1:0] req_data_i,
-  output             req_ready_o,
-  ...
-);
+<span class="token keyword">module</span> my_module #<span class="token punctuation">(</span>
+  <span class="token keyword">parameter</span> Width <span class="token operator">=</span> <span class="token number">80</span><span class="token punctuation">,</span>
+  <span class="token keyword">parameter</span> Height <span class="token operator">=</span> <span class="token number">24</span>
+<span class="token punctuation">)</span> <span class="token punctuation">(</span>
+  <span class="token keyword">input</span>              clk_i<span class="token punctuation">,</span>
+  <span class="token keyword">input</span>              rst_ni<span class="token punctuation">,</span>
+  <span class="token keyword">input</span>              req_valid_i<span class="token punctuation">,</span>
+  <span class="token keyword">input</span>  <span class="token punctuation">[</span>Width<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> req_data_i<span class="token punctuation">,</span>
+  <span class="token keyword">output</span>             req_ready_o<span class="token punctuation">,</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  logic [Width-1:0] req_data_masked;
+  <span class="token keyword">logic</span> <span class="token punctuation">[</span>Width<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> req_data_masked<span class="token punctuation">;</span>
 
-  submodule u_submodule (
-    .clk_i,
-    .rst_ni,
-    .req_valid_i,
-    .req_data_i (req_data_masked),
-    .req_ready_o(req_ready),
-    ...
-  );
+  submodule u_submodule <span class="token punctuation">(</span>
+    <span class="token punctuation">.</span>clk_i<span class="token punctuation">,</span>
+    <span class="token punctuation">.</span>rst_ni<span class="token punctuation">,</span>
+    <span class="token punctuation">.</span>req_valid_i<span class="token punctuation">,</span>
+    <span class="token punctuation">.</span>req_data_i <span class="token punctuation">(</span>req_data_masked<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token function">req_ready_o</span><span class="token punctuation">(</span>req_ready<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  always_comb begin
-    req_data_masked = req_data_i;
-    case (fsm_state_q)
-      ST_IDLE: begin
-        req_data_masked = req_data_i &amp; MASK_IDLE;
-        ...
-  end
+  <span class="token important">always_comb</span> <span class="token keyword">begin</span>
+    req_data_masked <span class="token operator">=</span> req_data_i<span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token punctuation">(</span>fsm_state_q<span class="token punctuation">)</span>
+      ST_IDLE<span class="token punctuation">:</span> <span class="token keyword">begin</span>
+        req_data_masked <span class="token operator">=</span> req_data_i <span class="token operator">&amp;</span> MASK_IDLE<span class="token punctuation">;</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token keyword">end</span>
 
-  ...
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 
-endmodule
+<span class="token keyword">endmodule</span>
 </code></pre>
 <h2 id="naming">Naming</h2>
 <h3 id="summary">Summary</h3>
@@ -1321,7 +1321,7 @@ facilitate the creation of IP that may be re-used across many projects.</p>
 constant is unitless or the units are &quot;bits.&quot; For example, <code>FooLengthBytes</code>.</p>
 <p>Example:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 // package-scope
 package my_pkg;</p>
 <p>  parameter int unsigned NUM_CPU_CORES = 64;
@@ -1345,7 +1345,7 @@ tuneable parameters from constants.
 Derived parameters within the `module` declaration should use `localparam`.
 An example is shown below.
 
-```systemverilog
+```verilog
 module modname #(
   parameter  int Depth  = 2048,         // 8kB default
   localparam int Aw     = $clog2(Depth) // derived parameter
@@ -1357,7 +1357,7 @@ endmodule
 </code></pre><p><code>`define</code> and <code>defparam</code> should never be used to parameterize a module.</p>
 <p>Use <a href="#constants">package parameters</a> to transmit global constants through a
 hierarchy instead of parameters. To declare a constant whose scope is internal
-to the particular SystemVerilog module, <a href="#constants">use <code>localparam</code> instead</a>.</p>
+to the particular Verilog module, <a href="#constants">use <code>localparam</code> instead</a>.</p>
 <p>Examples of when to use parameterized modules:</p>
 <ul>
 <li>When multiple instances of a module will be instantiated, and need to be
@@ -1382,10 +1382,10 @@ Models</a>.</p>
 all source files in a project. To reduce namespace collisions, global defines
 should be prefixed by the name of a group of related macros, followed by a pair
 of underscores:</p>
-<pre class="language-"><code class="lang-systemverilog">// The following two constants are in the FOO namespace of the
-// SN chip.
-`define SN_FOO__ALPHA_BETA  5
-`define SN_FOO__GAMMA_OMEGA 6
+<pre class="language-"><code class="lang-verilog"><span class="token comment">// The following two constants are in the FOO namespace of the</span>
+<span class="token comment">// SN chip.</span>
+<span class="token constant">`define</span> SN_FOO__ALPHA_BETA  <span class="token number">5</span>
+<span class="token constant">`define</span> SN_FOO__GAMMA_OMEGA <span class="token number">6</span>
 </code></pre>
 <p>A <strong>local define</strong> is a tick-defined macro that should only be used within the
 scope of a single local file. It must be explicitly undefined after use, to
@@ -1395,12 +1395,12 @@ single underscore.</p>
 <p>To ensure that local defines stay local, be careful not to <code>`include</code> other
 files between the macro definition and <code>`undef</code>.</p>
 <p>Example:</p>
-<pre class="language-"><code class="lang-systemverilog">`define _MAKE_THING(_x) \
-    thing i_thing_##_x (.clk(clk), .i(i##_x) .o(o##_x));
-`_MAKE_THING(a)
-`_MAKE_THING(b)
-`_MAKE_THING(c)
-`undef _MAKE_THING
+<pre class="language-"><code class="lang-verilog"><span class="token constant">`define</span> <span class="token function">_MAKE_THING</span><span class="token punctuation">(</span>_x<span class="token punctuation">)</span> \
+    thing i_thing_##_x <span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">clk</span><span class="token punctuation">(</span>clk<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token function">i</span><span class="token punctuation">(</span>i##_x<span class="token punctuation">)</span> <span class="token punctuation">.</span><span class="token function">o</span><span class="token punctuation">(</span>o##_x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token constant">`_MAKE_THING</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token constant">`_MAKE_THING</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token constant">`_MAKE_THING</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+<span class="token constant">`undef</span> _MAKE_THING
 </code></pre>
 <h3 id="suffixes">Suffixes</h3>
 <p>Suffixes are used in several places to give guidance to intent. The following
@@ -1461,7 +1461,7 @@ characters (<code>_ni</code> not <code>_n_i</code>)</li>
 </ul>
 <p>Example:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 module simple (
   input        clk_i,
   input        rst_ni,              // Active low reset</p>
@@ -1514,7 +1514,7 @@ don&apos;t care to the designer, like state machine values.  See the conversatio
 [constants](#constants) for a discussion on how to think of this recommendation.
 
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 typedef enum logic [7:0] {  // 8-bit opcodes
   OP_JALR = 8&apos;hA0,
   OP_ADDI = 8&apos;h47,
@@ -1522,7 +1522,7 @@ typedef enum logic [7:0] {  // 8-bit opcodes
 } opcode_e;
 opcode_e op_val;
 </code></pre><p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 typedef enum logic [1:0] {  // A 2-bit enumerated type
   ACC_WRITE,
   ACC_READ,
@@ -1531,7 +1531,7 @@ typedef enum logic [1:0] {  // A 2-bit enumerated type
 access_e req_access, resp_access;</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 typedef enum logic [1:0] {  // A 2-bit enumerated type
   AccWrite,
   AccRead,
@@ -1539,7 +1539,7 @@ typedef enum logic [1:0] {  // A 2-bit enumerated type
 } access_e; // new named type is created
 access_e req_access, resp_access;
 </code></pre><p>&#x1F44E;
-```systemverilog {.bad}
+```verilog {.bad}
 enum {  // Typedef is missing, storage type is missing.
   Write,
   Read
@@ -1550,7 +1550,7 @@ enum {  // Typedef is missing, storage type is missing.
 ***Use `lower_snake_case` when naming signals.***
 
 In this context, a **signal** is meant to mean a net, variable, or port within a
-SystemVerilog design.
+Verilog design.
 
 Signal names may contain lowercase alphanumeric characters and underscores.
 
@@ -1559,7 +1559,7 @@ example, `foo_1`, `foo_2`, etc.). Many synthesis tools map buses into nets using
 that naming convention, so similarly named nets can lead to confusion when
 examining a synthesized netlist.
 
-Reserved [Verilog](http://www.xilinx.com/support/documentation/sw_manuals/xilinx13_1/ite_r_verilog_reserved_words.htm) or SystemVerilog keywords may never be used as names.
+Reserved [Verilog](http://www.xilinx.com/support/documentation/sw_manuals/xilinx13_1/ite_r_verilog_reserved_words.htm) or Verilog keywords may never be used as names.
 
 When interoperating with different languages, be mindful not to use keywords
 from other languages.
@@ -1590,7 +1590,7 @@ Examples:
 Code example:
 
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 module fifo_controller (
   input         clk_i,
   input         rst_ni,
@@ -1647,29 +1647,29 @@ defined as tied to the asynchronous reset input of the associated standard
 cell registers.</p>
 <p>The default name is <code>rst_n</code>. If they must be distinguished by their clock, the
 clock name should be included in the reset name like <code>rst_domain_n</code>.</p>
-<p>SystemVerilog allows either of the following syntax styles, but the style
+<p>Verilog allows either of the following syntax styles, but the style
 guide prefers the former.</p>
-<pre class="language-"><code class="lang-systemverilog">// preferred
-always_ff @(posedge clk or negedge rst_n) begin
-  if (!rst_n) begin
-    q &lt;= 1&apos;b0;
-  end else begin
-    q &lt;= d;
-  end
-end
+<pre class="language-"><code class="lang-verilog"><span class="token comment">// preferred</span>
+<span class="token important">always_ff @</span><span class="token punctuation">(</span><span class="token keyword">posedge</span> clk <span class="token keyword">or</span> <span class="token keyword">negedge</span> rst_n<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rst_n<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+    q <span class="token operator">&lt;=</span> <span class="token number">1&apos;b0</span><span class="token punctuation">;</span>
+  <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+    q <span class="token operator">&lt;=</span> d<span class="token punctuation">;</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
 
-// legal but not preferred
-always_ff @(posedge clk, negedge rst_n) begin
-  if (!rst_n) begin
-    q &lt;= 1&apos;b0;
-  end else begin
-    q &lt;= d;
-  end
-end
+<span class="token comment">// legal but not preferred</span>
+<span class="token important">always_ff @</span><span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">,</span> <span class="token keyword">negedge</span> rst_n<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rst_n<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+    q <span class="token operator">&lt;=</span> <span class="token number">1&apos;b0</span><span class="token punctuation">;</span>
+  <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+    q <span class="token operator">&lt;=</span> d<span class="token punctuation">;</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
 </code></pre>
 <h2 id="language-features">Language Features</h2>
-<h3 id="preferred-systemverilog-constructs">Preferred SystemVerilog Constructs</h3>
-<p>Use these SystemVerilog constructs instead of their Verilog-2001 equivalents:</p>
+<h3 id="preferred-verilog-constructs">Preferred Verilog Constructs</h3>
+<p>Use these Verilog constructs instead of their Verilog-2001 equivalents:</p>
 <ul>
 <li><code>always_comb</code> is required over <code>always @*</code>.</li>
 <li><code>logic</code> is preferred over <code>reg</code> and <code>wire</code>.</li>
@@ -1680,15 +1680,15 @@ end
 <p>Package files may depend on constants and types in other package files, but
 there must not be any cyclic dependencies. That is: if package A depends on a
 constant from package B, package B must not depend on anything from package A.
-While cyclic dependencies are permitted by the SystemVerilog language
+While cyclic dependencies are permitted by the Verilog language
 specification, their use can break some tools.</p>
 <p>For example:</p>
-<pre class="language-"><code class="lang-systemverilog">package foo;
+<pre class="language-"><code class="lang-verilog"><span class="token keyword">package</span> foo<span class="token punctuation">;</span>
 
-  // Package &quot;bar&quot; must not depend on anything in &quot;foo&quot;:
-  parameter int unsigned PageSizeBytes = 16 * bar::Kibi;
+  <span class="token comment">// Package &quot;bar&quot; must not depend on anything in &quot;foo&quot;:</span>
+  <span class="token keyword">parameter</span> <span class="token keyword">int</span> <span class="token keyword">unsigned</span> PageSizeBytes <span class="token operator">=</span> <span class="token number">16</span> <span class="token operator">*</span> bar<span class="token punctuation">:</span><span class="token punctuation">:</span>Kibi<span class="token punctuation">;</span>
 
-endpackage
+<span class="token keyword">endpackage</span>
 </code></pre>
 <h3 id="module-declaration">Module Declaration</h3>
 <p><strong><em>Use the Verilog-2001 full port declaration style, and use the format
@@ -1705,7 +1705,7 @@ rule of two space indentation.</p>
 all reset inputs.</p>
 <p>Example without parameters:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 module foo (
   input              clk_i,
   input              rst_ni,
@@ -1716,7 +1716,7 @@ module foo (
 Example with parameters:
 
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 module foo #(
   parameter int unsigned Width = 8,
 ) (
@@ -1727,7 +1727,7 @@ module foo #(
 );
 </code></pre><p>Do not use Verilog-95 style:</p>
 <p>&#x1F44E;
-```systemverilog {.bad}
+```verilog {.bad}
 // WRONG:
 module foo(a, b, c d);
 input wire [2:0] a;
@@ -1741,7 +1741,7 @@ output logic b;
 When connecting signals to ports for an instantiation, use the named port style,
 like this:
 
-```systemverilog
+```verilog
 my_module i_my_instance (
   .clk_i (clk_i),
   .rst_ni(rst_ni),
@@ -1750,12 +1750,12 @@ my_module i_my_instance (
 );
 </code></pre><p>If the port and the connecting signal have the same name, you can use the
 <code>.port</code> syntax (without parentheses) to indicate connectivity. For example:</p>
-<pre class="language-"><code class="lang-systemverilog">my_module i_my_instance (
-  .clk_i,
-  .rst_ni,
-  .d_i   (from_here),
-  .q_o   (to_there)
-);
+<pre class="language-"><code class="lang-verilog">my_module i_my_instance <span class="token punctuation">(</span>
+  <span class="token punctuation">.</span>clk_i<span class="token punctuation">,</span>
+  <span class="token punctuation">.</span>rst_ni<span class="token punctuation">,</span>
+  <span class="token punctuation">.</span>d_i   <span class="token punctuation">(</span>from_here<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">.</span>q_o   <span class="token punctuation">(</span>to_there<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>All declared ports must be present in the instantiation blocks. Unconnected
 outputs must be explicitly written as no-connects (for example:
@@ -1768,23 +1768,23 @@ example: <code>.unused_input_port(8&apos;d0)</code>)</p>
 Do not include whitespace before the opening parenthesis of the longest port name.
 Do not include whitespace after the opening parenthesis, or before the closing parenthesis enclosing the port expression.</p>
 <p>:-1:</p>
-<pre class="language-"><code class="lang-systemverilog">mod u_mod(
-  .clk_i,
-  .rst_ni,
+<pre class="language-"><code class="lang-verilog">mod <span class="token function">u_mod</span><span class="token punctuation">(</span>
+  <span class="token punctuation">.</span>clk_i<span class="token punctuation">,</span>
+  <span class="token punctuation">.</span>rst_ni<span class="token punctuation">,</span>
 
-  // Not allowed: avoid leading/trailing whitespace in expressions.
-  .sig_1_i( sig_1 ),
-  .sig_2_i( sig_2 )
-);
+  <span class="token comment">// Not allowed: avoid leading/trailing whitespace in expressions.</span>
+  <span class="token punctuation">.</span><span class="token function">sig_1_i</span><span class="token punctuation">(</span> sig_1 <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">.</span><span class="token function">sig_2_i</span><span class="token punctuation">(</span> sig_2 <span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-mod u_mod(
-  .clk_i,
-  .rst_ni,
+mod <span class="token function">u_mod</span><span class="token punctuation">(</span>
+  <span class="token punctuation">.</span>clk_i<span class="token punctuation">,</span>
+  <span class="token punctuation">.</span>rst_ni<span class="token punctuation">,</span>
 
-  .short_sig_i                       (sig_1),
-  // Not allowed: avoid whitespace between the longest signal name and the opening parenthesis.
-  .a_very_long_signal_name_indeed_i  (sig_2)
-);
+  <span class="token punctuation">.</span>short_sig_i                       <span class="token punctuation">(</span>sig_1<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token comment">// Not allowed: avoid whitespace between the longest signal name and the opening parenthesis.</span>
+  <span class="token punctuation">.</span>a_very_long_signal_name_indeed_i  <span class="token punctuation">(</span>sig_2<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><strong><em>Use named parameters for all instantiations.</em></strong></p>
 <p>When parameterizing an instance, specify the parameter using the named parameter
@@ -1792,19 +1792,19 @@ style. An exception is if there is only one parameter that is obvious such as
 register width, then the instantiation can be implicit.</p>
 <p>Indentation for module instantiation follows the standard indentation
 rule of two space indentation.</p>
-<pre class="language-"><code class="lang-systemverilog">my_module #(
-  .Height(5),
-  .Width(10)
-) my_module (
-  // ...
-);
+<pre class="language-"><code class="lang-verilog">my_module #<span class="token punctuation">(</span>
+  <span class="token punctuation">.</span><span class="token function">Height</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">.</span><span class="token function">Width</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> my_module <span class="token punctuation">(</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-my_reg #(16) my_reg0 (
-  .clk_i,
-  .rst_ni,
-  .d_i   (data_in),
-  .q_o   (data_out)
-);
+my_reg #<span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span> my_reg0 <span class="token punctuation">(</span>
+  <span class="token punctuation">.</span>clk_i<span class="token punctuation">,</span>
+  <span class="token punctuation">.</span>rst_ni<span class="token punctuation">,</span>
+  <span class="token punctuation">.</span>d_i   <span class="token punctuation">(</span>data_in<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">.</span>q_o   <span class="token punctuation">(</span>data_out<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Do not specify parameters positionally, unless there is only one parameter and
 the intent of that parameter is obvious, such as the width for a register
@@ -1820,32 +1820,32 @@ raw numbers.</p>
 <p>Local constants should always be declared using <code>localparam</code>.</p>
 <p>Global constants should always be declared in a separate <code>.vh</code> or <code>.svh</code> include
 file.</p>
-<p>For SystemVerilog code, global constants should always be declared as package
+<p>For Verilog code, global constants should always be declared as package
 parameters. For Verilog-2001 compatible code, top-level parameters are not
 supported and <code>`define</code> macros must be used instead.</p>
 <p>Include the units for a constant as a suffix in the constant&apos;s symbolic name.
 The exceptions to this rule are for constants that are inherently unitless, or
 if the constant is describing the default unit type, &quot;bits.&quot;</p>
 <p>Example:</p>
-<pre class="language-"><code class="lang-systemverilog">localparam int unsigned INTERFACE_WIDTH = 64;  // Bits
-localparam int unsigned INTERFACE_WIDTH_BYTES = (INTERFACE_WIDTH + 7) / 8;
-localparam int unsigned INTERFACE_WIDTH_64B_WORDS = (INTERFACE_WIDTH + 63) / 64;
-localparam int unsigned IMAGE_WIDTH_PIXELS = 640;
-localparam int unsigned MEGA = 1000 * 1000;  // Unitless
-localparam int unsigned MEBI = 1024 * 1024;  // Unitless
-localparam int unsigned SYSTEM_CLOCK_HZ = 200 * MEGA;
+<pre class="language-"><code class="lang-verilog"><span class="token keyword">localparam</span> <span class="token keyword">int</span> <span class="token keyword">unsigned</span> INTERFACE_WIDTH <span class="token operator">=</span> <span class="token number">64</span><span class="token punctuation">;</span>  <span class="token comment">// Bits</span>
+<span class="token keyword">localparam</span> <span class="token keyword">int</span> <span class="token keyword">unsigned</span> INTERFACE_WIDTH_BYTES <span class="token operator">=</span> <span class="token punctuation">(</span>INTERFACE_WIDTH <span class="token operator">+</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">8</span><span class="token punctuation">;</span>
+<span class="token keyword">localparam</span> <span class="token keyword">int</span> <span class="token keyword">unsigned</span> INTERFACE_WIDTH_64B_WORDS <span class="token operator">=</span> <span class="token punctuation">(</span>INTERFACE_WIDTH <span class="token operator">+</span> <span class="token number">63</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">64</span><span class="token punctuation">;</span>
+<span class="token keyword">localparam</span> <span class="token keyword">int</span> <span class="token keyword">unsigned</span> IMAGE_WIDTH_PIXELS <span class="token operator">=</span> <span class="token number">640</span><span class="token punctuation">;</span>
+<span class="token keyword">localparam</span> <span class="token keyword">int</span> <span class="token keyword">unsigned</span> MEGA <span class="token operator">=</span> <span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">;</span>  <span class="token comment">// Unitless</span>
+<span class="token keyword">localparam</span> <span class="token keyword">int</span> <span class="token keyword">unsigned</span> MEBI <span class="token operator">=</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">;</span>  <span class="token comment">// Unitless</span>
+<span class="token keyword">localparam</span> <span class="token keyword">int</span> <span class="token keyword">unsigned</span> SYSTEM_CLOCK_HZ <span class="token operator">=</span> <span class="token number">200</span> <span class="token operator">*</span> MEGA<span class="token punctuation">;</span>
 </code></pre>
 <h3 id="signal-widths">Signal Widths</h3>
 <p><strong><em>Be careful about signal widths.</em></strong></p>
 <h4 id="always-be-explicit-about-the-widths-of-number-literals">Always be explicit about the widths of number literals.</h4>
 <p>Examples:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 localparam logic [3:0] bar = 4&apos;d4;</p>
 <p>assign foo = 8&apos;d2;</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 localparam logic [3:0] bar = 4;
 
 assign foo = 2;
@@ -1864,13 +1864,13 @@ and longint) do not need an explicit width.</li>
 implicit zero-extension and truncation operations, whenever practical.</p>
 <p>Examples:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 my_module i_module (
   .thirty_two_bit_input({16&apos;d0, sixteen_bit_word})
 );</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 my_module i_module (
   // Incorrectly implicitly extends from 16 bit to 32 bit
   .thirty_two_bit_input(sixteen_bit_word)
@@ -1881,7 +1881,7 @@ signal to a single bit, explicitly compare the multi-bit signal to 0. The
 implicit conversion can hide subtle logic bugs.</p>
 <p>Examples;</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 logic [3:0] a, b;
 logic out;</p>
 <p>assign out = (a != &apos;0) &amp;&amp; (b == &apos;0);</p>
@@ -1893,7 +1893,7 @@ logic out;</p>
 end</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 logic [3:0] a, b;
 logic out;
 
@@ -1913,7 +1913,7 @@ end
 bit vector.</p>
 <p>Examples:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 logic [7:0] a, b;
 logic [6:0] c;</p>
 <p>assign a = 8&apos;d7;       // good</p>
@@ -1921,7 +1921,7 @@ logic [6:0] c;</p>
 assign a = b;          // good - the parser would warn on width mismatch.</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 logic [7:0] a, b;
 
 assign a[7:0] = 8&apos;d7;  // BAD - redundant and can mask linter warnings.
@@ -1934,11 +1934,11 @@ amount.</p>
 operands, due to carry. An allowable exception to the rule about matching widths
 is to silently drop the carry on assignment.</p>
 <p>Example:</p>
-<pre class="language-"><code class="lang-systemverilog">logic [3:0] cnt_d, cnt_q;
-assign cnt_d = cnt_q + 4&apos;h1;
+<pre class="language-"><code class="lang-verilog"><span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> cnt_d<span class="token punctuation">,</span> cnt_q<span class="token punctuation">;</span>
+<span class="token keyword">assign</span> cnt_d <span class="token operator">=</span> cnt_q <span class="token operator">+</span> <span class="token number">4&apos;h1</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Or you may explicitly express dropping the carry by using size casting.</p>
-<pre class="language-"><code class="lang-systemverilog">assign cnt_d = 4&apos;(cnt_q + 4&apos;h1);
+<pre class="language-"><code class="lang-verilog"><span class="token keyword">assign</span> cnt_d <span class="token operator">=</span> <span class="token number">4</span>&apos;<span class="token punctuation">(</span>cnt_q <span class="token operator">+</span> <span class="token number">4&apos;h1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 id="blocking-and-non-blocking-assignments">Blocking and Non-blocking Assignments</h3>
 <p><strong><em>Sequential logic must use non-blocking assignments.  Combinational
@@ -1976,7 +1976,7 @@ generate that next-state value.</p>
 <p>A correctly implemented 8-bit register with an initial value of &quot;0xAB&quot; would be
 implemented:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 logic foo_en;
 logic [7:0] foo_q, foo_d;</p>
 <p>always_ff @(posedge clk or negedge rst_ni) begin
@@ -1992,7 +1992,7 @@ Do not allow multiple non-blocking assignments to the same bit.
 Example:
 
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 if (cond1) begin
   abc &lt;= 4&apos;h1;
 end
@@ -2008,34 +2008,34 @@ assignment will take effect, but this is a style violation.</p>
 However, it is preferred to do this work in a separate combinational block with
 explicit blocking assignments.</p>
 <p>Example:</p>
-<pre class="language-"><code class="lang-systemverilog">always_ff @(posedge clk or negedge rst_ni) begin
-  if (!rst_ni) begin
-    state_q &lt;= StIdle;
-  end else begin
-    state_q &lt;= state_d;
-  end
-end
+<pre class="language-"><code class="lang-verilog"><span class="token important">always_ff @</span><span class="token punctuation">(</span><span class="token keyword">posedge</span> clk <span class="token keyword">or</span> <span class="token keyword">negedge</span> rst_ni<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rst_ni<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+    state_q <span class="token operator">&lt;=</span> StIdle<span class="token punctuation">;</span>
+  <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+    state_q <span class="token operator">&lt;=</span> state_d<span class="token punctuation">;</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
 
-always_comb begin
-  state_d = state_q;    // default assignment next state is present state
-  unique case (state_q)
-    StIdle: state_d = StInit;       // Idle State move to Init
-    StInit: begin                   // Initialize calculation
-      if (conditional) begin
-        state_d = StIdle;
-      end else begin
-        state_d = StCalc;
-      end
-    end
-    StCalc: begin                   // Perform calculation
-      if (conditional) begin
-        state_d = StResult;
-      end
-    end
-    StResult: state_d = Idle;
-    default: ;
-  endcase
-end
+<span class="token important">always_comb</span> <span class="token keyword">begin</span>
+  state_d <span class="token operator">=</span> state_q<span class="token punctuation">;</span>    <span class="token comment">// default assignment next state is present state</span>
+  <span class="token keyword">unique</span> <span class="token keyword">case</span> <span class="token punctuation">(</span>state_q<span class="token punctuation">)</span>
+    StIdle<span class="token punctuation">:</span> state_d <span class="token operator">=</span> StInit<span class="token punctuation">;</span>       <span class="token comment">// Idle State move to Init</span>
+    StInit<span class="token punctuation">:</span> <span class="token keyword">begin</span>                   <span class="token comment">// Initialize calculation</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>conditional<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+        state_d <span class="token operator">=</span> StIdle<span class="token punctuation">;</span>
+      <span class="token keyword">end</span> <span class="token keyword">else</span> <span class="token keyword">begin</span>
+        state_d <span class="token operator">=</span> StCalc<span class="token punctuation">;</span>
+      <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+    StCalc<span class="token punctuation">:</span> <span class="token keyword">begin</span>                   <span class="token comment">// Perform calculation</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>conditional<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+        state_d <span class="token operator">=</span> StResult<span class="token punctuation">;</span>
+      <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+    StResult<span class="token punctuation">:</span> state_d <span class="token operator">=</span> Idle<span class="token punctuation">;</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token punctuation">;</span>
+  <span class="token keyword">endcase</span>
+<span class="token keyword">end</span>
 </code></pre>
 <p>Keep work in sequential blocks simple. If a sequential block becomes
 sufficiently complicated, consider splitting the combinational logic into a
@@ -2079,104 +2079,104 @@ and is used to trigger some action (such as a register write-enable), it is
 recommened to add an assert to check that when the enable is true, the signal is
 valid. This triggers a simple to diagnose failure when an invalid value has been
 accidentally used.</p>
-<pre class="language-"><code class="lang-systemverilog">
-logic reg_addr;
-logic reg_wr_en;
+<pre class="language-"><code class="lang-verilog">
+<span class="token keyword">logic</span> reg_addr<span class="token punctuation">;</span>
+<span class="token keyword">logic</span> reg_wr_en<span class="token punctuation">;</span>
 
-// internal logic which generates reg_addr/reg_wr_en reg_en_addr will never
-// be X but must be ignored if reg_wr_en == 0
-assign reg_addr = ...
-assign reg_wr_en = ...
+<span class="token comment">// internal logic which generates reg_addr/reg_wr_en reg_en_addr will never</span>
+<span class="token comment">// be X but must be ignored if reg_wr_en == 0</span>
+<span class="token keyword">assign</span> reg_addr <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">assign</span> reg_wr_en <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 
-...
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 
-// trigger some specific action when a certain register is written
-logic special_reg_en;
+<span class="token comment">// trigger some specific action when a certain register is written</span>
+<span class="token keyword">logic</span> special_reg_en<span class="token punctuation">;</span>
 
-assign special_reg_en = (reg_addr == SPECIAL_REG_ADDR) &amp; reg_wr_en;
+<span class="token keyword">assign</span> special_reg_en <span class="token operator">=</span> <span class="token punctuation">(</span>reg_addr <span class="token operator">==</span> SPECIAL_REG_ADDR<span class="token punctuation">)</span> <span class="token operator">&amp;</span> reg_wr_en<span class="token punctuation">;</span>
 
-// Aim to keep RHS of implication as broad as possible
-`ASSERT(NoSpecialRegEnWithoutRegEn, special_reg_en |-&gt; reg_wr_en);
+<span class="token comment">// Aim to keep RHS of implication as broad as possible</span>
+<span class="token constant">`ASSERT</span><span class="token punctuation">(</span>NoSpecialRegEnWithoutRegEn<span class="token punctuation">,</span> special_reg_en <span class="token operator">|-&gt;</span> reg_wr_en<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Where the value and its validity signal are generated by a DV environment which
 will drive <code>X</code> on invalid signals an <code>`ASSERT_KNOWN</code> suffices.</p>
-<pre class="language-"><code class="lang-systemverilog">module mymod (
-  input [7:0] external_addr_i,
-  input       external_wr_en_i
-);
+<pre class="language-"><code class="lang-verilog"><span class="token keyword">module</span> mymod <span class="token punctuation">(</span>
+  <span class="token keyword">input</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> external_addr_i<span class="token punctuation">,</span>
+  <span class="token keyword">input</span>       external_wr_en_i
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  logic special_action_en;
+  <span class="token keyword">logic</span> special_action_en<span class="token punctuation">;</span>
 
-  assign special_action_en =
-      (external_addr_i == SPECIAL_ADDR) &amp; external_wr_en_i;
+  <span class="token keyword">assign</span> special_action_en <span class="token operator">=</span>
+      <span class="token punctuation">(</span>external_addr_i <span class="token operator">==</span> SPECIAL_ADDR<span class="token punctuation">)</span> <span class="token operator">&amp;</span> external_wr_en_i<span class="token punctuation">;</span>
 
-  `ASSERT_KNOWN(special_action_en)
+  <span class="token constant">`ASSERT_KNOWN</span><span class="token punctuation">(</span>special_action_en<span class="token punctuation">)</span>
 
-endmodule
+<span class="token keyword">endmodule</span>
 </code></pre>
 <h4 id="specific-guidance-on-case-statements-and-ternaries">Specific Guidance on Case Statements and Ternaries</h4>
 <p>To comply with this style, RTL must place <code>`ASSERT_KNOWN</code> assertions on all
 module outputs, with the exception of signals that may implicitly be <code>X</code> at the
 beginning of the simulation, such as FIFO, SRAM or register file outputs.</p>
-<pre class="language-"><code class="lang-systemverilog">module mymod (
-  input        ina_i,
-  input        inb_i,
-  output logic out_o
-);
-  assign out_o = ina_i ^ inb_i;
-  `ASSERT_KNOWN(OutKnown_A, out_o, clk_i, !rst_ni)
-endmodule : mymod
+<pre class="language-"><code class="lang-verilog"><span class="token keyword">module</span> mymod <span class="token punctuation">(</span>
+  <span class="token keyword">input</span>        ina_i<span class="token punctuation">,</span>
+  <span class="token keyword">input</span>        inb_i<span class="token punctuation">,</span>
+  <span class="token keyword">output</span> <span class="token keyword">logic</span> out_o
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">assign</span> out_o <span class="token operator">=</span> ina_i <span class="token operator">^</span> inb_i<span class="token punctuation">;</span>
+  <span class="token constant">`ASSERT_KNOWN</span><span class="token punctuation">(</span>OutKnown_A<span class="token punctuation">,</span> out_o<span class="token punctuation">,</span> clk_i<span class="token punctuation">,</span> <span class="token operator">!</span>rst_ni<span class="token punctuation">)</span>
+<span class="token keyword">endmodule</span> <span class="token punctuation">:</span> mymod
 </code></pre>
 <p>Further, it is encouraged to add assertions to the signals forming conditions of
 case statements, ternaries or if/else statements. The assertion style is at the
 designer&apos;s discretion, and can range from simple <code>`ASSERT_KNOWN</code>  to fully
 functional assertions, as shown in the following examples:</p>
-<pre class="language-"><code class="lang-systemverilog">typedef enum logic [1:0] {mode0, mode1, mode2} state_e;
-state_e sel;
+<pre class="language-"><code class="lang-verilog"><span class="token keyword">typedef</span> <span class="token keyword">enum</span> <span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">{</span>mode0<span class="token punctuation">,</span> mode1<span class="token punctuation">,</span> mode2<span class="token operator">}</span> state_e<span class="token punctuation">;</span>
+state_e sel<span class="token punctuation">;</span>
 
-// encouraged
-`ASSERT_KNOWN(SelKnown_A, sel)
-always_comb begin
-  out0 = &apos;0;
-  out1 = &apos;0;
-  unique case (sel)
-    mode1: out0 = foo;
-    mode2: out1 = bar;
-    default: ;
-  endcase
-end
+<span class="token comment">// encouraged</span>
+<span class="token constant">`ASSERT_KNOWN</span><span class="token punctuation">(</span>SelKnown_A<span class="token punctuation">,</span> sel<span class="token punctuation">)</span>
+<span class="token important">always_comb</span> <span class="token keyword">begin</span>
+  out0 <span class="token operator">=</span> &apos;<span class="token number">0</span><span class="token punctuation">;</span>
+  out1 <span class="token operator">=</span> &apos;<span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">unique</span> <span class="token keyword">case</span> <span class="token punctuation">(</span>sel<span class="token punctuation">)</span>
+    mode1<span class="token punctuation">:</span> out0 <span class="token operator">=</span> foo<span class="token punctuation">;</span>
+    mode2<span class="token punctuation">:</span> out1 <span class="token operator">=</span> bar<span class="token punctuation">;</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token punctuation">;</span>
+  <span class="token keyword">endcase</span>
+<span class="token keyword">end</span>
 
-// optional, but more explicit
-// not always applicable
-`ASSERT(MainFsmCase_A, sel inside {mode0, mode1, mode2}, clk_i, !rst_ni)
-always_comb begin
-  out0 = &apos;0;
-  out1 = &apos;0;
-  unique case (sel)
-    mode1: out0 = foo;
-    mode2: out1 = bar;
-    default: ;
-  endcase
-end
+<span class="token comment">// optional, but more explicit</span>
+<span class="token comment">// not always applicable</span>
+<span class="token constant">`ASSERT</span><span class="token punctuation">(</span>MainFsmCase_A<span class="token punctuation">,</span> sel <span class="token keyword">inside</span> <span class="token operator">{</span>mode0<span class="token punctuation">,</span> mode1<span class="token punctuation">,</span> mode2<span class="token operator">}</span><span class="token punctuation">,</span> clk_i<span class="token punctuation">,</span> <span class="token operator">!</span>rst_ni<span class="token punctuation">)</span>
+<span class="token important">always_comb</span> <span class="token keyword">begin</span>
+  out0 <span class="token operator">=</span> &apos;<span class="token number">0</span><span class="token punctuation">;</span>
+  out1 <span class="token operator">=</span> &apos;<span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">unique</span> <span class="token keyword">case</span> <span class="token punctuation">(</span>sel<span class="token punctuation">)</span>
+    mode1<span class="token punctuation">:</span> out0 <span class="token operator">=</span> foo<span class="token punctuation">;</span>
+    mode2<span class="token punctuation">:</span> out1 <span class="token operator">=</span> bar<span class="token punctuation">;</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token punctuation">;</span>
+  <span class="token keyword">endcase</span>
+<span class="token keyword">end</span>
 </code></pre>
 <p>In the context of ternary statements, the following are encouraged examples:</p>
-<pre class="language-"><code class="lang-systemverilog">// encouraged
-`ASSERT_KNOWN(ModeKnown_A, mode_i, clk_i, !rst_ni)
-`ASSERT_KNOWN(LenKnown_A, len_i, clk_i, !rst_ni)
-// assign &apos;0 for all other combinations
-assign val = (mode_i == ENC)                    ? 8&apos;h01 :
-             (mode_i == DEC &amp;&amp; len_i == LEN128) ? 8&apos;h36 :
-             (mode_i == DEC &amp;&amp; len_i == LEN192) ? 8&apos;h80 :
-             (mode_i == DEC &amp;&amp; len_i == LEN256) ? 8&apos;h40 : 8&apos;h00;
+<pre class="language-"><code class="lang-verilog"><span class="token comment">// encouraged</span>
+<span class="token constant">`ASSERT_KNOWN</span><span class="token punctuation">(</span>ModeKnown_A<span class="token punctuation">,</span> mode_i<span class="token punctuation">,</span> clk_i<span class="token punctuation">,</span> <span class="token operator">!</span>rst_ni<span class="token punctuation">)</span>
+<span class="token constant">`ASSERT_KNOWN</span><span class="token punctuation">(</span>LenKnown_A<span class="token punctuation">,</span> len_i<span class="token punctuation">,</span> clk_i<span class="token punctuation">,</span> <span class="token operator">!</span>rst_ni<span class="token punctuation">)</span>
+<span class="token comment">// assign &apos;0 for all other combinations</span>
+<span class="token keyword">assign</span> val <span class="token operator">=</span> <span class="token punctuation">(</span>mode_i <span class="token operator">==</span> ENC<span class="token punctuation">)</span>                    <span class="token operator">?</span> <span class="token number">8&apos;h01</span> <span class="token punctuation">:</span>
+             <span class="token punctuation">(</span>mode_i <span class="token operator">==</span> DEC <span class="token operator">&amp;&amp;</span> len_i <span class="token operator">==</span> LEN128<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">8&apos;h36</span> <span class="token punctuation">:</span>
+             <span class="token punctuation">(</span>mode_i <span class="token operator">==</span> DEC <span class="token operator">&amp;&amp;</span> len_i <span class="token operator">==</span> LEN192<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">8&apos;h80</span> <span class="token punctuation">:</span>
+             <span class="token punctuation">(</span>mode_i <span class="token operator">==</span> DEC <span class="token operator">&amp;&amp;</span> len_i <span class="token operator">==</span> LEN256<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">8&apos;h40</span> <span class="token punctuation">:</span> <span class="token number">8&apos;h00</span><span class="token punctuation">;</span>
 
-// optional, but more explicit
-`ASSERT(ValSelValid_A, mode_i == ENC || mode_i == DEC &amp;&amp;
-    len_i inside {LEN128, LEN192, LEN256}, clk_i, !rst_ni)
-// using one of the valid outputs for other combinations (saves logic)
-assign val = (mode_i == ENC)                    ? 8&apos;h01 :
-             (mode_i == DEC &amp;&amp; len_i == LEN128) ? 8&apos;h36 :
-             (mode_i == DEC &amp;&amp; len_i == LEN192) ? 8&apos;h80 :
-             (mode_i == DEC &amp;&amp; len_i == LEN256) ? 8&apos;h40 : 8&apos;h01;
+<span class="token comment">// optional, but more explicit</span>
+<span class="token constant">`ASSERT</span><span class="token punctuation">(</span>ValSelValid_A<span class="token punctuation">,</span> mode_i <span class="token operator">==</span> ENC <span class="token operator">||</span> mode_i <span class="token operator">==</span> DEC <span class="token operator">&amp;&amp;</span>
+    len_i <span class="token keyword">inside</span> <span class="token operator">{</span>LEN128<span class="token punctuation">,</span> LEN192<span class="token punctuation">,</span> LEN256<span class="token operator">}</span><span class="token punctuation">,</span> clk_i<span class="token punctuation">,</span> <span class="token operator">!</span>rst_ni<span class="token punctuation">)</span>
+<span class="token comment">// using one of the valid outputs for other combinations (saves logic)</span>
+<span class="token keyword">assign</span> val <span class="token operator">=</span> <span class="token punctuation">(</span>mode_i <span class="token operator">==</span> ENC<span class="token punctuation">)</span>                    <span class="token operator">?</span> <span class="token number">8&apos;h01</span> <span class="token punctuation">:</span>
+             <span class="token punctuation">(</span>mode_i <span class="token operator">==</span> DEC <span class="token operator">&amp;&amp;</span> len_i <span class="token operator">==</span> LEN128<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">8&apos;h36</span> <span class="token punctuation">:</span>
+             <span class="token punctuation">(</span>mode_i <span class="token operator">==</span> DEC <span class="token operator">&amp;&amp;</span> len_i <span class="token operator">==</span> LEN192<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">8&apos;h80</span> <span class="token punctuation">:</span>
+             <span class="token punctuation">(</span>mode_i <span class="token operator">==</span> DEC <span class="token operator">&amp;&amp;</span> len_i <span class="token operator">==</span> LEN256<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">8&apos;h40</span> <span class="token punctuation">:</span> <span class="token number">8&apos;h01</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Note that there are cases where the input into a case or ternary could be <code>X</code>
 but only under circumstances where it doesn&apos;t matter as the output will be
@@ -2185,20 +2185,20 @@ the input may be fed directly from a memory or from a top-level input that a DV
 environment drives to <code>X</code>. A plain <code>`ASSERT_KNOWN</code> will not work under these
 circumstances and it is appropriate to use an assert with some qualifying valid
 instead:</p>
-<pre class="language-"><code class="lang-systemverilog">`ASSERT(AddrKnownIfValid, addr_valid |-&gt; !$isunknown(addr))
-always_comb begin
-  out = &apos;0
-  unique case (addr[1:0])
-    ConstAddr1: out = foo;
-    ConstAddr2: out = bar;
-    default:    out = baz;
-  endcase
-end
+<pre class="language-"><code class="lang-verilog"><span class="token constant">`ASSERT</span><span class="token punctuation">(</span>AddrKnownIfValid<span class="token punctuation">,</span> addr_valid <span class="token operator">|-&gt;</span> <span class="token operator">!</span><span class="token kernel-function property">$isunknown</span><span class="token punctuation">(</span>addr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token important">always_comb</span> <span class="token keyword">begin</span>
+  out <span class="token operator">=</span> &apos;<span class="token number">0</span>
+  <span class="token keyword">unique</span> <span class="token keyword">case</span> <span class="token punctuation">(</span>addr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    ConstAddr1<span class="token punctuation">:</span> out <span class="token operator">=</span> foo<span class="token punctuation">;</span>
+    ConstAddr2<span class="token punctuation">:</span> out <span class="token operator">=</span> bar<span class="token punctuation">;</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>    out <span class="token operator">=</span> baz<span class="token punctuation">;</span>
+  <span class="token keyword">endcase</span>
+<span class="token keyword">end</span>
 </code></pre>
 <p>The aim should be to make the qualifying valid signal as wide reaching as
 possible rather than narrowing down the <code>X</code> check more than is required:</p>
 <p>&#x1F44E;
-<code>``systemverilog {.bad}</code>ASSERT(AddrKnownIfValid,
+<code>``verilog {.bad}</code>ASSERT(AddrKnownIfValid,
   addr_valid &amp; internal_condition_1 &amp; internal_condition_2 |-&gt;
   !$isunknown(addr))</p>
 <pre class="language-"><code>
@@ -2211,7 +2211,7 @@ These solutions are illustrated in the following examples.
 
 
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 logic selected;
 logic [3:0] idx;
 logic [11:0] foo; // problematic
@@ -2219,7 +2219,7 @@ logic [11:0] foo; // problematic
 assign foo = {12&apos;b1010_1111_0000};
 assign selected = foo[idx];
 </code></pre><p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 logic selected;
 logic [3:0] idx;
 logic [15:0] foo; // aligned to powers of two</p>
@@ -2227,7 +2227,7 @@ logic [15:0] foo; // aligned to powers of two</p>
 assign selected = foo[idx];</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 logic selected;
 logic [3:0] idx;
 logic [11:0] foo;
@@ -2238,12 +2238,12 @@ assign foo = {12&apos;b1010_1111_0000};
 assign selected = (idx &lt; $bits(foo)) ? foo[idx] : 1&apos;b0;
 </code></pre><h3 id="combinational-logic">Combinational Logic</h3>
 <p><strong><em>Avoid sensitivity lists, and use a consistent assignment type.</em></strong></p>
-<p>Use <code>always_comb</code> for SystemVerilog combinational blocks. Use <code>always @*</code> if
+<p>Use <code>always_comb</code> for Verilog combinational blocks. Use <code>always @*</code> if
 only Verilog-2001 is supported. Never explicitly declare sensitivity lists for
 combinational logic.</p>
 <p>Prefer assign statements wherever practical.</p>
 <p>Example:</p>
-<pre class="language-"><code class="lang-systemverilog">assign final_value = xyz ? value_a : value_b;
+<pre class="language-"><code class="lang-verilog"><span class="token keyword">assign</span> final_value <span class="token operator">=</span> xyz <span class="token operator">?</span> value_a <span class="token punctuation">:</span> value_b<span class="token punctuation">;</span>
 </code></pre>
 <p>Where a case statement is needed, enclose it in its own <code>always_comb</code> block.</p>
 <p>Synthesizable combinational logic blocks should only use blocking assignments.</p>
@@ -2257,16 +2257,16 @@ practice. Always define a default case.</em></strong></p>
 <p>Never use either the <code>full_case</code> or <code>parallel_case</code> pragmas. These pragmas can
 easily cause synthesis-simulation mismatches.</p>
 <p>Here is an example of a style-compliant full case statement:</p>
-<pre class="language-"><code class="lang-systemverilog">always_comb begin
-  unique casez (select)
-    3&apos;b000: operand = accum0 &gt;&gt; 0;
-    3&apos;b001: operand = accum0 &gt;&gt; 1;
-    3&apos;b010: operand = accum1 &gt;&gt; 0;
-    3&apos;b011: operand = accum1 &gt;&gt; 1;
-    3&apos;b1??: operand = regfile[select[1:0]];
-    default: operand = &apos;0; // assign a default
-  endcase
-end
+<pre class="language-"><code class="lang-verilog"><span class="token important">always_comb</span> <span class="token keyword">begin</span>
+  <span class="token keyword">unique</span> <span class="token keyword">casez</span> <span class="token punctuation">(</span>select<span class="token punctuation">)</span>
+    <span class="token number">3&apos;b000</span><span class="token punctuation">:</span> operand <span class="token operator">=</span> accum0 <span class="token operator">&gt;&gt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token number">3&apos;b001</span><span class="token punctuation">:</span> operand <span class="token operator">=</span> accum0 <span class="token operator">&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token number">3&apos;b010</span><span class="token punctuation">:</span> operand <span class="token operator">=</span> accum1 <span class="token operator">&gt;&gt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token number">3&apos;b011</span><span class="token punctuation">:</span> operand <span class="token operator">=</span> accum1 <span class="token operator">&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token number">3&apos;b1??</span><span class="token punctuation">:</span> operand <span class="token operator">=</span> regfile<span class="token punctuation">[</span>select<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span> operand <span class="token operator">=</span> &apos;<span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// assign a default</span>
+  <span class="token keyword">endcase</span>
+<span class="token keyword">end</span>
 </code></pre>
 <p>The <code>unique</code> prefix is recommended before all case statements, as it creates
 simulation assertions that can catch certain mistakes. In some cases, <code>priority</code>
@@ -2294,31 +2294,31 @@ omit common assignments in the individual cases further below. If it weren&apos;
 the common default assignments before the case statement, all variables would
 have to be assigned a value in all cases and in the <code>default:</code> in order to
 prevent simulation-synthesis mismatches.</p>
-<pre class="language-"><code class="lang-systemverilog">always_comb begin
-  // common default assignments
-  state_d = state_q;
-  outa = 1&apos;b0;
-  outb = 1&apos;b0;
-  outc = 1&apos;b0;
+<pre class="language-"><code class="lang-verilog"><span class="token important">always_comb</span> <span class="token keyword">begin</span>
+  <span class="token comment">// common default assignments</span>
+  state_d <span class="token operator">=</span> state_q<span class="token punctuation">;</span>
+  outa <span class="token operator">=</span> <span class="token number">1&apos;b0</span><span class="token punctuation">;</span>
+  outb <span class="token operator">=</span> <span class="token number">1&apos;b0</span><span class="token punctuation">;</span>
+  outc <span class="token operator">=</span> <span class="token number">1&apos;b0</span><span class="token punctuation">;</span>
 
-  unique case (state_q)
-    Idle: begin
-      state_d = Work;
-      outa = in0;
-    end
-    Work: begin
-      state_d = Wait;
-      outb = in1;
-    end
-    Wait: begin
-      state_d = Idle;
-      outc = in2;
-    end
-    // always include a default case
-    // empty default permissible due to defaults before case block
-    default: ;
-  endcase
-end
+  <span class="token keyword">unique</span> <span class="token keyword">case</span> <span class="token punctuation">(</span>state_q<span class="token punctuation">)</span>
+    Idle<span class="token punctuation">:</span> <span class="token keyword">begin</span>
+      state_d <span class="token operator">=</span> Work<span class="token punctuation">;</span>
+      outa <span class="token operator">=</span> in0<span class="token punctuation">;</span>
+    <span class="token keyword">end</span>
+    Work<span class="token punctuation">:</span> <span class="token keyword">begin</span>
+      state_d <span class="token operator">=</span> Wait<span class="token punctuation">;</span>
+      outb <span class="token operator">=</span> in1<span class="token punctuation">;</span>
+    <span class="token keyword">end</span>
+    Wait<span class="token punctuation">:</span> <span class="token keyword">begin</span>
+      state_d <span class="token operator">=</span> Idle<span class="token punctuation">;</span>
+      outc <span class="token operator">=</span> in2<span class="token punctuation">;</span>
+    <span class="token keyword">end</span>
+    <span class="token comment">// always include a default case</span>
+    <span class="token comment">// empty default permissible due to defaults before case block</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token punctuation">;</span>
+  <span class="token keyword">endcase</span>
+<span class="token keyword">end</span>
 </code></pre>
 <h4 id="wildcards-in-case-items">Wildcards in case items</h4>
 <p>Use <code>case</code> if wildcard operator behavior is not needed.
@@ -2338,8 +2338,8 @@ wildcard, so this form is preferred over <code>casez</code>.</p>
 <ul>
 <li>Don Mills, <a href="http://www.lcdm-eng.com/papers/snug12_Paper_final.pdf" target="_blank">Yet Another Latch and Gotchas Paper</a></li>
 <li>Clifford Cummings, <a href="http://www.sunburst-design.com/papers/CummingsSNUG1999Boston_FullParallelCase_rev1_1.pdf" target="_blank">full_case parallel_case, the Evil Twins of Verilog Synthesis</a></li>
-<li>Clifford Cummings, <a href="http://www.sunburst-design.com/papers/CummingsSNUG2005Israel_SystemVerilog_UniquePriority.pdf" target="_blank">SystemVerilog&apos;s priority &amp; unique</a></li>
-<li>Sutherland, Mills, and Spear, <a href="http://www.lcdm-eng.com/papers/snug07_Verilog%20Gotchas%20Part2.pdf" target="_blank">Gotcha Again: More Subtleties in the Verilog and SystemVerilog Standards That Every Engineer Should Know</a></li>
+<li>Clifford Cummings, <a href="http://www.sunburst-design.com/papers/CummingsSNUG2005Israel_Verilog_UniquePriority.pdf" target="_blank">Verilog&apos;s priority &amp; unique</a></li>
+<li>Sutherland, Mills, and Spear, <a href="http://www.lcdm-eng.com/papers/snug07_Verilog%20Gotchas%20Part2.pdf" target="_blank">Gotcha Again: More Subtleties in the Verilog and Verilog Standards That Every Engineer Should Know</a></li>
 </ul>
 <h3 id="generate-constructs">Generate Constructs</h3>
 <p><strong><em>Always name your generated blocks.</em></strong></p>
@@ -2352,7 +2352,7 @@ different tools.</p>
 be placed between <code>begin</code> and the code block name.</p>
 <p>Example of a conditional generate construct:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 if (TypeIsPosedge) begin : posedge_type
   always_ff @(posedge clk) foo &lt;= bar;
 end else begin : negedge_type
@@ -2362,7 +2362,7 @@ end</p>
 Example of a loop generate construct:
 
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 for (genvar ii = 0; ii &lt; NumberOfBuses; ii++) begin : my_buses
   my_bus #(.index(ii)) i_my_bus (.foo(foo), .bar(bar[ii]));
 end
@@ -2378,16 +2378,16 @@ operands to unsigned and generates a warning. There should not be any
 signed-to-unsigned warnings from either the simulation or synthesis tools if all
 unsigned variables are properly casted.</p>
 <p>Example of implicit signed-to-unsigned casting:</p>
-<pre class="language-"><code class="lang-systemverilog">logic signed [7:0]  a;
-logic               incr;
-logic signed [15:0] sum1, sum2, sum3;
-initial begin
-  a = 8&apos;sh80;                        // a = -128
-  incr = 1&apos;b1;
-  sum1 = a + incr;                   // bad:  sum1 = 16&apos;h0081 ( 129)
-  sum2 = a + signed&apos;({1&apos;b0, incr});  // good: sum2 = 16&apos;hFF81 (-127)
-  sum3 = a + 8&apos;sh01;                 // good: sum3 = sum2 (more straightforward)
-end
+<pre class="language-"><code class="lang-verilog"><span class="token keyword">logic</span> <span class="token keyword">signed</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span>  a<span class="token punctuation">;</span>
+<span class="token keyword">logic</span>               incr<span class="token punctuation">;</span>
+<span class="token keyword">logic</span> <span class="token keyword">signed</span> <span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> sum1<span class="token punctuation">,</span> sum2<span class="token punctuation">,</span> sum3<span class="token punctuation">;</span>
+<span class="token keyword">initial</span> <span class="token keyword">begin</span>
+  a <span class="token operator">=</span> <span class="token number">8</span>&apos;sh80<span class="token punctuation">;</span>                        <span class="token comment">// a = -128</span>
+  incr <span class="token operator">=</span> <span class="token number">1&apos;b1</span><span class="token punctuation">;</span>
+  sum1 <span class="token operator">=</span> a <span class="token operator">+</span> incr<span class="token punctuation">;</span>                   <span class="token comment">// bad:  sum1 = 16&apos;h0081 ( 129)</span>
+  sum2 <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token keyword">signed</span>&apos;<span class="token punctuation">(</span><span class="token operator">{</span><span class="token number">1&apos;b0</span><span class="token punctuation">,</span> incr<span class="token operator">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// good: sum2 = 16&apos;hFF81 (-127)</span>
+  sum3 <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">8</span>&apos;sh01<span class="token punctuation">;</span>                 <span class="token comment">// good: sum3 = sum2 (more straightforward)</span>
+<span class="token keyword">end</span>
 </code></pre>
 <p>In the above example, the fact that <code>incr</code> is unsigned causes <code>a</code> to be
 evaluated as unsigned as well. The <code>sum1</code> evaluation is surprising and is
@@ -2402,13 +2402,13 @@ modifiers. Use a <code>0x</code> prefix for hexadecimal and <code>0b</code> pref
 <p>Decode individual fields of large structures individually, instead of expecting
 the user to manually decode raw values.</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 $display(&quot;0x%0x&quot;, some_hex_value);
 $display(&quot;0b%0b&quot;, some_binary_value);
 $display(&quot;%0d&quot;,   some_decimal_value);</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 $display(&quot;%0x&quot;,   some_hex_value);
 $display(&quot;%0b&quot;,   some_binary_value);
 $display(&quot;0d%0d&quot;, some_decimal_value);
@@ -2417,7 +2417,7 @@ hex or binary bit strengths of length beyond 8 for better readability. Zero
 prepending is not required unless it improves readability. Declare constants in
 the format (binary, hex, decimal) they are typically displayed in.</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 logic [15:0] val0, val1, val2;
 logic [39:0] addr0, addr1;</p>
 <p>always_comb begin
@@ -2463,7 +2463,7 @@ not required on the function arguments.
 
 
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 // - Doesn&apos;t have explicit storage type on `a` or `b` or return type
 // - `b` being used as `output` argument
 // - `input` not required on `a`
@@ -2472,7 +2472,7 @@ function automatic [2:0] foo(input [2:0] a, [2:0] b);
   return a + b;
 endfunction
 </code></pre><p>&#x1F44E;
-<code>``systemverilog {.bad}
+<code>``verilog {.bad}
 // - Doesn&apos;t have explicit storage type on</code>a<code>,</code>b<code>or</code>c<code>// - Uses</code>output<code>on</code>c<code>// -</code>input<code>not required on</code>a<code>and</code>b`
 function automatic logic [2:0] foo(input [2:0] a, input [2:0] b, output [2:0] c);
   c = a - b;
@@ -2480,19 +2480,19 @@ function automatic logic [2:0] foo(input [2:0] a, input [2:0] b, output [2:0] c)
 endfunction</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 // - Uses 2-state data type `int` for `a`
 function automatic logic [2:0] foo(int a, logic [2:0] b);
   return a + b;
 endfunction
 </code></pre><p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 function automatic logic [2:0] foo(logic [2:0] a, logic [2:0] b);
  return a ^ b;
 endfunction</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 typedef logic [2:0] bar_t;
 
 typedef struct packed {
@@ -2505,7 +2505,7 @@ endfunction
 </code></pre><p>Data should be returned from a function using an explicit <code>return result</code> style.
 Do not use a <code>function_name = result</code> style.</p>
 <p>&#x1F44E;
-```systemverilog {.bad}
+```verilog {.bad}
 function automatic logic [2:0] foo(logic [2:0] a, logic [2:0] b);
   if (a == 3&apos;d2) begin
     foo = b;
@@ -2515,7 +2515,7 @@ function automatic logic [2:0] foo(logic [2:0] a, logic [2:0] b);
 endfunction</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 function automatic logic [2:0] foo(logic [2:0] a, logic [2:0] b);
   logic [2:0] result;
 
@@ -2531,7 +2531,7 @@ endfunction
 initial assignment or through the use of <code>else</code> and <code>default:</code> for <code>if</code> and
 <code>case</code> statements.</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 function automatic logic [2:0] foo(logic [2:0] a, logic [2:0] b);
   logic [2:0] local_var_1;
   logic [2:0] local_var_2;</p>
@@ -2548,7 +2548,7 @@ function automatic logic [2:0] foo(logic [2:0] a, logic [2:0] b);
 endfunction</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 function automatic logic [2:0] foo(logic [2:0] a, logic [2:0] b);
   logic [2:0] local_var_1;
   logic [2:0] local_var_2;
@@ -2577,7 +2577,7 @@ constructs is not LRM compliant. While such usage might be accepted by some
 tools, this guide prohibits such &quot;bare&quot; generate blocks. Note that the similar
 &quot;sequential block&quot; construct is LRM compliant and allowed.</p>
 <p>&#x1F44E;
-```systemverilog {.bad}
+```verilog {.bad}
 module foo (
   input bar,
   output foo
@@ -2595,11 +2595,11 @@ tools error out and others may silently ignore them potentially leading to
 simulation/synthesis mismatches.
 
 An exemption to this is the case where the hierarchical references are guarded
-by macros to remove them for synthesis, e.g., as part of SystemVerilog
+by macros to remove them for synthesis, e.g., as part of Verilog
 assertions (SVAs).
 
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 
 module mymod_int (
   input        in0_i,
@@ -2647,32 +2647,32 @@ must specify a data type. A correct design contains no inferred nets.</p>
 <p><strong><em>Use <code>logic</code> for synthesis. <code>wire</code> is allowed when necessary.</em></strong></p>
 <p>All signals in synthesizable RTL must be implemented in terms of 4-state data
 types. This means that all signals must ultimately be constructed of nets with
-the storage type of <code>logic</code>. While SystemVerilog does provide other data
+the storage type of <code>logic</code>. While Verilog does provide other data
 primitives with 4-state storage (ie. <code>integer</code>), those primitives are prone to
 misunderstandings and misuse.</p>
 <p>For example:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 logic signed [31:0] x_velocity;  // say what you mean: a signed 32-bit integer.
 typedef logic [7:0] byte_t;</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 bit signed [63:0] stars_in_the_sky;  // 2-state logic doesn&apos;t belong in RTL
 int grains_of_sand;  // Or wait, did I mean integer?  Easy to confuse!
 </code></pre><p>It is permissible to use wire as a short-hand to both declare a net and perform
 continuous assignment. Take care not to confuse continuous assignment with
 initialization. For example:</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 wire [7:0] sum = a + b;  // Continuous assignment</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 logic [7:0] sum = a + b; // Initialization (not synthesizable)
 </code></pre><p><code>sum</code> is initialized to sum of initial values of a and b.</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 logic [7:0] acc = &apos;0;    // Initialization (synthesizable on some FPGA tools)</p>
 <pre class="language-"><code>
 There are exceptions for places where `logic` is inappropriate. For example,
@@ -2695,7 +2695,7 @@ where it is clear that the evaluated expression is to be used in a logical
 context.
 
 :+1:
-```systemverilog {.good}
+```verilog {.good}
 always_ff @(posedge clk_i or negedge rst_ni) begin
   if (!rst_ni) begin
     reg_q &lt;= &apos;0;
@@ -2714,7 +2714,7 @@ end
 assign z = ((bool_a != bool_b) || bool_c) ? a : b;
 assign y = (a &amp; ~b) | c;
 </code></pre><p>:-1:
-```systemverilog {.bad}
+```verilog {.bad}
 always_ff @(posedge clk_i or negedge rst_ni) begin
   if (~rst_ni) begin
     reg_q &lt;= &apos;0;
@@ -2732,7 +2732,7 @@ end</p>
 assign y = (a &amp;&amp; !b) || c;</p>
 <pre class="language-"><code>
 :+1:
-```systemverilog
+```verilog
 // allowed logical assignment for boolean test
 assign request_valid = !fifo_empty &amp;&amp; data_available;
 
@@ -2750,12 +2750,12 @@ bound (left of the colon) must be greater than or equal to the least-significant
 bound (right of the colon).</p>
 <p>This style of bit vector declaration keeps packed variables little-endian.</p>
 <p>For example:</p>
-<pre class="language-"><code class="lang-systemverilog">typedef logic [7:0] u8_t;
-logic [31:0] u32_word;
-u8_t [1:0] u16_word;
-u8_t byte3, byte2, byte1, byte0;
-assign u16_word = {byte1, byte0};
-assign u32_word = {byte3, byte2, u16_word};
+<pre class="language-"><code class="lang-verilog"><span class="token keyword">typedef</span> <span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> u8_t<span class="token punctuation">;</span>
+<span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">31</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> u32_word<span class="token punctuation">;</span>
+u8_t <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> u16_word<span class="token punctuation">;</span>
+u8_t byte3<span class="token punctuation">,</span> byte2<span class="token punctuation">,</span> byte1<span class="token punctuation">,</span> byte0<span class="token punctuation">;</span>
+<span class="token keyword">assign</span> u16_word <span class="token operator">=</span> <span class="token operator">{</span>byte1<span class="token punctuation">,</span> byte0<span class="token operator">}</span><span class="token punctuation">;</span>
+<span class="token keyword">assign</span> u32_word <span class="token operator">=</span> <span class="token operator">{</span>byte3<span class="token punctuation">,</span> byte2<span class="token punctuation">,</span> u16_word<span class="token operator">}</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 id="unpacked-ordering">Unpacked Ordering</h3>
 <p><strong><em>Unpacked arrays must be big-endian.</em></strong></p>
@@ -2765,7 +2765,7 @@ m</code>). Never declare an unpacked array in little-endian order, such as
 <p>Declare zero-based unpacked arrays using the shorter notation <code>[size]</code>. It is
 understood that <code>[size]</code> is equivalent to the big-endian declaration
 <code>[0:size-1]</code>.</p>
-<pre class="language-"><code class="lang-systemverilog">logic [15:0] word_array[3] = &apos;{word0, word1, word2};
+<pre class="language-"><code class="lang-verilog"><span class="token keyword">logic</span> <span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> word_array<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> &apos;<span class="token operator">{</span>word0<span class="token punctuation">,</span> word1<span class="token punctuation">,</span> word2<span class="token operator">}</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 id="finite-state-machines">Finite State Machines</h3>
 <p><strong><em>State machines use an enum to define states, and be implemented with
@@ -2813,7 +2813,7 @@ variable should latch the value of the &quot;next state&quot; variable.</p>
 name, to make them more readable when viewing waveform traces.</p>
 <p><em>Example</em></p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 // Define the states
 typedef enum {
   StIdle, StFrameStart, StDynInstrRead, StBandCorr, StAccStoreWrite, StBandEnd
@@ -2874,7 +2874,7 @@ be identifed with the `_q2` suffix, and then `_q3` and so on.
 
 Example:
 
-```systemverilog
+```verilog
 always_ff @(posedge clk) begin
   data_valid_q &lt;= data_valid_d;
   data_valid_q2 &lt;= data_valid_q;
@@ -2885,7 +2885,7 @@ end
 package is part of the same IP as the module that uses that package.  Wildcard
 import statement must be placed in the module header or in the module body.</p>
 <p>&#x1F44D;
-```systemverilog {.good}
+```verilog {.good}
 // mod_a_pkg.sv and mod_a.sv are in the same IP.
 // Packages can be imported in the module declaration if access to
 // unqualified types is needed in the port list.</p>
@@ -2906,7 +2906,7 @@ module mod_a
 <p>endmodule</p>
 <pre class="language-"><code>
 <span class="token entity" title="&#x1F44D;">&amp;#x1f44d;</span>
-```systemverilog {.good}
+```verilog {.good}
 // mod_a
 module mod_a ();
 
@@ -2922,7 +2922,7 @@ endmodule
 the example below may create a name collision in the module following <code>mod_a</code>
 in the source list.</p>
 <p>&#x1F44E;
-```systemverilog {.bad}
+```verilog {.bad}
 // mod_a.sv
 import mod_a_pkg::*; // not allowed: imported to $root scope.</p>
 <p>module mod_a ();</p>
@@ -2931,11 +2931,11 @@ import mod_a_pkg::*; // not allowed: imported to $root scope.</p>
 Other bad examples:
 
 <span class="token entity" title="&#x1F44E;">&amp;#x1f44e;</span>
-```systemverilog {.bad}
+```verilog {.bad}
 // wildcard import for other packages outside of the IP
 module mod_a import mod_b_pkg::*; ();
 </code></pre><p>&#x1F44E;
-```systemverilog {.bad}
+```verilog {.bad}
 module mod_a ();</p>
 <p>  // not allowed: wildcard import of a package from a different IP
   import mod_b_pkg::*;</p>
@@ -2943,12 +2943,12 @@ module mod_a ();</p>
 <pre class="language-"><code>
 ### Assertion Macros
 
-It is encouraged to use SystemVerilog assertions (SVAs) throughout the design to
+It is encouraged to use Verilog assertions (SVAs) throughout the design to
 check functional correctness and flag invalid conditions. In order to increase
 productivity and keep the assertions short and concise, the following assertion
 macros can be used:
 
-```systemverilog
+```verilog
 // immediate assertion, to be placed within a process.
 `ASSERT_I(<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>, <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>)
 // immediate assertion wrapped within an initial block. can be used for things
@@ -2968,9 +2968,9 @@ in guarding case statements and ternaries shall be postfixed with <code>_SEC</co
 enables security-specific post-processing of these statements at a later stage
 in the design process. In terms of functionality these macros should be
 identical to the original assertions, i.e.,</p>
-<pre class="language-"><code class="lang-systemverilog">`define ASSERT_SEC `ASSERT
-`define ASSERT_I_SEC `ASSERT_I
-`define ASSERT_KNOWN_SEC `ASSERT_KNOWN
+<pre class="language-"><code class="lang-verilog"><span class="token constant">`define</span> ASSERT_SEC <span class="token constant">`ASSERT</span>
+<span class="token constant">`define</span> ASSERT_I_SEC <span class="token constant">`ASSERT_I</span>
+<span class="token constant">`define</span> ASSERT_KNOWN_SEC <span class="token constant">`ASSERT_KNOWN</span>
 </code></pre>
 <p>More security assertion and coding style guidance will be given in a separate
 document, soon.</p>
@@ -2979,7 +2979,7 @@ document, soon.</p>
 body for explanations examples, and exceptions.</p>
 <h3 id="basic-style-elements">Basic Style Elements</h3>
 <ul>
-<li>Use SystemVerilog-2012 conventions, files named as module.sv, one file
+<li>Use Verilog-2012 conventions, files named as module.sv, one file
 per module</li>
 <li>Only ASCII, <strong>100</strong> chars per line, <strong>no</strong> tabs, <strong>two</strong> spaces per
 indent for all paired keywords.</li>
@@ -3056,7 +3056,7 @@ outputs in the process</li>
 <li>Default value for next state variable should be the current state </li>
 </ul>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Priself.zz@gmail.com 2023 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2023-05-19 15:40:47
+2023-05-19 15:44:14
 </span></footer>
                                 
                                 </section>
@@ -3096,7 +3096,7 @@ outputs in the process</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SV代码风格","level":"1.2","depth":1,"next":{"title":"Ariane(cva6)","level":"2.1","depth":1,"ref":"","articles":[]},"previous":{"title":"README","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-default","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","alerts","fontsettings","tbfed-pagefooter"],"root":".","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Priself.zz@gmail.com 2023","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"splitter":{},"search-pro":{},"hide-element":{},"katex":{},"fontsettings":{"family":"sans","size":12,"theme":"white"},"alerts":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blog","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"学习的一些知识与心得"},"file":{"path":"blog/SV.md","mtime":"2023-05-19T07:40:47.064Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-19T07:40:48.189Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SV代码风格","level":"1.2","depth":1,"next":{"title":"Ariane(cva6)","level":"2.1","depth":1,"ref":"","articles":[]},"previous":{"title":"README","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-default","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","alerts","fontsettings","tbfed-pagefooter"],"root":".","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Priself.zz@gmail.com 2023","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"splitter":{},"search-pro":{},"hide-element":{},"katex":{},"fontsettings":{"family":"sans","size":12,"theme":"white"},"alerts":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blog","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"学习的一些知识与心得"},"file":{"path":"blog/SV.md","mtime":"2023-05-19T07:44:14.456Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-19T07:44:32.607Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

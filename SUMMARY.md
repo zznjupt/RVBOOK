@@ -5,6 +5,7 @@
 ## 通用处理器
 
 * Ariane(cva6)
+	* [BHT](./blog/cva6/bht.md)
 
 * Rocket Core
 

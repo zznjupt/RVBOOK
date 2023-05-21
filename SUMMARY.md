@@ -2,8 +2,8 @@
 
 * [README](README.md)
 
-## 通用处理器
-
+## 通用超标量处理器
+* MIPS R10000
 * Ariane(cva6)
 	* [BHT](./blog/cva6/bht.md)
 

@@ -15,9 +15,10 @@
 
 * AI 芯片体系架构基础
 	* [AI 芯片指标](./blog/AI/AI芯片指标.md)
-	* [硬件定点数](./blog/hardfix/README.md)
+	* [浮点数、定点数](./blog/hardfix/README.md)
 
 * AI 芯片架构
+	* SIMD(@Vector)
 	* SIMT(@GPGPU)
 	* [脉动阵列(@Gemini、TPU、Xilinx AIE)](./blog/hardalgo/systolic-array.md)
 

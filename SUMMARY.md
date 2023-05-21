@@ -18,11 +18,12 @@
 	* [浮点数、定点数](./blog/hardfix/README.md)
 
 * AI 芯片架构
-	* SIMD(@Vector)
+	* SIMD
+	* Vector
 	* SIMT(@GPGPU)
 	* [脉动阵列(@Gemini、TPU、Xilinx AIE)](./blog/hardalgo/systolic-array.md)
 
-## 隐私计算
+## 隐私计算DSA
 
 * 隐私计算数学基础
 

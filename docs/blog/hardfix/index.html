@@ -427,44 +427,6 @@ n
 | 1000_0000_0000_0000 |  -32768  |           -128.0           | &#x8D1F;&#x6700;&#x5C0F;&#x503C; |
 | 0001_0101_1100_0011 |   5571   |         21.76171875         |    /    |
 | 1001_0101_1010_0110 |  -27226  |        -106.3515625        |    /    |</p>
-<!-- ## Verilog-FixedPoint
-
-SystemVerilog 定点数库
-
-* 可定制整数位宽和小数位宽。
-* **运算** ： 加、减、乘、除、开方。
-* **溢出检测** ： 发生溢出时，溢出信号=1，输出结果会设为正最大值（上溢出）或负最小值（下溢出）。
-* **舍入控制** ： 发生截断时，可选择是否进行四舍五入。
-* **与单精度浮点数（IEEE754）互相转换** 。
-* 所有运算均有 **单周期实现** ，组合逻辑延迟长的运算有 **流水线实现** 。
-
-本库的模块输入输出都可以用参数 (parameter) 来定制定点数位宽，这些参数的命名是统一的：
-
-- WOI 和 WOF 分别是输出的定点数的整数位宽和小数位宽。
-- 对于单目运算， WII 和 WIF 分别是输入的定点数的整数位宽和小数位宽。
-- 对于双目运算， WIIA 和 WIFA 分别是输入操作数A的定点数的整数位宽和小数位宽；WIIB 和 WIFB 分别是输入操作数B的定点数的整数位宽和小数位宽。
-
-以乘法器为例：
-
-```verilog
-module fxp_mul #( // 以乘法器为
-    parameter WIIA = 8,       // 输入(乘数a)的整数位宽，默认=8
-    parameter WIFA = 8,       // 输入(乘数a)的小数位宽，默认=8
-    parameter WIIB = 8,       // 输入(乘数b)的整数位宽，默认=8
-    parameter WIFB = 8,       // 输入(乘数b)的小数位宽，默认=8
-    parameter WOI  = 8,       // 输出(积)的整数位宽，默认=8
-    parameter WOF  = 8,       // 输出(积)的小数位宽，默认=8
-    parameter bit ROUND= 1    // 当积的小数截断时，是否四舍五入，默认是
-)(
-    input  wire [WIIA+WIFA-1:0] ina, // 乘数a
-    input  wire [WIIB+WIFB-1:0] inb, // 乘数b
-    output wire [WOI +WOF -1:0] out, // 结果(积) = 乘数a * 乘数b
-    output wire overflow             // 结果是否溢出，若溢出则为 1'b1
-                                     // 若为上溢出，则out被置为最大正值
-                                     // 若为下溢出，则out被置为最小负值
-);
-``` 
--->
 <h2 id="&#x6D6E;&#x70B9;&#x6570;&#x8F6C;&#x5B9A;&#x70B9;&#x6570;">&#x6D6E;&#x70B9;&#x6570;&#x8F6C;&#x5B9A;&#x70B9;&#x6570;</h2>
 <h3 id="&#x7EC4;&#x5408;&#x903B;&#x8F91;">&#x7EC4;&#x5408;&#x903B;&#x8F91;</h3>
 <pre class="language-"><code class="lang-verilog"><span class="token keyword">module</span> Float2Fix #<span class="token punctuation">(</span>
@@ -557,7 +519,7 @@ module fxp_mul #( // 以乘法器为
 <span class="token keyword">endmodule</span>
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Priself.zz@gmail.com 2023 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2023-05-21 20:51:23
+2023-05-21 20:55:09
 </span></footer>
                                 
                                 </section>
@@ -597,7 +559,7 @@ module fxp_mul #( // 以乘法器为
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"硬件定点数","level":"3.1.2","depth":2,"next":{"title":"AI 芯片架构","level":"3.2","depth":1,"ref":"","articles":[{"title":"脉动阵列(@Gemini、TPU、AIE)","level":"3.2.1","depth":2,"path":"blog/hardalgo/systolic-array.md","ref":"./blog/hardalgo/systolic-array.md","articles":[]}]},"previous":{"title":"AI 芯片指标","level":"3.1.1","depth":2,"path":"blog/AI/AI芯片指标.md","ref":"./blog/AI/AI芯片指标.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-default","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","alerts","fontsettings","tbfed-pagefooter"],"root":".","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Priself.zz@gmail.com 2023","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"splitter":{},"search-pro":{},"hide-element":{},"katex":{},"fontsettings":{"family":"sans","size":12,"theme":"white"},"alerts":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blog","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"学习的一些知识与心得"},"file":{"path":"blog/hardfix/README.md","mtime":"2023-05-21T12:51:23.730Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-21T12:53:50.979Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"硬件定点数","level":"3.1.2","depth":2,"next":{"title":"AI 芯片架构","level":"3.2","depth":1,"ref":"","articles":[{"title":"脉动阵列(@Gemini、TPU、AIE)","level":"3.2.1","depth":2,"path":"blog/hardalgo/systolic-array.md","ref":"./blog/hardalgo/systolic-array.md","articles":[]}]},"previous":{"title":"AI 芯片指标","level":"3.1.1","depth":2,"path":"blog/AI/AI芯片指标.md","ref":"./blog/AI/AI芯片指标.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-default","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","alerts","fontsettings","tbfed-pagefooter"],"root":".","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Priself.zz@gmail.com 2023","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"splitter":{},"search-pro":{},"hide-element":{},"katex":{},"fontsettings":{"family":"sans","size":12,"theme":"white"},"alerts":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blog","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"学习的一些知识与心得"},"file":{"path":"blog/hardfix/README.md","mtime":"2023-05-21T12:55:09.876Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-21T12:55:13.193Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

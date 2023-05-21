@@ -18,7 +18,7 @@
 	* [硬件定点数](./blog/hardfix/README.md)
 
 * AI 芯片架构
-	* [脉动阵列(@Gemini、TPU、AIE)](./blog/hardalgo/systolic-array.md)
+	* [脉动阵列(@Gemini、TPU、Xilinx AIE)](./blog/hardalgo/systolic-array.md)
 
 ## 隐私计算
 

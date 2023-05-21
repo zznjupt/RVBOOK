@@ -1,6 +1,6 @@
 <img src='https://img.shields.io/badge/-Verilog-8985F0.svg'>
 
-# 详解脉动阵列
+# 漫谈脉动阵列
 
 > Reference:<br>
 > 《FPGA原理和结构》日 天野英晴

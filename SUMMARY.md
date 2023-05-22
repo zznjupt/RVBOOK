@@ -6,7 +6,7 @@
 * MIPS R10000
 	* [R10k总览](./blog/CPU/R10k/r10k.md)
 * Ariane(cva6)
-	* [模式历史表](./blog/CPU/cva6/bht.md)
+	* [前端Frontend](./blog/CPU/cva6/Frontend.md)
 
 * Rocket Core
 

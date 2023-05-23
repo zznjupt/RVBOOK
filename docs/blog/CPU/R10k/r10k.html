@@ -474,11 +474,6 @@ Yeager, Kenneth C. &quot;The MIPS R10000 superscalar microprocessor.&quot; IEEE 
 28-41.</p>
 </blockquote>
 <h2 id="&#x5904;&#x7406;&#x5668;&#x603B;&#x89C8;">&#x5904;&#x7406;&#x5668;&#x603B;&#x89C8;</h2>
-<p><img src="image/r10k1.png" alt="R10k overview">
-<img src="image/r10k2.png" alt="R10k overview"></p>
-<blockquote>
-<p>&#x7B2C;&#x4E8C;&#x5F20;&#x56FE;&#x7684;&#x201C;&#x53D1;&#x5C04;&#x201D;&#x4E3A; Issue Queue</p>
-</blockquote>
 <ul>
 <li>&#x56DB;&#x8DEF;&#x8D85;&#x6807;&#x91CF; RISC &#x5904;&#x7406;&#x5668;<ul>
 <li>&#x6BCF;&#x5468;&#x671F;&#x53D6;&#x6307;&#x5E76;&#x8BD1;&#x7801;&#x56DB;&#x6761;&#x6307;&#x4EE4;</li>
@@ -497,13 +492,38 @@ Yeager, Kenneth C. &quot;The MIPS R10000 superscalar microprocessor.&quot; IEEE 
 </ul>
 </li>
 <li>&#x5C42;&#x6B21;&#x5316;&#x3001;&#x975E;&#x963B;&#x585E;&#x7684;&#x5185;&#x5B58;&#x5B50;&#x7CFB;&#x7EDF;<ul>
-<li>&#x7247;&#x5185;</li>
+<li>&#x7247;&#x5185;&#x3001;2-way L1&#x7F13;&#x5B58;<ul>
+<li>32Kb Icache</li>
+<li>32Kb Interleaved Dcache</li>
+</ul>
+</li>
+<li>&#x7247;&#x5916;&#x3001;2-way L2&#x7F13;&#x5B58;<ul>
+<li>128bit-wide, &#x540C;&#x6B65;SRAM</li>
+</ul>
+</li>
+<li>64bit &#x591A;&#x6838;&#x7CFB;&#x7EDF;&#x63A5;&#x53E3;(&#x5E26;&#x5206;&#x79BB;&#x4E8B;&#x52A1;&#x534F;&#x8BAE;)</li>
 </ul>
 </li>
 </ul>
 <p><img src="image/r10k3.png" alt="R10k overview"></p>
+<h2 id="&#x7CFB;&#x7EDF;&#x7075;&#x6D3B;&#x6027;">&#x7CFB;&#x7EDF;&#x7075;&#x6D3B;&#x6027;</h2>
+<p>&#x901A;&#x8FC7;&#x4E0D;&#x540C;&#x7684;&#x914D;&#x7F6E;&#xFF0C;R10k&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;&#x5BBD;&#x8303;&#x56F4;&#x7CFB;&#x7EDF;&#x4E2D;&#x5DE5;&#x4F5C;&#x2014;&#x2014;&#x5355;&#x6838;&#x5904;&#x7406;&#x5668;&#x6216;&#x591A;&#x6838;&#x5904;&#x7406;&#x5668;&#xFF08;&#x96C6;&#x7FA4;&#xFF09;&#x3002;&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;snoopy&#x6216;<a href="https://zhuanlan.zhihu.com/p/419722803" target="_blank">directory</a>&#x65B9;&#x6848;&#x6765;&#x7EF4;&#x62A4;&#x7F13;&#x5B58;&#x4E00;&#x81F4;&#x6027;&#x3002;R10k&#x7684;L2&#x7F13;&#x5B58;&#x8303;&#x56F4;&#x5728;512K&#x5B57;&#x8282;&#x5230;16M&#x5B57;&#x8282;&#x4E4B;&#x95F4;&#x3002;</p>
+<h2 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h2>
+<p>&#x4E24;&#x5F20;&#x56FE;&#x4E3A;R10k&#x7684;&#x7EC4;&#x6210;&#x6846;&#x56FE;&#x548C;&#x6D41;&#x6C34;&#x7EBF;&#x65F6;&#x5E8F;&#x56FE;&#xFF0C;&#x5171;&#x6709;&#x8FD1;6&#x6761;&#x72EC;&#x7ACB;&#x6D41;&#x6C34;&#x7EBF;&#x3002;</p>
+<p>&#x53D6;&#x6307;&#x6D41;&#x6C34;&#x7EBF;&#x4F4D;&#x4E8E;&#x7B2C;1&#x81F3;3&#x7EA7;&#xFF0C;&#x5728;&#x7B2C;1&#x7EA7;R10k&#x83B7;&#x53D6;&#x5E76;&#x5BF9;&#x9F50;&#x540E;&#x7EED;&#x56DB;&#x6761;&#x6307;&#x4EE4;&#xFF1B;&#x5728;&#x7B2C;2&#x7EA7;&#xFF0C;&#x8FDB;&#x884C;&#x8BD1;&#x7801;&#x5E76;&#x5BF9;&#x9F50;&#x540E;&#x7EED;&#x56DB;&#x6761;&#x6307;&#x4EE4;&#xFF0C;&#x5728;&#x7B2C;2&#x7EA7;&#xFF0C;&#x8FDB;&#x884C;&#x8BD1;&#x7801;&#x5E76;&#x5BF9;&#x8FD9;&#x4E9B;&#x6307;&#x4EE4;&#x8FDB;&#x884C;&#x91CD;&#x547D;&#x540D;&#xFF0C;&#x8FD8;&#x5BF9;&#x5176;&#x4E2D;&#x7684;&#x8DF3;&#x8F6C;&#x548C;&#x5206;&#x652F;&#x6307;&#x4EE4;&#x8BA1;&#x7B97;&#x76EE;&#x6807;&#x5730;&#x5740;&#x3002;&#x5728;&#x7B2C;3&#x7EA7;&#xFF0C;&#x5C06;&#x91CD;&#x547D;&#x540D;&#x540E;&#x7684;&#x6307;&#x4EE4;&#x5199;&#x5165;&#x961F;&#x5217;&#x3002;&#x540C;&#x65F6;&#x8BFB;&#x53D6;&#x5FD9;&#x4F4D;&#x8868;&#xFF08;busy-bit table&#xFF09;&#x6765;&#x5224;&#x65AD;&#x3002;</p>
+<p>&#x64CD;&#x4F5C;&#x6570;&#x662F;&#x5426;&#x5904;&#x4E8E;&#x5FD9;&#x72B6;&#x6001;&#xFF0C;&#x6307;&#x4EE4;&#x5C06;&#x5728;&#x961F;&#x5217;&#x4E2D;&#x7B49;&#x5F85;&#x76F4;&#x5230;&#x5176;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x6570;&#x5C31;&#x7EEA;&#x3002;</p>
+<p>&#x5728;&#x7B2C;&#x4E09;&#x7EA7;&#xFF0C;&#x5F53;&#x961F;&#x5217;&#x53D1;&#x5C04;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#xFF0C;&#x5219;&#x5176;&#x540E;&#x7684;&#x4E94;&#x6761;&#x6267;&#x884C;&#x6D41;&#x6C34;&#x7EBF;&#x5C31;&#x5F00;&#x52A8;&#x4E86;&#x3002;&#x5904;&#x7406;&#x5668;&#x5728;&#x7B2C;3&#x7EA7;&#x7684;&#x540E;&#x534A;&#x6BB5;&#x4ECE;&#x5BC4;&#x5B58;&#x5668;&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;&#x6570;&#xFF0C;&#x5E76;&#x4ECE;&#x7B2C;4&#x7EA7;&#x5F00;&#x59CB;&#x6267;&#x884C;&#xFF0C;&#x6574;&#x6570;&#x6D41;&#x6C34;&#x7EBF;&#x5360;&#x636E;&#x4E00;&#x7EA7;&#xFF0C;&#x88C5;&#x8F7D;&#x6D41;&#x6C34;&#x7EBF;&#x5360;&#x636E;&#x4E24;&#x7EA7;&#xFF0C;&#x6D6E;&#x70B9;&#x6D41;&#x6C34;&#x7EBF;&#x5360;&#x636E;&#x4E09;&#x7EA7;&#xFF0C;&#x5904;&#x7406;&#x5668;&#x5728;&#x4E0B;&#x4E00;&#x7EA7;&#x524D;&#x534A;&#x6BB5;&#x5C06;&#x7ED3;&#x679C;&#x5199;&#x5165;&#x5BC4;&#x5B58;&#x5668;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x6574;&#x6570;&#x548C;&#x6D6E;&#x70B9;&#x90E8;&#x5206;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x6307;&#x4EE4;&#x961F;&#x5217;&#x3001;&#x5BC4;&#x5B58;&#x5668;&#x6587;&#x4EF6;&#x548C;&#x6570;&#x636E;&#x901A;&#x9053;&#x3002;&#x5206;&#x79BB;&#x662F;&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x6700;&#x5927;&#x7EBF;&#x957F;&#xFF08;wire length&#xFF09;&#xFF0C;&#x83B7;&#x5F97;&#x5B8C;&#x5168;&#x7684;&#x5E76;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x5206;&#x5F00;&#x540E;&#x7684;&#x4E24;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x6587;&#x4EF6;&#x6BD4;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x91CC;&#x9700;&#x8981;&#x66F4;&#x591A;&#x7684;&#x7A7A;&#x95F2;&#x5BC4;&#x5B58;&#x5668;&#x3002;&#x4F46;&#x7531;&#x4E8E;&#x6BCF;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x53EA;&#x9700;&#x8981;&#x5C11;&#x91CF;&#x8BFB;&#x5199;&#x7AEF;&#x53E3;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x7269;&#x7406;&#x4E0A;&#x6765;&#x8BF4;&#x9762;&#x79EF;&#x4F1A;&#x66F4;&#x5C0F;&#x3002;</p>
+<p><img src="image/r10k1.png" alt="R10k overview">
+<img src="image/r10k2.png" alt="R10k overview"></p>
+<blockquote>
+<p>&#x56FE;&#x4E2D;&#x201C;&#x53D1;&#x5C04;&#x201D;&#x4E3A; Issue Queue</p>
+</blockquote>
+<h2 id="&#x53D6;&#x6307;&#x7EA7;">&#x53D6;&#x6307;&#x7EA7;</h2>
+<p>&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x5904;&#x7406;&#x5668;&#x9700;&#x8981;&#x7528;&#x6BD4;&#x6267;&#x884C;&#x66F4;&#x9AD8;&#x7684;&#x5E26;&#x5BBD;&#x6765;&#x53D6;&#x6307;&#x548C;&#x8BD1;&#x7801;&#xFF0C;&#x5C06;&#x6307;&#x4EE4;&#x961F;&#x5217;&#x4FDD;&#x6301;&#x6EE1;&#x8F7D;&#x5F88;&#x91CD;&#x8981;&#x3002;&#x8FD9;&#x6837;&#x624D;&#x80FD;&#x63D0;&#x524D;&#x627E;&#x5230;&#xFF08;look ahead&#xFF09;&#x53EF;&#x4E71;&#x5E8F;&#x53D1;&#x5C04;&#x7684;&#x6307;&#x4EE4;&#x3002;&#x6700;&#x7EC8;&#x5904;&#x7406;&#x5668;&#x83B7;&#x53D6;&#x5230;&#x6BD4;&#x6267;&#x884C;&#x6307;&#x4EE4;&#x6570;&#x8FD8;&#x591A;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x8BEF;&#x5224;&#x5206;&#x652F;&#xFF08;mispredicted branch&#xFF09;&#x540E;&#x4F1A;&#x9700;&#x8981;&#x653E;&#x5F03;&#x90E8;&#x5206;&#x6307;&#x4EE4;&#x3002;</p>
+<p><img src="image/r10k4.png" width="50%"><img src="image/r10k5.png" width="50%"></p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Priself.zz@gmail.com 2023 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2023-05-22 14:29:25
+2023-05-23 15:02:10
 </span></footer>
                                 
                                 </section>
@@ -539,7 +559,7 @@ Yeager, Kenneth C. &quot;The MIPS R10000 superscalar microprocessor.&quot; IEEE 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"R10k总览","level":"2.1.1","depth":2,"next":{"title":"Ariane(cva6)","level":"2.2","depth":1,"ref":"","articles":[{"title":"前端Frontend","level":"2.2.1","depth":2,"path":"blog/CPU/cva6/Frontend.md","ref":"./blog/CPU/cva6/Frontend.md","articles":[]}]},"previous":{"title":"MIPS R10000","level":"2.1","depth":1,"ref":"","articles":[{"title":"R10k总览","level":"2.1.1","depth":2,"path":"blog/CPU/R10k/r10k.md","ref":"./blog/CPU/R10k/r10k.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-default","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","alerts","fontsettings","tbfed-pagefooter"],"root":".","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Priself.zz@gmail.com 2023","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"splitter":{},"search-pro":{},"hide-element":{},"katex":{},"fontsettings":{"family":"sans","size":12,"theme":"white"},"alerts":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blog","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"学习的一些知识与心得"},"file":{"path":"blog/CPU/R10k/r10k.md","mtime":"2023-05-22T06:29:25.669Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-22T12:59:16.470Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"R10k总览","level":"2.1.1","depth":2,"next":{"title":"Ariane(cva6)","level":"2.2","depth":1,"ref":"","articles":[{"title":"前端Frontend","level":"2.2.1","depth":2,"path":"blog/CPU/cva6/Frontend.md","ref":"./blog/CPU/cva6/Frontend.md","articles":[]}]},"previous":{"title":"MIPS R10000","level":"2.1","depth":1,"ref":"","articles":[{"title":"R10k总览","level":"2.1.1","depth":2,"path":"blog/CPU/R10k/r10k.md","ref":"./blog/CPU/R10k/r10k.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","katex","theme-default","expandable-chapters","chapter-fold","splitter","copy-code-button","-lunr","-search","search-pro","prism","-highlight","hide-element","alerts","fontsettings","tbfed-pagefooter"],"root":".","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Priself.zz@gmail.com 2023","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"splitter":{},"search-pro":{},"hide-element":{},"katex":{},"fontsettings":{"family":"sans","size":12,"theme":"white"},"alerts":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"expandable-chapters":{}},"theme":"default","author":"UnisLab-ic-group","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blog","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"学习的一些知识与心得"},"file":{"path":"blog/CPU/R10k/r10k.md","mtime":"2023-05-23T07:02:10.074Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-23T07:02:18.995Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

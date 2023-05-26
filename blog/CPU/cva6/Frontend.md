@@ -1,8 +1,6 @@
-<img src='https://img.shields.io/badge/语言-systemverilog_(IEEE1800_2005)-CAD09D.svg'> 
+<img src='https://img.shields.io/badge/语言-systemverilog_(IEEE1800_2017)-CAD09D.svg'> 
 
 # cva6-Frontend 前端流水线
-
-
 
 ```verilog
 // Author: Florian Zaruba, ETH Zurich

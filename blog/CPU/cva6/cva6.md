@@ -1,7 +1,7 @@
 <!-- `语言: systemverilog IEEE1800-2017` -->
 <img src='https://img.shields.io/badge/语言-systemverilog_(IEEE1800_2017)-CAD09D.svg'> 
 
-# 顺序单发六级流水线标量处理器核-RV64GC cva6(Ariane)
+# 顺序单发六级流水线标量处理器-RV64GC cva6(Ariane)
 
 > cva6系列(一) 处理器解析<br>
 > 预计更新到魔改其为多发超标量乱序核，悠闲的日子快过去了，咕咕咕多久未知(
